@@ -15,9 +15,24 @@ public class CameraSettings : ScriptableObject {
     public bool InvertY = true;
     public bool InvertX = false;
 }
+[CreateAssetMenu]
+public class NPCData : ScriptableObject, ISerializationCallbackReceiver {
+    public float Speed = 6f;
+    public float RunSpeedMultiplier = 1.5f;
+    public float VisionRange = 50f;
+    public void OnAfterDeserialize() { }
+    public void OnBeforeSerialize() { }
+}
 
-public class CharController : MonoBehaviour
+public class GameController : MonoBehaviour{
+    public Camera mainCamera;
+
+}
+
+public class CController : MonoBehaviour
 {
+
+
     [Header("Camera Movement")]
     public CameraSettings m_CConfig;
     public Transform m_PitchController;
@@ -27,18 +42,18 @@ public class CharController : MonoBehaviour
 
     [Header("Movement")]
     private CharacterController m_characterController;
-    public float m_Speed = 6f;
-    public float m_RunSpeedMultiplier = 1.5f;
+    public NPCData m_CVars;
 
     [Header("Stats")]
     public GameController m_GameController;
     public Preset m_startPosition;
 
-    [SerializeField]
-    public CharacterVariables m_CharacterVars;
+    private Vector3 m_ROrigin;
+    private LineRenderer m_Line;
 
-    //m_AngleLocked
-
+    void Awake() {
+        
+    }
     void Start()
     {
         m_startPosition.ApplyTo(transform);
@@ -47,7 +62,15 @@ public class CharController : MonoBehaviour
 
     void OnEnable()
     {
+        m_ROrigin = m_GameController.mainCamera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
         m_characterController = GetComponent<CharacterController>();
+
+        #region UNITY_EDITOR
+        if(!GetComponent<LineRenderer>())
+            m_Line = this.gameObject.AddComponent<LineRenderer>();
+        else
+            m_Line = GetComponent<LineRenderer>();
+        #endregion
     }
 
     void Update()
@@ -61,6 +84,27 @@ public class CharController : MonoBehaviour
             else Cursor.lockState = CursorLockMode.Locked;
             m_AimLocked = Cursor.lockState == CursorLockMode.Locked;
         }*/
+        #endregion
+
+        RaycastHit hit;
+
+        #region UNITY_EDITOR
+        m_Line.SetPosition(0, this.transform.position);
+        #endregion
+
+        if(Physics.Raycast(m_ROrigin, m_GameController.mainCamera.transform.forward, out hit, m_CVars.VisionRange, ~(1<<gameObject.layer))){
+            Debug.Log(hit.collider.name);
+
+            #region UNITY_EDITOR
+            m_Line.SetPosition(1, hit.point);
+            #endregion
+
+            //Transform hitObject = hit.collider.GetComponent<Transform>();
+        } 
+        #region UNITY_EDITOR
+        else {
+            m_Line.SetPosition(1, m_ROrigin + (m_GameController.mainCamera.transform.forward * m_CVars.VisionRange));
+        }
         #endregion
 
         Vector2 mouseAxis = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
@@ -81,7 +125,7 @@ public class CharController : MonoBehaviour
 
         l_Movement.Normalize();
 
-        l_Movement = l_Movement * m_Speed * ((Input.GetButton("Fire1")) ? m_RunSpeedMultiplier : 1f) * Time.deltaTime;
+        l_Movement = l_Movement * m_CVars.Speed * ((Input.GetButton("Fire1")) ? m_CVars.RunSpeedMultiplier : 1f) * Time.deltaTime;
 
         m_characterController.Move(l_Movement);
     }
@@ -90,7 +134,7 @@ public class CharController : MonoBehaviour
     public void Reset()
     {
         m_startPosition.ApplyTo(transform);
-        m_CharacterVars.OnAfterDeserialize();
+        m_CVars.OnAfterDeserialize();
     }
     #endregion
 }
