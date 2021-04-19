@@ -5,39 +5,9 @@ using System.Security.Cryptography;
 using UnityEditor.Presets;
 using UnityEngine;
 using UnityEngine.Audio;
-<<<<<<< HEAD
-public class CController : MonoBehaviour
-{
-=======
-
-[CreateAssetMenu]
-public class CameraSettings : ScriptableObject {
-    public float MinPitch = -35f;
-    public float MaxPitch = 105f;
-    public float YawSpeed = 90f;
-    public float PitchSpeed = 45f;
-    public bool InvertY = true;
-    public bool InvertX = false;
-}
-[CreateAssetMenu]
-public class NPCData : ScriptableObject, ISerializationCallbackReceiver {
-    public float Speed = 6f;
-    public float RunSpeedMultiplier = 1.5f;
-    public float VisionRange = 50f;
-    public void OnAfterDeserialize() { }
-    public void OnBeforeSerialize() { }
-}
-
-public class GameController : MonoBehaviour{
-    public Camera mainCamera;
-
-}
 
 public class CController : MonoBehaviour
 {
-
-
->>>>>>> 8f78af3cf7a33cd3920d32e158f3b9ecf6331316
     [Header("Camera Movement")]
     public CameraSettings m_CConfig;
     public Transform m_PitchController;
@@ -47,11 +17,7 @@ public class CController : MonoBehaviour
 
     [Header("Movement")]
     private CharacterController m_characterController;
-<<<<<<< HEAD
     public EntityData m_CVars;
-=======
-    public NPCData m_CVars;
->>>>>>> 8f78af3cf7a33cd3920d32e158f3b9ecf6331316
 
     [Header("Stats")]
     public GameController m_GameController;
@@ -146,8 +112,4 @@ public class CController : MonoBehaviour
         m_CVars.OnAfterDeserialize();
     }
     #endregion
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8f78af3cf7a33cd3920d32e158f3b9ecf6331316
