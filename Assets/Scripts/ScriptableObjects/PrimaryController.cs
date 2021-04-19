@@ -1,0 +1,11 @@
+using UnityEngine;
+
+[CreateAssetMenu]
+public class PrimaryController : ScriptableObject{
+    public Vector2 Axis = Vector2.zero;
+    public Vector2 CameraAxis = Vector2.zero;
+    public bool isInputPressed = false;
+    public bool isEscapePressed = false;
+    public bool isBoostPressed = false;
+    // Temporal, no sabemos si añadir boost de velocidad, no encaja en el juego
+}

@@ -18,13 +18,17 @@ public class CController : MonoBehaviour
     [Header("Movement")]
     private CharacterController m_characterController;
     public EntityData m_CVars;
+    public PrimaryController m_PlayerMovement;
 
     [Header("Stats")]
     public GameController m_GameController;
     public Preset m_startPosition;
 
     private Vector3 m_ROrigin;
+
+    #region UNITY_EDITOR
     private LineRenderer m_Line;
+    #endregion
 
     void Awake() {
         
@@ -45,6 +49,9 @@ public class CController : MonoBehaviour
             m_Line = this.gameObject.AddComponent<LineRenderer>();
         else
             m_Line = GetComponent<LineRenderer>();
+
+        m_Line.startWidth = 0.01f;
+        m_Line.endWidth = 0.01f;
         #endregion
     }
 
@@ -82,7 +89,7 @@ public class CController : MonoBehaviour
         }
         #endregion
 
-        Vector2 mouseAxis = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        Vector2 mouseAxis = m_PlayerMovement.CameraAxis;
         m_Yaw = m_Yaw + mouseAxis.x * m_CConfig.YawSpeed * Time.deltaTime * (m_CConfig.InvertX ? -1 : 1);
         m_Pitch = m_Pitch + mouseAxis.y * m_CConfig.PitchSpeed * Time.deltaTime * (m_CConfig.InvertY ? -1 : 1);
         m_Pitch = Mathf.Clamp(m_Pitch, m_CConfig.MinPitch, m_CConfig.MaxPitch);
@@ -93,14 +100,14 @@ public class CController : MonoBehaviour
         Vector3 l_Forward = transform.forward;
         Vector3 l_Right = transform.right;
         Vector3 l_Movement = Vector3.zero;
-        Vector2 l_Axis = new Vector2(Input.GetAxisRaw("Vertical"), Input.GetAxisRaw("Horizontal"));
+        Vector2 l_Axis = m_PlayerMovement.Axis;
 
         l_Movement = l_Forward * l_Axis.x;
         l_Movement += l_Right * l_Axis.y;
 
         l_Movement.Normalize();
 
-        l_Movement = l_Movement * m_CVars.Speed * ((Input.GetButton("Fire1")) ? m_CVars.RunSpeedMultiplier : 1f) * Time.deltaTime;
+        l_Movement = l_Movement * m_CVars.Speed * Time.deltaTime;
 
         m_characterController.Move(l_Movement);
     }
