@@ -397,7 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Player: {fileID: 602727850}
   m_Camera: {fileID: 1687258584}
-  m_AttachedKey: 101
+  m_PlayerMovement: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   m_AttachedObjectTransform: {fileID: 2145793588}
   m_MaxDistanceToAttachObject: 50
   m_AttachObjectLayerMask:

@@ -7,7 +7,8 @@ public class GrabScript : MonoBehaviour
 
     public GameObject m_Player;
     public Camera m_Camera;
-    public KeyCode m_AttachedKey = KeyCode.E;
+    // public KeyCode m_AttachedKey = KeyCode.E;
+    public PrimaryController m_PlayerMovement;
     public Transform m_AttachedObjectTransform;
     GameObject m_ObjectAttached;
     bool m_AttachingObject = false;
@@ -28,7 +29,7 @@ public class GrabScript : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(m_AttachedKey) && m_ObjectAttached == null)
+        if (m_PlayerMovement.isInputPressed && m_ObjectAttached == null)
         {
             TryAttachObject();
         }
@@ -58,11 +59,10 @@ public class GrabScript : MonoBehaviour
 
         else if (m_AttachedObject)
         {
-            if (Input.GetKeyDown(m_AttachedKey))
+            if (m_PlayerMovement.isInputPressed)
             {
                 ThrowAttachObject(0.0f);
             }
-            
         }
     }
 

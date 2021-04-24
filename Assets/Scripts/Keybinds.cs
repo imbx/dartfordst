@@ -34,6 +34,7 @@ public class Keybinds : MonoBehaviour {
         controller.CameraAxis = lookAction.ReadValue<Vector2>();
 
         controller.isEscapePressed = isEscapePressed();
+        controller.isInputPressed = isActionPressed();
     }
 
     bool isEscapePressed() {
