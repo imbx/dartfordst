@@ -18,4 +18,8 @@ public class InteractBase : MonoBehaviour {
 
     protected virtual void OnEnd() {
     }
+
+    public virtual void Execute(){
+
+    }
 }

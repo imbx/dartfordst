@@ -25,6 +25,12 @@ public class CController : MonoBehaviour
     public Preset m_startPosition;
     private Vector3 m_ROrigin;
 
+    public GameObject Lantern;
+
+    [SerializeField] private float _isPressedCd = 0f;
+    [SerializeField] private bool isLanternActive;
+    [SerializeField] private float lanternInputCd = 0f;
+
     void Awake()
     {
         
@@ -37,7 +43,6 @@ public class CController : MonoBehaviour
 
     void OnEnable()
     {
-        m_ROrigin = m_GameController.mainCamera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
         m_characterController = GetComponent<CharacterController>();
     }
 
@@ -46,11 +51,21 @@ public class CController : MonoBehaviour
         // FindObjectOfType<AudioManager>().Play("player_steps");
 
         RaycastHit hit;
-
-        if(Physics.Raycast(m_ROrigin, m_GameController.mainCamera.transform.forward, out hit, m_CVars.VisionRange, ~(1<<gameObject.layer))){
+        m_ROrigin = m_GameController.mainCamera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
+        if(_isPressedCd > 0) _isPressedCd -= Time.deltaTime;
+        if(Physics.Raycast(m_ROrigin, m_GameController.mainCamera.transform.forward, out hit, m_CVars.VisionRange, LayerMask.GetMask("Interactuable"))){
             Debug.Log(hit.collider.name);
+            if(_isPressedCd <= 0 && m_PlayerMovement.isInputPressed) {
+                if(hit.collider.GetComponent<InteractBase>()){
+                    hit.collider.GetComponent<InteractBase>().Execute();
+                    _isPressedCd = 0.75f;
+                }
 
-            
+                if(hit.collider.GetComponent<LightboxSwitches>()) {
+                    hit.collider.GetComponent<LightboxSwitches>().ToggleSwitch();
+                    _isPressedCd = 0.75f;
+                }
+            }
 
             //Transform hitObject = hit.collider.GetComponent<Transform>();
         } 
@@ -64,7 +79,24 @@ public class CController : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0, m_Yaw, 0);
             m_PitchController.localRotation = Quaternion.Euler(m_Pitch, 0, 0);
+
+
         }
+
+        if(lanternInputCd > 0f) lanternInputCd -= Time.deltaTime;
+
+        if(m_PlayerMovement.isLanternPressed && !isLanternActive && lanternInputCd <= 0f) {
+            isLanternActive = true;
+            lanternInputCd = 1f;
+            // GameController.current.lanternActive = true;
+        }
+        if(m_PlayerMovement.isLanternPressed && isLanternActive && lanternInputCd <= 0f){
+            isLanternActive = false;
+            lanternInputCd = 1f;
+        }
+
+        Lantern.SetActive(isLanternActive);
+        
 
         if(m_CVars.CanMove)
         {

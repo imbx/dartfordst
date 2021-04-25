@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour{
     private void Awake() {
         current = this;
         ToggleCursor(false);
+        database = new Database();
     }
 
 }

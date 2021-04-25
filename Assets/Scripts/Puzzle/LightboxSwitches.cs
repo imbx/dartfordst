@@ -12,6 +12,7 @@ public class LightboxSwitches : MonoBehaviour {
         if(isOn) ResetSwitch();
         else {
             isOn = true;
+            Debug.Log("On");
             Action.Invoke();
             GetComponent<MeshRenderer>().material = Green;
         }

@@ -5,9 +5,11 @@ using System.Collections.Generic;
 public class Database {
     private Dictionary<int, string>  Dialogues;
     private Dictionary<int, bool> PlayerProgression;
+
     public Database() {
         Dialogues = new Dictionary<int, string>();
         PlayerProgression = new Dictionary<int, bool>();
+        LoadData();
     }
 
     private bool LoadData() {

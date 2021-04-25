@@ -35,6 +35,7 @@ public class Keybinds : MonoBehaviour {
 
         controller.isEscapePressed = isEscapePressed();
         controller.isInputPressed = isActionPressed();
+        controller.isLanternPressed = isLanternPressed();
     }
 
     bool isEscapePressed() {
@@ -43,5 +44,9 @@ public class Keybinds : MonoBehaviour {
 
     bool isActionPressed () {
         return Keyboard.current != null ? Keyboard.current.spaceKey.isPressed : false; 
+    }
+
+    bool isLanternPressed () {
+        return Keyboard.current != null ? Keyboard.current.qKey.isPressed : false; 
     }  
 }
