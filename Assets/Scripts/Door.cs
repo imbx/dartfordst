@@ -14,6 +14,7 @@ public class Door : InteractBase {
     private float timer = 0f;
 
 
+
     void OnEnable() { 
         BaseRotation = transform.rotation.eulerAngles;
         eulerYAngle = BaseRotation.y;

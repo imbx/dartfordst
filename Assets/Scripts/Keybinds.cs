@@ -44,7 +44,7 @@ public class Keybinds : MonoBehaviour {
     }
 
     bool isActionPressed () {
-        return Keyboard.current != null ? Keyboard.current.spaceKey.isPressed : false; 
+        return Mouse.current != null ? Mouse.current.leftButton.isPressed : false; 
     }
 
     bool isLanternPressed () {
