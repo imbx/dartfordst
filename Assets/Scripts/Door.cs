@@ -13,6 +13,8 @@ public class Door : InteractBase {
 
     private float timer = 0f;
 
+    public Material doorClosed;
+    public Material doorOpen;
 
 
     void OnEnable() { 
@@ -40,6 +42,14 @@ public class Door : InteractBase {
 
     void Update()
     {
+
+        if(hasRequirement)
+        {
+            if(!GameController.current.database.GetProgressionState(reqID))
+                GetComponent<MeshRenderer>().material = doorClosed;
+            else GetComponent<MeshRenderer>().material = doorOpen;
+        }
+
         if(timer < 1f)
             timer += Time.deltaTime * rotationSpeed;
 
