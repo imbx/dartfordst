@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Book : InteractBase {
-    [SerializeField] private int BookID;
+    [SerializeField] public int BookID;
     private Vector2 InnerPosition;
     public Vector3 BookPosition; 
     public bool canPlace = true;
@@ -33,15 +33,16 @@ public class Book : InteractBase {
         Action.Invoke(this);
     }
 
-    public void SetPos(Vector3 oBook) {
+    public void SetPos(Vector3 oBook, int newId) {
         transform.position = oBook;
+        BookID = newId;
         BookPosition = transform.position;
     }
 
     public void PlaceBook() {
         if(otherBook) {
             transform.position = otherBook.BookPosition;
-            otherBook.SetPos(BookPosition);
+            // otherBook.SetPos(BookPosition);
             BookPosition = transform.position;
         }
     }

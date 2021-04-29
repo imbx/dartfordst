@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
-  BookID: 0
+  BookID: 2
   BookPosition: {x: 0, y: 0, z: 0}
   canPlace: 1
   Action:
@@ -773,7 +773,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ef5a57ae349a19c4fbf46a8a148a85f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -908,9 +908,7 @@ GameObject:
   - component: {fileID: 334715087}
   - component: {fileID: 334715091}
   - component: {fileID: 334715090}
-  - component: {fileID: 334715089}
-  - component: {fileID: 334715088}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,50 +929,6 @@ Transform:
   m_Father: {fileID: 500620211}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &334715088
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334715086}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &334715089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334715086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a71250c3555aed43a5b5dae06ef35eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 0
-  BookID: 0
-  BookPosition: {x: 0, y: 0, z: 0}
-  canPlace: 1
-  Action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1414992769}
-        m_TargetAssemblyTypeName: Library, Assembly-CSharp
-        m_MethodName: GetBook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!23 &334715090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1425,7 +1379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
-  BookID: 0
+  BookID: 1
   BookPosition: {x: 0, y: 0, z: 0}
   canPlace: 1
   Action:
@@ -1953,9 +1907,7 @@ GameObject:
   - component: {fileID: 745167015}
   - component: {fileID: 745167019}
   - component: {fileID: 745167018}
-  - component: {fileID: 745167017}
-  - component: {fileID: 745167016}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1976,50 +1928,6 @@ Transform:
   m_Father: {fileID: 500620211}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &745167016
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745167014}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &745167017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745167014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a71250c3555aed43a5b5dae06ef35eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 0
-  BookID: 0
-  BookPosition: {x: 0, y: 0, z: 0}
-  canPlace: 1
-  Action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1414992769}
-        m_TargetAssemblyTypeName: Library, Assembly-CSharp
-        m_MethodName: GetBook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!23 &745167018
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2908,7 +2816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
-  BookID: 0
+  BookID: 3
   BookPosition: {x: 0, y: 0, z: 0}
   canPlace: 1
   Action:
@@ -3081,9 +2989,7 @@ GameObject:
   - component: {fileID: 1106896648}
   - component: {fileID: 1106896652}
   - component: {fileID: 1106896651}
-  - component: {fileID: 1106896650}
-  - component: {fileID: 1106896649}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3104,50 +3010,6 @@ Transform:
   m_Father: {fileID: 500620211}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1106896649
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106896647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1106896650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106896647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a71250c3555aed43a5b5dae06ef35eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 0
-  BookID: 0
-  BookPosition: {x: 0, y: 0, z: 0}
-  canPlace: 1
-  Action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1414992769}
-        m_TargetAssemblyTypeName: Library, Assembly-CSharp
-        m_MethodName: GetBook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!23 &1106896651
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3278,7 +3140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1159516694
 Transform:
   m_ObjectHideFlags: 0
@@ -3708,9 +3570,7 @@ GameObject:
   - component: {fileID: 1337672852}
   - component: {fileID: 1337672856}
   - component: {fileID: 1337672855}
-  - component: {fileID: 1337672854}
-  - component: {fileID: 1337672853}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3731,50 +3591,6 @@ Transform:
   m_Father: {fileID: 500620211}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1337672853
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337672851}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1337672854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337672851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a71250c3555aed43a5b5dae06ef35eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 0
-  BookID: 0
-  BookPosition: {x: 0, y: 0, z: 0}
-  canPlace: 1
-  Action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1414992769}
-        m_TargetAssemblyTypeName: Library, Assembly-CSharp
-        m_MethodName: GetBook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!23 &1337672855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3985,20 +3801,10 @@ MonoBehaviour:
   vecModifier: {x: 0, y: -1, z: 0}
   DesiredPos: {fileID: 2655988077585873504, guid: 9dc6d4e367a6d1241a9d1a9e12e1e25a, type: 2}
   Books:
-  - {fileID: 745167017}
-  - {fileID: 1337672854}
-  - {fileID: 562736266}
-  - {fileID: 1475680897}
   - {fileID: 1051625000}
-  - {fileID: 1748435489}
-  - {fileID: 1106896650}
-  - {fileID: 334715089}
-  - {fileID: 1460199944}
   - {fileID: 276832472}
+  - {fileID: 562736266}
   ChosenBook: {fileID: 0}
-  OnResetLightbox:
-    m_PersistentCalls:
-      m_Calls: []
   playerData: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
 --- !u!65 &1414992770
 BoxCollider:
@@ -4196,9 +4002,7 @@ GameObject:
   - component: {fileID: 1460199942}
   - component: {fileID: 1460199946}
   - component: {fileID: 1460199945}
-  - component: {fileID: 1460199944}
-  - component: {fileID: 1460199943}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4219,50 +4023,6 @@ Transform:
   m_Father: {fileID: 500620211}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1460199943
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460199941}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1460199944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460199941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a71250c3555aed43a5b5dae06ef35eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 0
-  BookID: 0
-  BookPosition: {x: 0, y: 0, z: 0}
-  canPlace: 1
-  Action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1414992769}
-        m_TargetAssemblyTypeName: Library, Assembly-CSharp
-        m_MethodName: GetBook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!23 &1460199945
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4323,9 +4083,7 @@ GameObject:
   - component: {fileID: 1475680895}
   - component: {fileID: 1475680899}
   - component: {fileID: 1475680898}
-  - component: {fileID: 1475680897}
-  - component: {fileID: 1475680896}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4346,50 +4104,6 @@ Transform:
   m_Father: {fileID: 500620211}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1475680896
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475680894}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1475680897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475680894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a71250c3555aed43a5b5dae06ef35eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 0
-  BookID: 0
-  BookPosition: {x: 0, y: 0, z: 0}
-  canPlace: 1
-  Action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1414992769}
-        m_TargetAssemblyTypeName: Library, Assembly-CSharp
-        m_MethodName: GetBook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!23 &1475680898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5367,9 +5081,7 @@ GameObject:
   - component: {fileID: 1748435487}
   - component: {fileID: 1748435491}
   - component: {fileID: 1748435490}
-  - component: {fileID: 1748435489}
-  - component: {fileID: 1748435488}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5390,50 +5102,6 @@ Transform:
   m_Father: {fileID: 500620211}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1748435488
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1748435486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1748435489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1748435486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a71250c3555aed43a5b5dae06ef35eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 0
-  BookID: 0
-  BookPosition: {x: 0, y: 0, z: 0}
-  canPlace: 1
-  Action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1414992769}
-        m_TargetAssemblyTypeName: Library, Assembly-CSharp
-        m_MethodName: GetBook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!23 &1748435490
 MeshRenderer:
   m_ObjectHideFlags: 0
