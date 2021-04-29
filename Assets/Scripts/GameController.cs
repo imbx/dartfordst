@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour{
     public Database database;
     private Texture2D[] CursorTextures;
     public EntityData Player;
+
+    public Transform Hand;
     public GameObject UI;
 
     public void SetCursor() {
