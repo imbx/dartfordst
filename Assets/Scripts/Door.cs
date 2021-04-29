@@ -6,6 +6,8 @@ public class Door : InteractBase {
     public float rotationSpeed = 2f;
     public float targetAngle = 90f; // CALCULATED OVER Y AXIS
 
+    public Transform door;
+
     private bool isDoorOpen = false;
 
     private Vector3 BaseRotation;
@@ -46,8 +48,8 @@ public class Door : InteractBase {
         if(hasRequirement)
         {
             if(!GameController.current.database.GetProgressionState(reqID))
-                GetComponent<MeshRenderer>().material = doorClosed;
-            else GetComponent<MeshRenderer>().material = doorOpen;
+                door.GetComponent<MeshRenderer>().material = doorClosed;
+            else door.GetComponent<MeshRenderer>().material = doorOpen;
         }
 
         if(timer < 1f)
