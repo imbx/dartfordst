@@ -32,6 +32,7 @@ public class Keybinds : MonoBehaviour {
         Vector2 vecMov = new Vector2(movementAction.ReadValue<Vector2>().y, movementAction.ReadValue<Vector2>().x);
         controller.Axis = vecMov;
         controller.CameraAxis = lookAction.ReadValue<Vector2>();
+        controller.Mouse = mousePosition();
 
         controller.isEscapePressed = isEscapePressed();
         controller.isInputPressed = isActionPressed();
@@ -48,5 +49,9 @@ public class Keybinds : MonoBehaviour {
 
     bool isLanternPressed () {
         return Keyboard.current != null ? Keyboard.current.qKey.isPressed : false; 
-    }  
+    }
+
+    Vector2 mousePosition() {
+        return Mouse.current.position.ReadValue();
+    }
 }

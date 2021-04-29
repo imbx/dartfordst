@@ -8,6 +8,7 @@ public class PrimaryController : ScriptableObject{
     public bool isEscapePressed = false;
     public bool isLanternPressed = false;
     public bool isBoostPressed = false;
+    public Vector2 Mouse = Vector2.zero;
 
     // Temporal, no sabemos si añadir boost de velocidad, no encaja en el juego
 }

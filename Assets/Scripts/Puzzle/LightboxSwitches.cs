@@ -1,25 +1,28 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LightboxSwitches : MonoBehaviour {
+public class LightboxSwitches : InteractBase {
     private bool isOn = false;
-    public UnityEvent Action;
+    public int switchID = -1;
+    public UnityEvent<int> Action;
 
-    public Material Red;
-    public Material Green; // ONLY FOR TEST PURPOSES
-
-    public void ToggleSwitch() {
+    public override void Execute() {
         if(isOn) ResetSwitch();
         else {
             isOn = true;
-            Debug.Log("On");
-            Action.Invoke();
-            GetComponent<MeshRenderer>().material = Green;
+            transform.localEulerAngles = new Vector3(0, 0, -45f);
+            Action.Invoke(switchID);
         }
     }
 
     public void ResetSwitch() {
         isOn = false;
-        GetComponent<MeshRenderer>().material = Red;
+        transform.localEulerAngles = new Vector3(0, 0, 45f);
+        Action.Invoke(-1);
     } 
+
+    public void OnDestroyLightbox() {
+        Destroy(GetComponent<BoxCollider>());
+        Destroy(this);
+    }
 }

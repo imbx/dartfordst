@@ -10,7 +10,8 @@ public class GameController : MonoBehaviour{
     public Camera mainCamera;
     public Database database;
     private Texture2D[] CursorTextures;
-    public Transform Player;
+    public EntityData Player;
+    public GameObject UI;
 
     public void SetCursor() {
 
@@ -27,6 +28,16 @@ public class GameController : MonoBehaviour{
         current = this;
         ToggleCursor(false);
         database = new Database();
+        Player.CanMove = true;
+        Player.CanLook = true;
+    }
+
+    public void DisableUI() {
+        UI.SetActive(false);
+    }
+
+    public void EnableUI() {
+        UI.SetActive(true);
     }
 
 }

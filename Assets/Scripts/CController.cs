@@ -31,6 +31,9 @@ public class CController : MonoBehaviour
     [SerializeField] private bool isLanternActive;
     [SerializeField] private float lanternInputCd = 0f;
 
+    [SerializeField] private float InteractRange = 2f;
+    private int lanternState = 0;
+
     void Awake()
     {
         
@@ -52,22 +55,23 @@ public class CController : MonoBehaviour
 
         RaycastHit hit;
         m_ROrigin = m_GameController.mainCamera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
-        if(_isPressedCd > 0) _isPressedCd -= Time.deltaTime;
-        if(Physics.Raycast(m_ROrigin, m_GameController.mainCamera.transform.forward, out hit, m_CVars.VisionRange, LayerMask.GetMask("Interactuable"))){
-            Debug.Log(hit.collider.name);
-            if(_isPressedCd <= 0 && m_PlayerMovement.isInputPressed) {
-                if(hit.collider.GetComponent<InteractBase>()){
-                    hit.collider.GetComponent<InteractBase>().Execute();
-                    _isPressedCd = 0.75f;
-                }
 
-                if(hit.collider.GetComponent<LightboxSwitches>()) {
-                    hit.collider.GetComponent<LightboxSwitches>().ToggleSwitch();
-                    _isPressedCd = 0.75f;
+        Vector3 direction = m_GameController.mainCamera.transform.forward;
+        if(!m_CVars.CanLook) {
+            Ray mouseHit = Camera.main.ScreenPointToRay(m_PlayerMovement.Mouse);
+            m_ROrigin = Camera.main.ScreenToWorldPoint(m_PlayerMovement.Mouse);
+            direction = mouseHit.direction;
+        }
+
+        if(_isPressedCd > 0) _isPressedCd -= Time.deltaTime;
+        if(Physics.Raycast(m_ROrigin, direction, out hit, m_CVars.VisionRange, LayerMask.GetMask("Interactuable"))){
+            // Debug.Log(hit.collider.name);
+            if(_isPressedCd <= 0 && m_PlayerMovement.isInputPressed) {
+                _isPressedCd = 0.75f;
+                if(hit.collider.GetComponent<InteractBase>() && Mathf.Abs((hit.transform.position - transform.position).magnitude) < InteractRange){
+                    hit.collider.GetComponent<InteractBase>().Execute();
                 }
             }
-
-            //Transform hitObject = hit.collider.GetComponent<Transform>();
         } 
 
         if(m_CVars.CanLook)
@@ -80,6 +84,8 @@ public class CController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, m_Yaw, 0);
             m_PitchController.localRotation = Quaternion.Euler(m_Pitch, 0, 0);
 
+            m_CVars.CameraRotations = new Vector3(m_Pitch, 0, m_Yaw);
+
 
         }
 
@@ -87,11 +93,22 @@ public class CController : MonoBehaviour
 
         if(m_PlayerMovement.isLanternPressed && !isLanternActive && lanternInputCd <= 0f) {
             isLanternActive = true;
+            lanternState = 1;
             lanternInputCd = 1f;
             // GameController.current.lanternActive = true;
         }
         if(m_PlayerMovement.isLanternPressed && isLanternActive && lanternInputCd <= 0f){
-            isLanternActive = false;
+            if(lanternState == 1) {
+                lanternState = 2;
+                Lantern.GetComponent<Light>().color = Color.magenta;
+                Lantern.GetComponent<Light>().cullingMask =  ~(1 << LayerMask.NameToLayer("Water"));
+            }
+            else {
+                lanternState = 0;
+                isLanternActive = false;
+                Lantern.GetComponent<Light>().color = Color.white;
+                Lantern.GetComponent<Light>().cullingMask =  -1;
+            }
             lanternInputCd = 1f;
         }
 

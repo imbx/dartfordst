@@ -6,10 +6,10 @@ using UnityEngine;
 public class InteractBase : MonoBehaviour {
     public int _id;
     void OnEnable() {
-        if(GameController.current.database.ProgressionExists(_id)){
+        /*if(GameController.current.database.ProgressionExists(_id)){
             this.gameObject.SetActive(!GameController.current.database.GetProgressionState(_id));
         }
-        else GameController.current.database.AddProgressionID(_id);
+        else GameController.current.database.AddProgressionID(_id);*/
     }
 
     protected virtual void OnStart(){
@@ -17,6 +17,9 @@ public class InteractBase : MonoBehaviour {
     }
 
     protected virtual void OnEnd() {
+    }
+
+    public virtual void OnExit() {
     }
 
     public virtual void Execute(){
