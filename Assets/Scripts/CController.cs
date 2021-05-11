@@ -34,6 +34,8 @@ public class CController : MonoBehaviour
     [SerializeField] private float InteractRange = 2f;
     private int lanternState = 0;
 
+    public float l_gravity = 9.8f;
+
     void Awake()
     {
         
@@ -124,7 +126,7 @@ public class CController : MonoBehaviour
 
             l_Movement = l_Forward * l_Axis.x;
             l_Movement += l_Right * l_Axis.y;
-
+            l_Movement += transform.up * -1 * l_gravity * Time.deltaTime;
             l_Movement.Normalize();
 
             l_Movement = l_Movement * m_CVars.Speed * Time.deltaTime;
