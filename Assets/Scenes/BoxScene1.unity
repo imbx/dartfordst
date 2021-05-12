@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d527f1783dad647909fad1a559edef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 0
+  _id: 738724
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   CanPickup: 1
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
