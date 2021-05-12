@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour {
     private float timer = 0f;
     [HideInInspector] public bool HasToDestroy = false;
     [HideInInspector] public bool isAtDestination = true;
+
     void Update()
     {
         if(hasParameters)
@@ -21,7 +22,6 @@ public class Movement : MonoBehaviour {
                 hasParameters = false;
                 if(HasToDestroy) Destroy(this);
             }
-
             if(hasToRotate) transform.eulerAngles = from.LerpAngle(target, timer);
             transform.position = from.LerpDistance(target, timer);
         }

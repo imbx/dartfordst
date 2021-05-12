@@ -12,24 +12,30 @@ public class Item : InteractBase {
     private TransformData startTransform;
     [SerializeField] private GameObject Son = null;
 
+    private bool isInteractingThis = false;
+
     void Start()
     {
         movement = GetComponent<Movement>();
     }
 
     public override void Execute(bool isLeftAction = true) {
-        Debug.Log("Execute");
+        isInteractingThis = true;
+        if(Son) Son.GetComponent<Item>().isInteractingThis = true;
         if(isLeftAction && gameControllerObject.state != GameState.LOOKITEM){
             if(NoEffects) {
                 OnEnd();
                 return;
             }
+            
             if(startTransform == null) 
             {
                 startTransform = new TransformData(transform);
                 movement.SetConfig(2f, true);
-                movement.SetParameters(new TransformData(GameController.current.Hand), startTransform);
-            } else movement.Invert();
+                movement.SetParameters(new TransformData(GameController.current.Hand.position, Vector3.zero), startTransform);
+            } else {
+                movement.Invert();
+            }
             if(HasItemInside) GetComponent<BoxCollider>().enabled = false;
             gameControllerObject.ChangeState(GameState.LOOKITEM);
         }
@@ -46,7 +52,8 @@ public class Item : InteractBase {
 
     protected override void OnEnd()
     {
-        Debug.Log("Should destroy now");
+        isInteractingThis = false;
+        if(Son) Son.GetComponent<Item>().isInteractingThis = false;
         isLeftAction = false;
         GameController.current.database.AddProgressionID(_id, true);
         gameControllerObject.ChangeState(GameState.ENDLOOKITEM);
@@ -55,32 +62,41 @@ public class Item : InteractBase {
 
     public override void OnExit()
     {
+        isInteractingThis = false;
         // base.OnExit();
-        movement.Invert();
+        if(!NoEffects) {
+            movement.Invert();
+        }
         gameControllerObject.ChangeState(GameState.ENDLOOKITEM);
         if(HasItemInside) {
-            if(Son) GetComponent<BoxCollider>().enabled = true;
+            if(Son) {
+                GetComponent<BoxCollider>().enabled = true;
+                Son.GetComponent<Item>().isInteractingThis = false;
+            }
             else this.enabled = false;
         }
     }
 
     private void Update()
     {
-        if(movement.isAtDestination)
+        if(isInteractingThis)
         {
-            if(HasItemInside && Son == null) OnExit();
-            if(!isLeftAction && controller.isInput2Hold)
+            if(movement.isAtDestination)
             {
-                transform.localEulerAngles += new Vector3(-controller.CameraAxis.y, controller.CameraAxis.x, 0);
+                if(HasItemInside && Son == null) OnExit();
+                if(!isLeftAction && controller.isInput2Hold)
+                {
+                    transform.localEulerAngles += new Vector3(-controller.CameraAxis.y, controller.CameraAxis.x, 0);
+                }
+                else if(isLeftAction)
+                {
+                    isLeftAction = false;
+                }
             }
-            else if(isLeftAction)
-            {
-                isLeftAction = false;
-            }
-        }
 
-        if(gameControllerObject.state == GameState.LOOKITEM && controller.isEscapePressed)
-            OnExit();
+            if(gameControllerObject.state == GameState.LOOKITEM && controller.isEscapePressed && !NoEffects)
+                OnExit();
+        }
     }
     
 }
