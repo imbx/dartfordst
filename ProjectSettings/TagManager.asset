@@ -7,6 +7,9 @@ TagManager:
   - Attachable
   - Cajones
   - Clickeable
+  - Picture
+  - Locked
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - UI
   - Interactuable
   - Player
-  - 
+  - Focus
   - 
   - 
   - 

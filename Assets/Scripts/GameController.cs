@@ -167,6 +167,28 @@ public class GameController : MonoBehaviour{
                 }
                 gameCObject.ChangeState(GameState.PLAYING);
                 break;
+
+            case GameState.LOOKITEM:
+                if(gameCObject.justChangedState)
+                {
+                    gameCObject.justChangedState = false;
+                    ToggleCursor();
+                    Player.CanMove = false;
+                    Player.CanLook = false;
+                }
+                ApplyPostEffect();
+                break;
+            case GameState.ENDLOOKITEM:
+                if(gameCObject.justChangedState)
+                {
+                    gameCObject.justChangedState = false;
+                    DisablePostEffect();
+                    ToggleCursor(false);
+                    Player.CanMove = true;
+                    Player.CanLook = true;
+                }
+                gameCObject.ChangeState(GameState.PLAYING);
+                break;
             case GameState.OPENNOTEBOOK:
                 if(gameCObject.justChangedState)
                 {

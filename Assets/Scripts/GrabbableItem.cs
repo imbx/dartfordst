@@ -3,17 +3,16 @@ using BoxScripts;
 
 public class GrabbableItem : InteractBase
 {
-
     private TransformData from;
     private TransformData target;
     private Transform playerCamera;
-
     [SerializeField] private bool hasParameters = false;
     [SerializeField] private float timer = 0;
     public float speed = 2f;
-
     private bool isReturning = false;
     private bool isAtDestination = false;
+    private bool isLeftAction = true;
+    [SerializeField] private PrimaryController controller;
 
     public override void Execute(bool isLeftAction = true) {
         base.Execute();
@@ -24,10 +23,15 @@ public class GrabbableItem : InteractBase
         Debug.Log("Is here");
 
         if(isAtDestination) {
-            base.OnExit();
-            Debug.Log("Should destroy now");
-            GameController.current.database.AddProgressionID(_id, true);
-            Destroy(gameObject);
+            if(isLeftAction)
+            {
+                base.OnExit();
+                Debug.Log("Should destroy now");
+                GameController.current.database.AddProgressionID(_id, true);
+                Destroy(gameObject);
+                return;
+            }
+            this.isLeftAction = isLeftAction;
         }
     }
 
@@ -48,6 +52,14 @@ public class GrabbableItem : InteractBase
 
             transform.eulerAngles = from.LerpAngle(target, timer);
             transform.position = from.LerpDistance(target, timer);
+        }
+
+        if(isAtDestination && !isLeftAction)
+        {
+            if(controller.isInput2Hold)
+            {
+                transform.localEulerAngles += (Vector3)controller.CameraAxis;
+            }
         }
     }
 

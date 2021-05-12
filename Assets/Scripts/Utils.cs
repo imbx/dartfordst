@@ -64,12 +64,21 @@ namespace BoxScripts {
         None
     }
 
+    public enum MapInteractions{
+        Add,
+        Remove,
+        Mark,
+        None
+    }
+
     public enum GameState {
         TITLESCREEN,
         LOADGAME,
         PLAYING,
         INTERACTING,
         ENDINTERACTING,
+        LOOKITEM,
+        ENDLOOKITEM,
         TARGETINGPICTURE,
         TARGETING,
         MOVINGPICTURE,

@@ -63,7 +63,9 @@ public class CController : MonoBehaviour
 
                 if( gcObject.state != BoxScripts.GameState.TARGETING &&
                     gcObject.state != BoxScripts.GameState.INTERACTING &&
-                    gcObject.state != BoxScripts.GameState.ENDINTERACTING)
+                    gcObject.state != BoxScripts.GameState.ENDINTERACTING &&
+                    gcObject.state != BoxScripts.GameState.LOOKITEM &&
+                    gcObject.state != BoxScripts.GameState.ENDLOOKITEM)
                     {
                         Debug.Log("Collider tag is " + hit.collider.tag);
                         switch(hit.collider.tag)
@@ -80,9 +82,9 @@ public class CController : MonoBehaviour
                                 break;
                         }
                     }
-
+                if(hit.collider.tag == "Item" || gcObject.state != BoxScripts.GameState.LOOKITEM)
                 if(_isPressedCd <= 0 && (leftButton || m_PlayerMovement.isInput2Pressed)) {
-                    _isPressedCd = 0.75f;
+                    _isPressedCd = 0.5f;
                     // GameController.current.ChangeState(BoxScripts.GameState.INTERACTING);
                     hit.collider.GetComponent<InteractBase>().Execute(leftButton);
                 }
