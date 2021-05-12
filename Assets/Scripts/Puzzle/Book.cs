@@ -29,7 +29,7 @@ public class Book : InteractBase {
         canPlace = false;
     }
 
-    public override void Execute() {
+    public override void Execute(bool isLeftAction = true) {
         Action.Invoke(this);
     }
 

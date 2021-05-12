@@ -20,8 +20,9 @@ public class Lightbox : PuzzleBase {
             this.OnEnd();
     }
 
-    public override void Execute()
+    public override void Execute(bool isLeftAction = true)
     {
+        base.Execute();
         this.OnStart();
     }
 

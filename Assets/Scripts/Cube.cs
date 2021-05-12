@@ -14,7 +14,7 @@ public class Cube : InteractBase {
         }
     }
 
-    public override void Execute() {
+    public override void Execute(bool isLeftAction = true) {
         OnStart();
     }
 

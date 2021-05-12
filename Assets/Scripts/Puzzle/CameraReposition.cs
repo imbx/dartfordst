@@ -14,7 +14,7 @@ public class CameraReposition : MonoBehaviour {
     private bool isReturning = false;
 
     private void OnEnable() {
-        playerCamera = GameController.current.mainCamera;
+        playerCamera = Camera.main;
         from = new TransformData(playerCamera.transform);
     }
 

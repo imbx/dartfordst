@@ -1,10 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using UnityEditor.Presets;
 using UnityEngine;
-using UnityEngine.Audio;
 
 [CreateAssetMenu]
 public class EntityData : ScriptableObject, ISerializationCallbackReceiver {

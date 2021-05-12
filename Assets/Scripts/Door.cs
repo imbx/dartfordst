@@ -25,7 +25,7 @@ public class Door : InteractBase {
     }
 
 
-    public override void Execute()
+    public override void Execute(bool isLeftAction = true)
     {
         if(hasRequirement)
         {
@@ -49,7 +49,10 @@ public class Door : InteractBase {
         {
             if(!GameController.current.database.GetProgressionState(reqID))
                 door.GetComponent<MeshRenderer>().material = doorClosed;
-            else door.GetComponent<MeshRenderer>().material = doorOpen;
+            else {
+                transform.tag = "Untagged";
+                door.GetComponent<MeshRenderer>().material = doorOpen;
+            }
         }
 
         if(timer < 1f)
