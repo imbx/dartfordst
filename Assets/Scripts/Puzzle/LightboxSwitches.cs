@@ -6,7 +6,7 @@ public class LightboxSwitches : InteractBase {
     public int switchID = -1;
     public UnityEvent<int> Action;
 
-    public override void Execute() {
+    public override void Execute(bool isLeftAction = true) {
         if(isOn) ResetSwitch();
         else {
             isOn = true;

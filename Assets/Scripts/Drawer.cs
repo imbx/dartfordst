@@ -27,7 +27,7 @@ public class Drawer : InteractBase {
         hasToMove = true; 
     }
 
-    public override void Execute()
+    public override void Execute(bool isLeftAction = true)
     {
         ToggleDrawer();
     }

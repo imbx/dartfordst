@@ -15,7 +15,7 @@ MonoBehaviour:
   Speed: 6
   RunSpeedMultiplier: 1.5
   VisionRange: 50
-  CameraRotations: {x: 17.844336, y: 0, z: -14.764429}
-  CanMove: 0
-  CanLook: 0
-  CanUseCursor: 1
+  CameraRotations: {x: 105, y: 0, z: -93.20134}
+  CanMove: 1
+  CanLook: 1
+  IsBlockedByEvent: 0

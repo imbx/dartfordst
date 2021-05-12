@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using UnityEditor.Presets;
 using UnityEngine;
 using BoxScripts;
 
@@ -12,7 +11,6 @@ public class PuzzleBase : InteractBase {
     private Vector3 CameraTarget;
     private Vector3 CameraEulerTarget;
     private BoxCollider boxCollider;
-    public Preset DesiredPos; // TEMPORAL, Cambiar a movimiento smooth de camara en perpendicular al puzzle en caso de MoveCamera true
 
     protected override void OnStart() {
         GameController.current.ToggleCursor(MoveCamera);
@@ -36,11 +34,13 @@ public class PuzzleBase : InteractBase {
     }
 
     public override void OnExit() {
+        base.OnExit();
         GetComponent<CameraReposition>().InvertDirection();
         boxCollider.enabled = true;
     }
 
     protected override void OnEnd() {
+        base.OnEnd();
         GetComponent<CameraReposition>().InvertDirection();
 
         GameController.current.database.EditProgression(_id);

@@ -7,6 +7,9 @@ public class Keybinds : MonoBehaviour {
     InputAction movementAction;
     InputAction lookAction;
     bool        mouseRightButtonPressed;
+
+    private float isHoldCounter = 0f;
+    private float isHold2Counter = 0f;
     
     void Start() {
         var map = new InputActionMap("DartfordStController");
@@ -36,15 +39,39 @@ public class Keybinds : MonoBehaviour {
 
         controller.isEscapePressed = isEscapePressed();
         controller.isInputPressed = isActionPressed();
+        controller.isInput2Pressed = isAction2Pressed();
+        controller.isTabPressed = isTabPressed();
         controller.isLanternPressed = isLanternPressed();
+
+        if(controller.isInputPressed) isHoldCounter += Time.deltaTime;
+        else isHoldCounter = 0;
+
+        if(controller.isInputPressed && isHoldCounter > 0.2f){
+            controller.isInputHold = true;
+        } else controller.isInputHold = false;
+
+        if(controller.isInput2Pressed) isHold2Counter += Time.deltaTime;
+        else isHold2Counter = 0;
+
+        if(controller.isInput2Pressed && isHold2Counter > 0.2f){
+            controller.isInput2Hold = true;
+        } else controller.isInput2Hold = false;
     }
 
     bool isEscapePressed() {
         return Keyboard.current != null ? Keyboard.current.escapeKey.isPressed : false; 
     }
 
+    bool isTabPressed() {
+        return Keyboard.current != null ? Keyboard.current.tabKey.isPressed : false; 
+    }
+
     bool isActionPressed () {
         return Mouse.current != null ? Mouse.current.leftButton.isPressed : false; 
+    }
+
+    bool isAction2Pressed () {
+        return Mouse.current != null ? Mouse.current.rightButton.isPressed : false; 
     }
 
     bool isLanternPressed () {

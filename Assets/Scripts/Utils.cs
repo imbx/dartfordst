@@ -30,4 +30,73 @@ namespace BoxScripts {
                 Mathf.LerpAngle(eulerAngles.z, other.eulerAngles.z, timer));
         }
     }
+
+    public class NotebookPage {
+        public int reqID { get; }
+        public string text { get; }
+        public NotebookPage (string dText)
+        {
+            reqID = -1;
+            text = dText;
+        }
+
+        public NotebookPage (int rqId, string dText)
+        {
+            reqID = rqId;
+            text = dText;
+        }
+    }
+
+    public class DiaryController : MonoBehaviour
+    {
+
+    }
+
+    public enum NotebookType{
+        Diary,
+        Notes,
+        None
+    }
+
+    public enum RadioSound{
+        Beep,
+        Peep,
+        None
+    }
+
+    public enum GameState {
+        TITLESCREEN,
+        LOADGAME,
+        PLAYING,
+        INTERACTING,
+        ENDINTERACTING,
+        TARGETINGPICTURE,
+        TARGETING,
+        MOVINGPICTURE,
+        OPENNOTEBOOK,
+        CLOSENOTEBOOK,
+        ENDGAME
+    }
+
+    // https://forum.unity.com/threads/change-gameobject-layer-at-run-time-wont-apply-to-child.10091/
+    public static class BoxUtils{
+        public static void SetLayerRecursively(
+            GameObject obj,
+            int newLayer)
+        {
+            if (null == obj)
+                return;
+        
+            obj.layer = newLayer;
+        
+            foreach (Transform child in obj.transform)
+            {
+                if (null == child)
+                {
+                    continue;
+                }
+                SetLayerRecursively(child.gameObject, newLayer);
+            }
+        }
+    }
 }

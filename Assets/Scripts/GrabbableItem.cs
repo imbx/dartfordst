@@ -15,7 +15,8 @@ public class GrabbableItem : InteractBase
     private bool isReturning = false;
     private bool isAtDestination = false;
 
-    public override void Execute() {
+    public override void Execute(bool isLeftAction = true) {
+        base.Execute();
         playerCamera = GameController.current.Hand;
         target = new TransformData(playerCamera.transform);
         SetParameters(transform);
@@ -23,6 +24,7 @@ public class GrabbableItem : InteractBase
         Debug.Log("Is here");
 
         if(isAtDestination) {
+            base.OnExit();
             Debug.Log("Should destroy now");
             GameController.current.database.AddProgressionID(_id, true);
             Destroy(gameObject);
@@ -53,6 +55,7 @@ public class GrabbableItem : InteractBase
     {
         from = new TransformData(targetDestination);
         hasParameters = true;
+        gameObject.layer = 8;
     }
 
     public void SetParameters(TransformData targetDestination)
