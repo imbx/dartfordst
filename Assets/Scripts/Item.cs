@@ -55,7 +55,7 @@ public class Item : InteractBase {
         isInteractingThis = false;
         if(Son) Son.GetComponent<Item>().isInteractingThis = false;
         isLeftAction = false;
-        GameController.current.database.AddProgressionID(_id, true);
+        GameController.current.database.EditProgression(_id, true);
         gameControllerObject.ChangeState(GameState.ENDLOOKITEM);
         if(NoEffects || CanPickup) Destroy(gameObject);
     }
