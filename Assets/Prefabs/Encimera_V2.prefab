@@ -26,13 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157513462219808372}
   m_LocalRotation: {x: -0.7071053, y: -0.0014933462, z: 0.0014933461, w: 0.7071052}
-  m_LocalPosition: {x: 0.0771565, y: 0.19380501, z: 0.10668703}
+  m_LocalPosition: {x: -0.0037, y: 0.1396, z: 0.0008}
   m_LocalScale: {x: 1, y: 1, z: 0.973764}
   m_Children:
   - {fileID: 5459362931719681088}
-  - {fileID: 6173618380844541319}
-  m_Father: {fileID: 5541119952522577852}
-  m_RootOrder: 1
+  m_Father: {fileID: 5810744458315373991}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3559413895873342749
 MeshFilter:
@@ -83,6 +82,70 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3607676507603998237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5810744458315373991}
+  - component: {fileID: 3978572494117329206}
+  - component: {fileID: 3157802051863238299}
+  m_Layer: 6
+  m_Name: Puerta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5810744458315373991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607676507603998237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0812, y: 0.0518, z: 0.1092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7262977798618119930}
+  m_Father: {fileID: 5541119952522577852}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3978572494117329206
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607676507603998237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18456, y: 0.26265842, z: 0.025730424}
+  m_Center: {x: -0.084901415, y: 0.1310923, z: 0.0039014334}
+--- !u!114 &3157802051863238299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607676507603998237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ad5f6f44e612744b36afdc92691937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
+  hasRequirement: 0
+  reqID: -1
+  gameControllerObject: {fileID: 0}
+  rotationSpeed: 2
+  targetAngle: 90
 --- !u!1 &5165016969556024582
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +177,7 @@ Transform:
   m_LocalScale: {x: 2.54, y: 2.54, z: 2.54}
   m_Children:
   - {fileID: 8070967377503876403}
-  - {fileID: 7262977798618119930}
+  - {fileID: 5810744458315373991}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -205,12 +268,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8248670191195453157}
-  m_LocalRotation: {x: 0.7071056, y: 0.001493851, z: -0.0014938525, w: 0.70710486}
-  m_LocalPosition: {x: -0.07474564, y: -0.0081154825, z: 0.16396222}
-  m_LocalScale: {x: 2.83857, y: 2.837932, z: 2.83825}
+  m_LocalRotation: {x: 0.0000002682209, y: -2.329585e-10, z: -0.0000007150229, w: 1}
+  m_LocalPosition: {x: 0.0065133017, y: -0.00095867884, z: 0.08031058}
+  m_LocalScale: {x: 2.8537393, y: 2.7019994, z: 2.3548198}
   m_Children: []
-  m_Father: {fileID: 7262977798618119930}
-  m_RootOrder: 1
+  m_Father: {fileID: 8070967377503876403}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2787492372640400303
 MeshFilter:
@@ -353,7 +416,10 @@ GameObject:
   - component: {fileID: 8070967377503876403}
   - component: {fileID: 5847234107118668370}
   - component: {fileID: 6748622991410788870}
-  m_Layer: 0
+  - component: {fileID: 8007983106408746336}
+  - component: {fileID: 6117287240822575603}
+  - component: {fileID: 6488556458009721051}
+  m_Layer: 6
   m_Name: "cajon peque\xF1o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +436,8 @@ Transform:
   m_LocalRotation: {x: 0.00000017881395, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0.004398193, y: 0.35172394, z: 0.021317618}
   m_LocalScale: {x: 0.994684, y: 1.022753, z: 1.205294}
-  m_Children: []
+  m_Children:
+  - {fileID: 6173618380844541319}
   m_Father: {fileID: 5541119952522577852}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -423,3 +490,49 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8007983106408746336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104557944581715839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15969571, y: 0.04590347, z: 0.010302312}
+  m_Center: {x: 0.00006463566, y: 0.00000012619388, z: 0.07475687}
+--- !u!114 &6117287240822575603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104557944581715839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726c7f68e2eb9a741a1e608ec090ae0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasParameters: 0
+  HasToDestroy: 0
+  isAtDestination: 1
+--- !u!114 &6488556458009721051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104557944581715839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b165f7ab94261fb4bacc34aa09ba8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
+  hasRequirement: 0
+  reqID: -1
+  gameControllerObject: {fileID: 0}
+  MovDimensions: {x: 0, y: 0, z: 0.3}
+  Speed: 2

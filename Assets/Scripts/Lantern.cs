@@ -27,6 +27,7 @@ public class Lantern : MonoBehaviour {
 
     void Update() 
     {
+        UpdateChecks();
         if(reqIdBool)
         {
             if(lanternInputCd > 0f) lanternInputCd -= Time.deltaTime;
