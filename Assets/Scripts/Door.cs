@@ -18,7 +18,7 @@ public class Door : InteractBase {
 
 
     void OnEnable() { 
-        BaseRotation = transform.rotation.eulerAngles;
+        BaseRotation = transform.localEulerAngles;
         eulerYAngle = BaseRotation.y;
     }
 
@@ -36,7 +36,7 @@ public class Door : InteractBase {
     private void ToggleDoor()
     {
         timer = 0;
-        eulerYAngle = transform.eulerAngles.y;
+        eulerYAngle = transform.localEulerAngles.y;
         isDoorOpen = !isDoorOpen;
     }
 

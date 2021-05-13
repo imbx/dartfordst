@@ -20,13 +20,18 @@ public class Drawer : InteractBase {
 
     void ToggleDrawer()
     {
-        movement.SetConfig(Speed);
-        movement.SetParameters(
-            new TransformData(
-                transform.position +
-                (isDrawerIn ? -1 : 1) * MovDimensions,
-                transform.eulerAngles),
-            new TransformData(transform));
+        if(!movement.hasParameters)
+        {
+            movement.SetConfig(Speed);
+            movement.SetParameters(
+                new TransformData(
+                    transform.position +
+                    (isDrawerIn ? -1 : 1) * MovDimensions,
+                    transform.eulerAngles),
+                new TransformData(transform));
+        }
+        else movement.Invert();
+        
         isDrawerIn = !isDrawerIn;
     }
 

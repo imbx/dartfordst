@@ -6,20 +6,20 @@ public class Movement : MonoBehaviour {
     private TransformData target;
     private bool hasToRotate = false;
     private float Speed = 2f;
-    private bool hasParameters = false;
+    [HideInInspector] public bool hasParameters = false;
     private float timer = 0f;
     [HideInInspector] public bool HasToDestroy = false;
     [HideInInspector] public bool isAtDestination = true;
 
     void Update()
     {
-        if(hasParameters)
+        if(!isAtDestination)
         { 
             if(timer < 1f)
                 timer += Time.deltaTime * Speed;
             else {
                 isAtDestination = true;
-                hasParameters = false;
+                //hasParameters = false;
                 if(HasToDestroy) Destroy(this);
             }
             if(hasToRotate) transform.eulerAngles = from.LerpAngle(target, timer);
