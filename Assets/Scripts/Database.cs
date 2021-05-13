@@ -74,6 +74,7 @@ public class Database {
         return false;
     }
     public void AddProgressionID(int _id, bool state = false) {
+        if(ProgressionExists(_id)) return;
         PlayerProgression.Add(_id, state);
     }
 
