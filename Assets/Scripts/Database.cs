@@ -44,6 +44,20 @@ public class Database {
         PlayerProgression.Add(1234, true);
         PlayerProgression.Add(6434, true);
         PlayerProgression.Add(3234, true);
+
+
+        PlayerProgression.Add(1242, true);
+        PlayerProgression.Add(1243, true);
+        PlayerProgression.Add(126, true);
+        PlayerProgression.Add(12432, true);
+
+
+
+
+
+
+
+
         return true;
     }
 
