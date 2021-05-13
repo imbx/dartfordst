@@ -15,7 +15,8 @@ public class PuzzleBase : InteractBase {
     private BoxCollider boxCollider;
 
     protected override void OnStart() {
-        Debug.Log("Is here ");
+        Debug.Log("[PuzzleBase] Starting");
+        OnLoad();
         if(MoveCamera) {
 
             boxCollider = GetComponent<BoxCollider>();

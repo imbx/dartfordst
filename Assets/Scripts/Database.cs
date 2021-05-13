@@ -68,6 +68,7 @@ public class Database {
 
     public bool EditProgression(int eventID, bool check = true) {
         if(ProgressionExists(eventID)){
+            Debug.Log("[Edit Progression] " + eventID + " is now " + check);
             PlayerProgression[eventID] = check;
             return true;
         }
