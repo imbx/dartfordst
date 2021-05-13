@@ -5,6 +5,8 @@ using BoxScripts;
 
 public class PuzzleBase : InteractBase {
     public bool MoveCamera = true;
+
+    public int EndIdentifier = 0;
     
     public float DistanceToCamera = 2f;
     public Vector3 vecModifier = Vector3.zero;
@@ -13,8 +15,7 @@ public class PuzzleBase : InteractBase {
     private BoxCollider boxCollider;
 
     protected override void OnStart() {
-        GameController.current.ToggleCursor(MoveCamera);
-
+        Debug.Log("Is here ");
         if(MoveCamera) {
 
             boxCollider = GetComponent<BoxCollider>();
@@ -23,9 +24,13 @@ public class PuzzleBase : InteractBase {
 
             Vector3 vecMultiplier = Vector3.Cross(transform.forward, vecModifier);
             CameraTarget = transform.position + vecMultiplier * DistanceToCamera;
-            CameraEulerTarget = new Vector3(0, Mathf.Atan2(transform.forward.x, transform.forward.z) * 180f / Mathf.PI - 90f, 0);
-            
-            ed.ControlMovement(false);
+            Vector3 invertedDirection = new Vector3(vecModifier.x * -1, vecModifier.y * -1, vecModifier.z * -1);
+            CameraEulerTarget = new Vector3(
+                Mathf.Rad2Deg * Mathf.Atan2(Mathf.Sqrt(Mathf.Pow(invertedDirection.z, 2) + Mathf.Pow(invertedDirection.y, 2)), invertedDirection.x) - 90f,
+                Mathf.Rad2Deg * Mathf.Atan2(Mathf.Sqrt(Mathf.Pow(invertedDirection.z, 2) + Mathf.Pow(invertedDirection.x, 2)), invertedDirection.y) - 90f,
+                Mathf.Rad2Deg * Mathf.Atan2(Mathf.Sqrt(Mathf.Pow(invertedDirection.x, 2) + Mathf.Pow(invertedDirection.y, 2)), invertedDirection.z) - 90f);
+            Debug.Log("This is destination angle " + CameraEulerTarget);
+            // ed.ControlMovement(false);
 
             gameObject.AddComponent<CameraReposition>();
             GetComponent<CameraReposition>().SetParameters(new TransformData(CameraTarget, CameraEulerTarget));

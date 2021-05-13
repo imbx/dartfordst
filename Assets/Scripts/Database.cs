@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using BoxScripts;
+using UnityEngine;
 
 public class Database {
     private Dictionary<int, string>  Dialogues;
@@ -18,7 +19,8 @@ public class Database {
     }
 
     private bool LoadData() {
-        Dialogues.Add(1, "Test dialogue");
+        //Dialogues.Add(1, "Test dialogue");
+        ParseDialogueData("Database/dialogues");
         PlayerProgression.Add(-1, true);
         PlayerProgression.Add(1, true);
 
@@ -45,8 +47,23 @@ public class Database {
         PlayerProgression.Add(1234, true);
         PlayerProgression.Add(6434, true);
         PlayerProgression.Add(3234, true);
-        
         return true;
+    }
+
+    public void ParseDialogueData(string fileName)
+    {
+        var textAsset = Resources.Load<TextAsset>(fileName);
+        var splitDataset = textAsset.text.Split(new char[] {'\n'});
+
+        for(int i = 0; i < splitDataset.Length; i++)
+        {
+            string[] row = splitDataset[i].Split(new char[] {';'});
+            if(row.Length == 2)
+            {
+                Dialogues.Add(int.Parse(row[0]), row[1]);
+                Debug.Log("Dialogue added " + row[0] + " : " + row[1]);
+            }
+        }
     }
 
     public bool EditProgression(int eventID, bool check = true) {

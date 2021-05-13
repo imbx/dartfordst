@@ -4,13 +4,31 @@ using UnityEngine;
 using BoxScripts;
 
 public class InteractBase : MonoBehaviour {
-    public int _id;
+    public int _id = 0;
     [SerializeField] protected GameControllerObject gameControllerObject;
+
+    private bool hasCheckedState = false;
     void OnEnable() {
-        /*if(GameController.current.database.ProgressionExists(_id)){
-            this.gameObject.SetActive(!GameController.current.database.GetProgressionState(_id));
+        OnLoad();
+    }
+
+    private void OnLoad() {
+        if(!hasCheckedState)
+        {
+            Debug.Log("[InteractBase] " + name);
+            if(GameController.current){
+                hasCheckedState = true;
+                if(GameController.current.database.ProgressionExists(_id)){
+                    Debug.Log("Deactivating " + name);
+                    this.gameObject.SetActive(!GameController.current.database.GetProgressionState(_id));
+                }
+                else GameController.current.database.AddProgressionID(_id);
+            }
         }
-        else GameController.current.database.AddProgressionID(_id);*/
+    }
+
+    private void Update() {
+        OnLoad();
     }
 
     protected virtual void OnStart(){

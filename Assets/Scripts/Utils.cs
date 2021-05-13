@@ -29,6 +29,8 @@ namespace BoxScripts {
                 Mathf.LerpAngle(eulerAngles.y, other.eulerAngles.y, timer),
                 Mathf.LerpAngle(eulerAngles.z, other.eulerAngles.z, timer));
         }
+
+        
     }
 
     public class NotebookPage {
@@ -64,10 +66,9 @@ namespace BoxScripts {
         None
     }
 
-    public enum MapInteractions{
-        Add,
-        Remove,
-        Mark,
+    public enum PinSelect{
+        Red,
+        Blue,
         None
     }
 
@@ -85,6 +86,17 @@ namespace BoxScripts {
         OPENNOTEBOOK,
         CLOSENOTEBOOK,
         ENDGAME
+    }
+
+    public enum TextPosition
+    {
+        TOPLEFT,
+        TOP,
+        TOPRIGHT,
+        BOTTOMLEFT,
+        BOTTOM,
+        BOTTOMRIGHT,
+        NONE
     }
 
     // https://forum.unity.com/threads/change-gameobject-layer-at-run-time-wont-apply-to-child.10091/

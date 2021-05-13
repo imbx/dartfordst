@@ -10,18 +10,21 @@ using BoxScripts;
 
 public class GameController : MonoBehaviour{
     public static GameController current;
-    [SerializeField] private GameControllerObject gameCObject;
+    public GameControllerObject gameCObject;
     public UIController ui;
     public Database database;
     private Texture2D[] CursorTextures;
     public EntityData Player;
     public PrimaryController PlayerControls;
     public Transform Hand;
+
+    public TextManager textManager;
     [SerializeField] private VolumeProfile postFxVol;
     [SerializeField] private ClampedFloatParameter contrast;
     [SerializeField] private float blurSpeed = 2f;
 
     private float keyPressCooldown = 0.75f;
+    private int counter = 1;
 
 
     public void SetCursor() {
@@ -76,6 +79,7 @@ public class GameController : MonoBehaviour{
 
     private void Update() {
         keyPressCooldown -= Time.deltaTime;
+
         switch(gameCObject.state)
         {
             case GameState.TITLESCREEN:
@@ -107,6 +111,13 @@ public class GameController : MonoBehaviour{
                     keyPressCooldown = 0.75f;
 
                     gameCObject.ChangeState(GameState.OPENNOTEBOOK);
+                }
+
+                if(PlayerControls.isInput2Pressed && keyPressCooldown <= 0f){
+                    keyPressCooldown = 0.75f;
+
+                    textManager.SpawnThought(counter);
+                    counter++;
                 }
                 // HERE KEYBINDS FOR NOTEBOOK, UI AND SO
 

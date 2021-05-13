@@ -11,6 +11,8 @@ TagManager:
   - Picture
   - Locked
   - Item
+  - Map
+  - MapPin
   layers:
   - Default
   - TransparentFX

@@ -59,20 +59,22 @@ public class CController : MonoBehaviour
         if(_isPressedCd > 0) _isPressedCd -= Time.deltaTime;
         if(Physics.Raycast(m_ROrigin, direction, out hit, m_CVars.VisionRange, LayerMask.GetMask("Focus") | LayerMask.GetMask("Interactuable"))){
             bool leftButton = m_PlayerMovement.isInputPressed;
-            Debug.Log(hit.collider.name);
-            if(hit.collider.GetComponent<InteractBase>() && Mathf.Abs((hit.transform.position - transform.position).magnitude) < InteractRange){
-
+            if(
+                (!m_CVars.CanLook && hit.collider.GetComponent<InteractBase>()) ||
+                (hit.collider.GetComponent<InteractBase>() && Mathf.Abs((hit.transform.position - transform.position).magnitude) < InteractRange)
+            )
+            {
                 if( gcObject.state != BoxScripts.GameState.TARGETING &&
                     gcObject.state != BoxScripts.GameState.INTERACTING &&
                     gcObject.state != BoxScripts.GameState.ENDINTERACTING &&
                     gcObject.state != BoxScripts.GameState.LOOKITEM &&
                     gcObject.state != BoxScripts.GameState.ENDLOOKITEM)
                     {
-                        Debug.Log("Collider tag is " + hit.collider.tag);
                         switch(hit.collider.tag)
                         {
                             case "Picture":
                                 gcObject.ChangeState(BoxScripts.GameState.TARGETINGPICTURE);
+                                GameController.current.SetCursor();
                                 break;
                             case "Locked":
                                 // SHOULD CHANGE CURSOR
@@ -86,8 +88,6 @@ public class CController : MonoBehaviour
                 if(hit.collider.tag == "Item" || gcObject.state != BoxScripts.GameState.LOOKITEM)
                 if(_isPressedCd <= 0 && (leftButton || m_PlayerMovement.isInput2Pressed)) {
                     _isPressedCd = 0.5f;
-                    Debug.Log(hit.collider.name);
-                    // GameController.current.ChangeState(BoxScripts.GameState.INTERACTING);
                     hit.collider.GetComponent<InteractBase>().Execute(leftButton);
                 }
             }
