@@ -5,6 +5,9 @@ using BoxScripts;
 
 public class InteractBase : MonoBehaviour {
     public int _id = 0;
+
+    public bool hasRequirement = false;
+    public int reqID = -1;
     [SerializeField] protected GameControllerObject gameControllerObject;
 
     private bool hasCheckedState = false;
@@ -12,7 +15,7 @@ public class InteractBase : MonoBehaviour {
         OnLoad();
     }
 
-    private void OnLoad() {
+    protected void OnLoad() {
         if(!hasCheckedState)
         {
             Debug.Log("[InteractBase] " + name);
@@ -25,6 +28,12 @@ public class InteractBase : MonoBehaviour {
                 else GameController.current.database.AddProgressionID(_id);
             }
         }
+        
+        if(hasRequirement && !GameController.current.database.GetProgressionState(reqID))
+        {
+            tag = "Requirement";
+        }
+        
     }
 
     private void Update() {
@@ -56,6 +65,9 @@ public class InteractBase : MonoBehaviour {
     }
 
     public virtual void Execute(bool isLeftAction = true){
+        
+        if(hasRequirement && !GameController.current.database.GetProgressionState(reqID)) return;
+        
         if(!gameControllerObject)
             GameController.current.ChangeState(GameState.INTERACTING);
         else {

@@ -17,6 +17,7 @@ public class Item : InteractBase {
     void Start()
     {
         movement = GetComponent<Movement>();
+        OnLoad();
     }
 
     public override void Execute(bool isLeftAction = true) {
@@ -79,6 +80,13 @@ public class Item : InteractBase {
 
     private void Update()
     {
+        if(hasRequirement)
+        {
+            if(GameController.current.database.GetProgressionState(reqID))
+                transform.tag = "Untagged";
+
+        }
+        
         if(isInteractingThis)
         {
             if(movement.isAtDestination)

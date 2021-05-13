@@ -80,6 +80,10 @@ public class CController : MonoBehaviour
                                 // SHOULD CHANGE CURSOR
                                 Debug.Log("Is locked, shouldnt do anything");
                                 break;
+                            case "Requirement":
+                                // SHOULD CHANGE CURSOR
+                                Debug.Log("Is locked, shouldnt do anything");
+                                break;
                             default:
                                 gcObject.ChangeState(BoxScripts.GameState.TARGETING);
                                 break;

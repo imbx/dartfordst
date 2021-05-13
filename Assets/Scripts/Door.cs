@@ -1,12 +1,8 @@
 using UnityEngine;
 
 public class Door : InteractBase {
-    public bool hasRequirement = false;
-    public int reqID = -1;
     public float rotationSpeed = 2f;
     public float targetAngle = 90f; // CALCULATED OVER Y AXIS
-
-
 
     private bool isDoorOpen = false;
 
