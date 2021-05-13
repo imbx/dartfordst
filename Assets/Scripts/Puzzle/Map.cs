@@ -17,6 +17,9 @@ public class Map : InteractBase {
 
     public LineRenderer RedLine;
     public LineRenderer BlueLine;
+
+
+    private bool hasGivenPage = false;
     
 
     private void OnEnable() {
@@ -110,6 +113,13 @@ public class Map : InteractBase {
             if(!BlueLine.enabled) BlueLine.enabled = true;
             SetLineRenderer(Marker2Pointers, BlueLine);
         } else if(BlueLine.enabled) BlueLine.enabled = false;
+
+
+        if(controller.isEscapePressed && !hasGivenPage) {
+            hasGivenPage = true;
+            GameController.current.database.AddNotePage(12432, "Paris");
+            this.OnEnd();
+        }
     }
 
     void SetLineRenderer(List<GameObject> list, LineRenderer lr)

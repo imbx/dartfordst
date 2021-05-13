@@ -5,9 +5,17 @@ using UnityEngine;
 public class PicturePuzzle : MonoBehaviour {
     public List<Picture> pictures;
     private Picture first;
+    
+
+
+    private bool hasGivenPage = false;
     void Update()
     {
-        if(CheckPictures()) Debug.Log("Got it");
+        if(CheckPictures() && !hasGivenPage)
+        {
+            hasGivenPage = true;
+            GameController.current.database.AddNotePage(1242, "... 1 -.. 2 --. 3 --- 4 .-- 5 ..- 6 .-. 7");
+        }
     }
 
     public bool CheckPictures()

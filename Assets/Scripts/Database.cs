@@ -31,11 +31,8 @@ public class Database {
         Diary.Add(232341, new NotebookPage("test page 4"));
         Diary.Add(646533, new NotebookPage("test page 5"));
         
-        Notes.Add(5223, new NotebookPage("test n page 1"));
-        Notes.Add(3652, new NotebookPage("test n page 2"));
-        Notes.Add(1234, new NotebookPage("test n page 3"));
-        Notes.Add(6434, new NotebookPage("test n page 4"));
-        Notes.Add(3234, new NotebookPage("test n page 5"));
+        Notes.Add(5223, new NotebookPage("La llave esta en el jarron"));
+        
 
         PlayerProgression.Add(78325, true);
         PlayerProgression.Add(324234, true);
@@ -48,6 +45,12 @@ public class Database {
         PlayerProgression.Add(6434, true);
         PlayerProgression.Add(3234, true);
         return true;
+    }
+
+
+    public void AddNotePage (int identifier, string page)
+    {
+        Notes.Add(identifier, new NotebookPage(page));
     }
 
     public void ParseDialogueData(string fileName)

@@ -14,6 +14,11 @@ public class Radio : InteractBase {
     private float delay = 0.5f;
 
     private float rad = 0.00f;
+
+
+
+
+    private bool hasGivenPage = false;
     
     void OnEnable()
     {
@@ -32,6 +37,12 @@ public class Radio : InteractBase {
             if(isRadioOn)
             {
                 currentSeqPos = 0;
+
+                if(!hasGivenPage)
+                {
+                    hasGivenPage = true;
+                    GameController.current.database.AddNotePage(1243, "...-..--.");
+                }
             }
             else
             {
