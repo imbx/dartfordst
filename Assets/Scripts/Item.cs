@@ -21,6 +21,8 @@ public class Item : InteractBase {
     }
 
     public override void Execute(bool isLeftAction = true) {
+        if(hasRequirement && !GameController.current.database.GetProgressionState(reqID)) return;
+        
         isInteractingThis = true;
         if(Son) Son.GetComponent<Item>().isInteractingThis = true;
         if(isLeftAction && gameControllerObject.state != GameState.LOOKITEM){
@@ -86,7 +88,7 @@ public class Item : InteractBase {
                 transform.tag = "Untagged";
 
         }
-        
+
         if(isInteractingThis)
         {
             if(movement.isAtDestination)
