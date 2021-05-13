@@ -876,6 +876,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 538095503142939987, guid: b8b125639e684ef4db55dc16c484b440, type: 3}
+      propertyPath: MovDimensions.z
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 538095503142939987, guid: b8b125639e684ef4db55dc16c484b440, type: 3}
       propertyPath: isAtDestination
       value: 1
       objectReference: {fileID: 0}
@@ -1274,6 +1278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 0}
   pin: 0
   OnAction:
@@ -1549,6 +1555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 2001
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   hasPressedLeft: 0
@@ -2094,6 +2102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 738724
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   hasParameters: 0
   timer: 0
@@ -2178,6 +2188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 738724
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   NoEffects: 0
   CanPickup: 1
@@ -2196,6 +2208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726c7f68e2eb9a741a1e608ec090ae0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParameters: 0
   HasToDestroy: 0
   isAtDestination: 1
 --- !u!1001 &460134381
@@ -2364,6 +2377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 2006
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   hasPressedLeft: 0
@@ -2492,6 +2507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 2003
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   hasPressedLeft: 0
@@ -2620,6 +2637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 2004
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   hasPressedLeft: 0
@@ -3141,6 +3160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 0}
   pin: 1
   OnAction:
@@ -3416,6 +3437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   PinPrefab: {fileID: 8910510840762010180, guid: 8461242137a064b4ca1d6b4da6fce225, type: 3}
@@ -4038,7 +4061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17946a3300f4314492efe711bfea94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 3234
+  _id: 0
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 0}
   MoveCamera: 1
   EndIdentifier: 0
@@ -4241,6 +4266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 0}
   MoveCamera: 1
   EndIdentifier: 0
@@ -4364,6 +4391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 2002
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   hasPressedLeft: 0
@@ -5051,6 +5080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 2005
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   hasPressedLeft: 0
@@ -5103,6 +5134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 2007
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   hasPressedLeft: 0
@@ -6372,6 +6405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 2000
+  hasRequirement: 0
+  reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   hasPressedLeft: 0

@@ -13,6 +13,7 @@ TagManager:
   - Item
   - Map
   - MapPin
+  - Requirement
   layers:
   - Default
   - TransparentFX
