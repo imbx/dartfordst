@@ -16,7 +16,7 @@ public class LockCombination : PuzzleBase {
 
     void Update()
     {
-        if(GetCurrentCombination().Equals(FinalCombination)) Debug.Log("GOT IT");
+        if(GetCurrentCombination().Equals(FinalCombination)) this.OnEnd();
     }
 
     private string GetCurrentCombination()
