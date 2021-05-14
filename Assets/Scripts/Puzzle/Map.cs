@@ -1,14 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 using BoxScripts;
-using UnityEditor.Events;
 
 public class Map : InteractBase {
-    private List<GameObject> Marker1Pointers;
-    private List<GameObject> Marker2Pointers;
     private GameObject Marker3;
     private PinSelect pinSelect = PinSelect.None;
-    [SerializeField] private PrimaryController controller;
 
     public GameObject PinPrefab;
 
@@ -20,12 +16,9 @@ public class Map : InteractBase {
 
 
     private bool hasGivenPage = false;
-    
 
-    private void OnEnable() {
-        Marker1Pointers = new List<GameObject>();
-        Marker2Pointers = new List<GameObject>();
-    }
+    public MapPuzzle mapPuzzle;
+
 
     public override void Execute(bool isLeftAction = true)
     {
@@ -56,30 +49,30 @@ public class Map : InteractBase {
             go.transform.position = pos;
             if(pinSelect == PinSelect.Red)
             {
-                Marker1Pointers.Add(go);
+                mapPuzzle.RedPinList.Add(go);
                 return;
             }
-            Marker2Pointers.Add(go);
+            mapPuzzle.BluePinList.Add(go);
         }
     }
 
     public void RemovePin(GameObject ioa)
     {
 
-        if(Marker1Pointers.Exists(vec => vec == ioa))
-            Marker1Pointers.Remove(ioa);
-        if(Marker2Pointers.Exists(vec => vec == ioa))
-            Marker2Pointers.Remove(ioa);
+        if(mapPuzzle.RedPinList.Exists(vec => vec == ioa))
+            mapPuzzle.RedPinList.Remove(ioa);
+        if(mapPuzzle.BluePinList.Exists(vec => vec == ioa))
+            mapPuzzle.BluePinList.Remove(ioa);
 
         Destroy(ioa);
     }
 
     private Transform ReturnPointer()
     {
-        Ray r = gameControllerObject.camera.ScreenPointToRay((Vector3)controller.Mouse);
+        Ray r = gameControllerObject.camera.ScreenPointToRay((Vector3)mapPuzzle.controller.Mouse);
         if(Physics.Raycast(
             r, out var hit, 5f,
-            LayerMask.GetMask("Focus") | LayerMask.GetMask("Interactuable")))
+            LayerMask.GetMask("Focus")))
         {
             if(hit.transform.tag == "MapPin") return hit.transform;
         }
@@ -89,11 +82,11 @@ public class Map : InteractBase {
 
     private Vector3 ReturnHitPoint()
     {
-        Ray r = gameControllerObject.camera.ScreenPointToRay((Vector3)controller.Mouse);
+        Ray r = gameControllerObject.camera.ScreenPointToRay((Vector3)mapPuzzle.controller.Mouse);
         
         if(Physics.Raycast(
             r, out var hit, Mathf.Infinity,
-            LayerMask.GetMask("Focus") | LayerMask.GetMask("Interactuable")))
+            LayerMask.GetMask("Focus")))
         {
             if(hit.transform.tag == "Map") return hit.point;
         }
@@ -103,23 +96,17 @@ public class Map : InteractBase {
 
     void Update()
     {
-        if(Marker1Pointers.Count > 1)
+        
+        if(mapPuzzle.RedPinList.Count > 1)
         {
             if(!RedLine.enabled) RedLine.enabled = true;
-            SetLineRenderer(Marker1Pointers, RedLine);
+            SetLineRenderer(mapPuzzle.RedPinList, RedLine);
         } else if(RedLine.enabled) RedLine.enabled = false;
-        if(Marker2Pointers.Count > 1)
+        if(mapPuzzle.BluePinList.Count > 1)
         {
             if(!BlueLine.enabled) BlueLine.enabled = true;
-            SetLineRenderer(Marker2Pointers, BlueLine);
+            SetLineRenderer(mapPuzzle.BluePinList, BlueLine);
         } else if(BlueLine.enabled) BlueLine.enabled = false;
-
-
-        if(controller.isEscapePressed && !hasGivenPage) {
-            hasGivenPage = true;
-            GameController.current.database.AddNotePage(12432, "Paris");
-            this.OnEnd();
-        }
     }
 
     void SetLineRenderer(List<GameObject> list, LineRenderer lr)

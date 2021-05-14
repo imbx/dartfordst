@@ -6,18 +6,17 @@ public class Item : InteractBase {
     public bool NoEffects = false;
     public bool CanPickup = true;
     public bool HasItemInside = false;
-    private bool isLeftAction = true;
-    [SerializeField] private PrimaryController controller;
-    private Movement movement;
-    private TransformData startTransform;
-    [SerializeField] private GameObject Son = null;
+    protected bool isLeftAction = true;
+    [SerializeField] protected PrimaryController controller;
+    protected Movement movement;
+    protected TransformData startTransform;
+    [SerializeField] protected GameObject Son = null;
 
-    private bool isInteractingThis = false;
+    protected bool isInteractingThis = false;
 
     void Start()
     {
         movement = GetComponent<Movement>();
-        OnLoad();
     }
 
     public override void Execute(bool isLeftAction = true) {
@@ -33,10 +32,12 @@ public class Item : InteractBase {
             
             if(startTransform == null) 
             {
+                gameObject.layer = 8;
                 startTransform = new TransformData(transform);
                 movement.SetConfig(2f, true);
                 movement.SetParameters(new TransformData(GameController.current.Hand.position, Vector3.zero), startTransform);
             } else {
+                gameObject.layer = 6;
                 movement.Invert();
             }
             if(HasItemInside) GetComponent<BoxCollider>().enabled = false;
@@ -53,7 +54,7 @@ public class Item : InteractBase {
         }
     }
 
-    protected override void OnEnd()
+    protected override void OnEnd(bool destroyGameObject = false)
     {
         isInteractingThis = false;
         if(Son) Son.GetComponent<Item>().isInteractingThis = false;
@@ -104,8 +105,10 @@ public class Item : InteractBase {
                 }
             }
 
-            if(gameControllerObject.state == GameState.LOOKITEM && controller.isEscapePressed && !NoEffects)
+            if(gameControllerObject.state == GameState.LOOKITEM && controller.isEscapePressed && !NoEffects){
+                Debug.Log("[Item] Called Escape");
                 OnExit();
+            }
         }
     }
     

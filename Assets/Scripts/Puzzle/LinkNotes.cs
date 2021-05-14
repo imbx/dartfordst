@@ -3,18 +3,10 @@ using System.Collections.Generic;
 
 public class LinkNotes : PuzzleBase {
     public List<Note> notes;
-
-    private bool hasGivenPage = false;
-
-    protected override void OnStart()
-    {
-        base.OnStart();
-    }
-
+    public PrimaryController controller;
     public override void Execute(bool isLeftAction = true)
     {
         base.Execute();
-        this.OnStart();
         GetComponent<BoxCollider>().enabled = false;
     }
 
@@ -25,10 +17,12 @@ public class LinkNotes : PuzzleBase {
     }
 
     private void Update() {
-        if(notes.Count <= 0 && !hasGivenPage) {
-            hasGivenPage = true;
-            GameController.current.database.AddNotePage(126, "La llave esta en la estanteria de la cocina");
-            this.OnEnd();
+        if(!isInteractingThis)return;
+        if(notes.Count <= 0) this.OnEnd();
+        if(controller.isEscapePressed)
+        {
+            Debug.Log("[LinkNotes] Escape pressed");
+            this.OnExit();
         }
     }
 }

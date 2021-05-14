@@ -42,7 +42,7 @@ public class Note : InteractBase {
         {
             distance = Vector3.Distance(transform.parent.position, Camera.main.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f)));
             startMousePos = Camera.main.ScreenToWorldPoint(new Vector3(controller.Mouse.x, controller.Mouse.y, distance));
-            Debug.Log("START MOUSE POS IS " + startMousePos);
+            Debug.Log("[Note] START MOUSE POS IS " + startMousePos);
             isMoving = controller.isInputHold;
         }
         else if(hasPressedLeft && isMoving)
@@ -51,20 +51,20 @@ public class Note : InteractBase {
             {
                 isMoving = false;
                 hasPressedLeft = false;
-                gameControllerObject.ChangeState(BoxScripts.GameState.PLAYING);
-                Debug.Log("Not moving1 "  + gameObject.name);
+                // gameControllerObject.ChangeState(BoxScripts.GameState.PLAYING);
+                Debug.Log("[Note] Not moving1 "  + gameObject.name);
 
                 RaycastHit hit;
                 Ray mouseHit = Camera.main.ScreenPointToRay(controller.Mouse);
                 Vector3 m_ROrigin = Camera.main.ScreenToWorldPoint(controller.Mouse);
                 Vector3 direction = mouseHit.direction;
-                Debug.Log("Prepare to hit raycast with direction " + direction );
+                Debug.Log("[Note] Prepare to hit raycast with direction " + direction );
                 if(Physics.Raycast(m_ROrigin, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Focus"))){
-                    Debug.Log("Hitting note raycast");
+                    Debug.Log("[Note] Hitting note raycast");
                     if(hit.collider.GetComponent<NotePlacement>())
                     {
 
-                        Debug.Log("Found placement");
+                        Debug.Log("[Note] Found placement");
                         NotePlacement np = hit.collider.GetComponent<NotePlacement>();
                         if(np.Identifier == _id)
                         {
@@ -81,15 +81,14 @@ public class Note : InteractBase {
 
         if(isMoving)
         {
-            if(gameControllerObject.state != BoxScripts.GameState.MOVINGPICTURE) gameControllerObject.ChangeState(BoxScripts.GameState.MOVINGPICTURE);
             isMoving = controller.isInputHold;
-            Debug.Log("Moving " + gameObject.name);
+            Debug.Log("[Note] Moving " + gameObject.name);
             Debug.Log(isMoving + " " + gameObject.name);
 
             if(boxCollider.enabled) boxCollider.enabled = false;
 
             Vector3 vec = Camera.main.ScreenToWorldPoint(new Vector3(controller.Mouse.x, controller.Mouse.y, distance));
-            Debug.Log("Difference should be " + (float)(vec.x - startMousePos.x) + " " + (float)(vec.y - startMousePos.y) + " from x " + vec.x + " y " + vec.y + " and startpos " + startMousePos);
+            Debug.Log("[Note] Difference should be " + (float)(vec.x - startMousePos.x) + " " + (float)(vec.y - startMousePos.y) + " from x " + vec.x + " y " + vec.y + " and startpos " + startMousePos);
             transform.position =
                 new Vector3(
                     startPosition.x + (float)(vec.x - startMousePos.x),
@@ -99,7 +98,7 @@ public class Note : InteractBase {
             
             if(!isMoving)
             {
-                Debug.Log("Not moving "  + gameObject.name);
+                Debug.Log("[Note] Not moving "  + gameObject.name);
                 
             }
         }

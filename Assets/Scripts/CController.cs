@@ -20,10 +20,6 @@ public class CController : MonoBehaviour
     public PrimaryController m_PlayerMovement;
 
     [Header("Stats")]
-    public GameControllerObject gcObject;
-    private Vector3 m_ROrigin;
-    [SerializeField] private float _isPressedCd = 0f;
-    [SerializeField] private float InteractRange = 2f;
     [SerializeField] private float l_gravity = 9.8f;
 
     void Awake()
@@ -44,62 +40,6 @@ public class CController : MonoBehaviour
     void Update()
     {
         // FindObjectOfType<AudioManager>().Play("player_steps");
-
-        RaycastHit hit;
-        
-        m_ROrigin = gcObject.camera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
-
-        Vector3 direction = gcObject.camera.transform.forward;
-        if(!m_CVars.CanLook) {
-            Ray mouseHit = Camera.main.ScreenPointToRay(m_PlayerMovement.Mouse);
-            m_ROrigin = Camera.main.ScreenToWorldPoint(m_PlayerMovement.Mouse);
-            direction = mouseHit.direction;
-        }
-
-        if(_isPressedCd > 0) _isPressedCd -= Time.deltaTime;
-        if(Physics.Raycast(m_ROrigin, direction, out hit, m_CVars.VisionRange, LayerMask.GetMask("Focus") | LayerMask.GetMask("Interactuable"))){
-            bool leftButton = m_PlayerMovement.isInputPressed;
-            if(
-                (!m_CVars.CanLook && hit.collider.GetComponent<InteractBase>()) ||
-                (hit.collider.GetComponent<InteractBase>() && Mathf.Abs((hit.transform.position - transform.position).magnitude) < InteractRange)
-            )
-            {
-                if( gcObject.state != BoxScripts.GameState.TARGETING &&
-                    gcObject.state != BoxScripts.GameState.INTERACTING &&
-                    gcObject.state != BoxScripts.GameState.ENDINTERACTING &&
-                    gcObject.state != BoxScripts.GameState.LOOKITEM &&
-                    gcObject.state != BoxScripts.GameState.ENDLOOKITEM)
-                    {
-                        switch(hit.collider.tag)
-                        {
-                            case "Picture":
-                                gcObject.ChangeState(BoxScripts.GameState.TARGETINGPICTURE);
-                                GameController.current.SetCursor();
-                                break;
-                            case "Locked":
-                                // SHOULD CHANGE CURSOR
-                                Debug.Log("Is locked, shouldnt do anything");
-                                break;
-                            case "Requirement":
-                                // SHOULD CHANGE CURSOR
-                                Debug.Log("Is locked, shouldnt do anything");
-                                break;
-                            default:
-                                gcObject.ChangeState(BoxScripts.GameState.TARGETING);
-                                break;
-                        }
-                    }
-                if(hit.collider.tag == "Item" || gcObject.state != BoxScripts.GameState.LOOKITEM)
-                if(_isPressedCd <= 0 && (leftButton || m_PlayerMovement.isInput2Pressed)) {
-                    _isPressedCd = 0.5f;
-                    hit.collider.GetComponent<InteractBase>().Execute(leftButton);
-                }
-            }
-        }
-        else
-        {
-            if(gcObject.state == BoxScripts.GameState.TARGETING) gcObject.ChangeState(BoxScripts.GameState.PLAYING);
-        }
 
         if(m_CVars.CanLook) CameraMovement();
         if(m_CVars.CanMove) Movement();

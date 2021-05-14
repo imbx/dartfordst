@@ -85,7 +85,8 @@ namespace BoxScripts {
         MOVINGPICTURE,
         OPENNOTEBOOK,
         CLOSENOTEBOOK,
-        ENDGAME
+        ENDGAME,
+        MOVINGCAMERA
     }
 
     public enum TextPosition

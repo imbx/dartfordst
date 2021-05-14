@@ -111,7 +111,7 @@ public class Picture : InteractBase {
 
     public bool CheckRotation()
     {
-        return transform.localEulerAngles == finalRotation;
+        return Mathf.Abs(transform.localEulerAngles.z) == Mathf.Abs(finalRotation.z);
     }
     
 }

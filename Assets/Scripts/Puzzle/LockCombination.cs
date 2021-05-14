@@ -10,7 +10,6 @@ public class LockCombination : PuzzleBase {
     public override void Execute(bool isLeftAction = true)
     {
         base.Execute();
-        this.OnStart();
         GetComponent<BoxCollider>().enabled = false;
     }
 

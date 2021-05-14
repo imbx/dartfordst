@@ -25,10 +25,148 @@ public class GameController : MonoBehaviour{
 
     private float keyPressCooldown = 0.75f;
     private int counter = 1;
+    private List<InteractBase> AllInteractions;
 
+    private void Awake() {
+        current = this;
+        Debug.Log("Loading Database");
+        database = new Database();
+        Debug.Log("-- DB LOADED --");
+        gameCObject.camera = Camera.main;
+        AllInteractions = new List<InteractBase>();
+        gameCObject.ChangeState(GameState.LOADGAME);
+        ui.HideUI();
+    }
+
+    private void Update() {
+        keyPressCooldown -= Time.deltaTime;
+        switch(gameCObject.state)
+        {
+            case GameState.TITLESCREEN:
+                break;
+            case GameState.LOADGAME:
+                if(gameCObject.justChangedState)
+                {
+                    StateChange(false);
+                    LoadInteractions();
+                    if (!postFxVol.TryGet<ColorAdjustments>(out var ca))
+                            ca = postFxVol.Add<ColorAdjustments>(false);
+
+                    contrast = ca.contrast;
+
+                    DisablePostEffect();
+                }
+                gameCObject.ChangeState(GameState.PLAYING);
+                break;
+            case GameState.PLAYING:
+                if(gameCObject.justChangedState)
+                {
+                    DisablePostEffect();
+                    StateChange(false);
+                    ui.HideUI();
+                }
+                
+                NotebookVisibility();
+
+                if(PlayerControls.isInput2Pressed && keyPressCooldown <= 0f){
+                    keyPressCooldown = 0.75f;
+
+                    textManager.SpawnThought(counter);
+                    counter++;
+                }
+                // HERE KEYBINDS FOR NOTEBOOK, UI AND SO
+
+                break;
+
+            case GameState.MOVINGCAMERA:
+                if(gameCObject.justChangedState)
+                {
+                    CameraChange(false);
+                    ui.HideUI();
+                }
+                break;
+
+            case GameState.TARGETING:
+                if(gameCObject.justChangedState)
+                {
+                    ui.SetBasicInteract(true);
+                    Debug.Log("Should enable UI");
+                    gameCObject.justChangedState = false;
+                }
+
+                if(PlayerControls.isTabPressed && keyPressCooldown <= 0f){
+                    keyPressCooldown = 0.75f;
+
+                    gameCObject.ChangeState(GameState.OPENNOTEBOOK);
+                }
+                break;
+            case GameState.TARGETINGPICTURE:
+                if(gameCObject.justChangedState)
+                {
+                    Debug.Log("Should enable pic UI");
+                    ui.SetPicturesInteract(true);
+                    gameCObject.justChangedState = false;
+                }
+
+                NotebookVisibility(true);
+                break;
+            case GameState.MOVINGPICTURE:
+                if(gameCObject.justChangedState) gameCObject.justChangedState = false;
+                break;
+
+            case GameState.INTERACTING:
+                if(gameCObject.justChangedState) StateChange(true);
+                if(gameCObject.requireFocus) ApplyPostEffect();
+                break;
+
+            case GameState.ENDINTERACTING:
+                if(gameCObject.justChangedState)
+                {
+                    DisablePostEffect();
+                    StateChange(false);
+                }
+                gameCObject.ChangeState(GameState.PLAYING);
+                break;
+
+            case GameState.LOOKITEM:
+                if(gameCObject.justChangedState) StateChange(true);
+                ApplyPostEffect();
+                break;
+
+            case GameState.ENDLOOKITEM:
+                if(gameCObject.justChangedState)
+                {
+                    DisablePostEffect();
+                    StateChange(false);
+                }
+                gameCObject.ChangeState(GameState.PLAYING);
+                break;
+
+            case GameState.OPENNOTEBOOK:
+                if(gameCObject.justChangedState) StateChange(true);
+                if(gameCObject.requireFocus && ApplyPostEffect())
+                    ui.SetNotebookActive(true);
+                else ui.SetNotebookActive(true);
+                NotebookVisibility(false);
+                break;
+
+            case GameState.CLOSENOTEBOOK:
+                if(gameCObject.justChangedState)
+                {
+                    StateChange(true);
+                    DisablePostEffect();
+                    ui.SetNotebookActive(false);
+                }
+                gameCObject.ChangeState(GameState.PLAYING);
+                break;
+            case GameState.ENDGAME:
+                break;
+            default:
+                break;   
+        }
+    }
 
     public void SetCursor() {
-
     }
 
     public void ToggleCursor(bool isVisible = true) => 
@@ -38,15 +176,27 @@ public class GameController : MonoBehaviour{
         return true;
     }
 
-    private void Awake() {
-        current = this;
-        Debug.Log("Loading Database");
-        database = new Database();
-        Debug.Log("-- DB LOADED --");
-        gameCObject.camera = Camera.main;
-        gameCObject.ChangeState(GameState.LOADGAME);
-        
-        ui.HideUI();
+    public void SubscribeInteraction(InteractBase ib)
+    {
+        AllInteractions.Add(ib);
+    }
+
+    private void LoadInteractions()
+    {
+        foreach(InteractBase ib in AllInteractions)
+        {
+            ib.OnLoad();
+        }
+    }
+
+    public void MoveCamera(Vector3 destination, Vector3 modifier, Vector3 rotation)
+    {
+        gameCObject.camera.GetComponent<CameraMovement>().PrepareMovement(destination, modifier, rotation);
+    }
+
+    public void RevertCamera()
+    {
+        gameCObject.camera.GetComponent<CameraMovement>().RevertCamera();
     }
 
     public void DisableUI() {
@@ -77,163 +227,26 @@ public class GameController : MonoBehaviour{
         gameCObject.ChangeState(gameState);
     }
 
-    private void Update() {
-        keyPressCooldown -= Time.deltaTime;
+    private void StateChange(bool hasCursor)
+    {
+        gameCObject.justChangedState = false;
+        ToggleCursor(hasCursor);
+        Player.CanMove = !hasCursor;
+        Player.CanLook = !hasCursor;
+    }
+    private void CameraChange(bool hasEnded)
+    {
+        gameCObject.justChangedState = false;
+        ToggleCursor(hasEnded);
+        Player.CanMove = hasEnded;
+        Player.CanLook = hasEnded;
+    }
 
-        switch(gameCObject.state)
-        {
-            case GameState.TITLESCREEN:
-                break;
-            case GameState.LOADGAME:
-                if(gameCObject.justChangedState)
-                {
-                    gameCObject.justChangedState = false;
-                    ToggleCursor(false);
-                    Player.CanMove = true;
-                    Player.CanLook = true;
-
-                    if (!postFxVol.TryGet<ColorAdjustments>(out var ca))
-                            ca = postFxVol.Add<ColorAdjustments>(false);
-
-                    contrast = ca.contrast;
-                    DisablePostEffect();
-                }
-                gameCObject.ChangeState(GameState.PLAYING);
-                break;
-            case GameState.PLAYING:
-                if(gameCObject.justChangedState)
-                {
-                    gameCObject.justChangedState = false;
-                    ui.HideUI();
-                }
-                
-                if(PlayerControls.isTabPressed && keyPressCooldown <= 0f){
-                    keyPressCooldown = 0.75f;
-
-                    gameCObject.ChangeState(GameState.OPENNOTEBOOK);
-                }
-
-                if(PlayerControls.isInput2Pressed && keyPressCooldown <= 0f){
-                    keyPressCooldown = 0.75f;
-
-                    textManager.SpawnThought(counter);
-                    counter++;
-                }
-                // HERE KEYBINDS FOR NOTEBOOK, UI AND SO
-
-                break;
-
-            case GameState.TARGETING:
-                if(gameCObject.justChangedState)
-                {
-                    ui.SetBasicInteract(true);
-                    Debug.Log("Should enable UI");
-                    gameCObject.justChangedState = false;
-                }
-
-                if(PlayerControls.isTabPressed && keyPressCooldown <= 0f){
-                    keyPressCooldown = 0.75f;
-
-                    gameCObject.ChangeState(GameState.OPENNOTEBOOK);
-                }
-                break;
-            case GameState.TARGETINGPICTURE:
-                if(gameCObject.justChangedState)
-                {
-                    Debug.Log("Should enable pic UI");
-                    ui.SetPicturesInteract(true);
-                    gameCObject.justChangedState = false;
-                }
-
-                if(PlayerControls.isTabPressed && keyPressCooldown <= 0f){
-                    keyPressCooldown = 0.75f;
-
-                    gameCObject.ChangeState(GameState.OPENNOTEBOOK);
-                }
-                break;
-            case GameState.MOVINGPICTURE:
-                if(gameCObject.justChangedState)
-                {
-                    gameCObject.justChangedState = false;
-                }
-                break;
-            case GameState.INTERACTING:
-                if(gameCObject.justChangedState)
-                {
-                    gameCObject.justChangedState = false;
-                    ToggleCursor();
-                    Player.CanMove = false;
-                    Player.CanLook = false;
-                }
-                if(gameCObject.requireFocus) ApplyPostEffect();
-                break;
-            case GameState.ENDINTERACTING:
-                if(gameCObject.justChangedState)
-                {
-                    gameCObject.justChangedState = false;
-                    DisablePostEffect();
-                    ToggleCursor(false);
-                    Player.CanMove = true;
-                    Player.CanLook = true;
-                }
-                gameCObject.ChangeState(GameState.PLAYING);
-                break;
-
-            case GameState.LOOKITEM:
-                if(gameCObject.justChangedState)
-                {
-                    gameCObject.justChangedState = false;
-                    ToggleCursor();
-                    Player.CanMove = false;
-                    Player.CanLook = false;
-                }
-                ApplyPostEffect();
-                break;
-            case GameState.ENDLOOKITEM:
-                if(gameCObject.justChangedState)
-                {
-                    gameCObject.justChangedState = false;
-                    DisablePostEffect();
-                    ToggleCursor(false);
-                    Player.CanMove = true;
-                    Player.CanLook = true;
-                }
-                gameCObject.ChangeState(GameState.PLAYING);
-                break;
-            case GameState.OPENNOTEBOOK:
-                if(gameCObject.justChangedState)
-                {
-                    gameCObject.justChangedState = false;
-                    ToggleCursor();
-                    Player.CanMove = false;
-                    Player.CanLook = false;
-                }
-                if(gameCObject.requireFocus && ApplyPostEffect())
-                    ui.SetNotebookActive(true);
-                else ui.SetNotebookActive(true);
-
-                if(PlayerControls.isTabPressed && keyPressCooldown <= 0f){
-                    keyPressCooldown = 0.75f;
-                    gameCObject.ChangeState(GameState.CLOSENOTEBOOK);
-                }
-                break;
-            case GameState.CLOSENOTEBOOK:
-                if(gameCObject.justChangedState)
-                {
-                    gameCObject.justChangedState = false;
-                    DisablePostEffect();
-                    ui.SetNotebookActive(false);
-                    ToggleCursor(false);
-                    Player.CanMove = true;
-                    Player.CanLook = true;
-
-                }
-                gameCObject.ChangeState(GameState.PLAYING);
-                break;
-            case GameState.ENDGAME:
-                break;
-            default:
-                break;   
+    private void NotebookVisibility(bool show = true)
+    {
+        if(PlayerControls.isTabPressed && keyPressCooldown <= 0f){
+            keyPressCooldown = 0.75f;
+            gameCObject.ChangeState(show ? GameState.OPENNOTEBOOK : GameState.CLOSENOTEBOOK);
         }
     }
 }

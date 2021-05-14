@@ -11,20 +11,15 @@ public class Library : PuzzleBase {
     [SerializeField] private PrimaryController playerData;
     private Vector3 lastMousePos = Vector3.zero;
 
-    void Start(){
-        // LibrarySelf = new int();
-        // this.OnStart();
-    }
-    public override void Execute(bool isLeftAction = true)
-    {
-        base.Execute();
-        this.OnStart();
-    }
-
     void Update() {
-        if(playerData.isEscapePressed) ChosenBook = null;
-        if(CheckList()) {
-            this.OnEnd();
+        if(isInteractingThis){
+            if(playerData.isEscapePressed) {
+                Debug.Log("[Library] Called Escape");
+                ChosenBook = null;
+            }
+            if(CheckList()) {
+                this.OnEnd(true);
+            }
         }
     }
 

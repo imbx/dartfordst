@@ -7,6 +7,7 @@ public class GameControllerObject : ScriptableObject {
     public Camera camera;
     public bool requireFocus = true;
     public bool justChangedState = false;
+    public string playerTargetTag = "";
 
     public void ChangeState(GameState gs)
     {

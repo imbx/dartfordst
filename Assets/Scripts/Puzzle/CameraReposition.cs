@@ -29,6 +29,7 @@ public class CameraReposition : MonoBehaviour {
                 if(isReturning) {
                     GameController.current.Player.ControlMovement(true);
                     Destroy(this);
+                    return;
                 }
             }
 

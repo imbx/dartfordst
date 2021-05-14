@@ -10,23 +10,13 @@ public class Lightbox : PuzzleBase {
     public UnityEvent OnResetLightbox;
     public UnityEvent OnDestroyLightbox;
 
-    void Start(){
-        // this.OnStart();
-    }
-
     void Update() {
         // if(CurrentCombination.Length == 0f) ResetLightbox();
         if(Combination.Equals(CurrentCombination))
             this.OnEnd();
     }
 
-    public override void Execute(bool isLeftAction = true)
-    {
-        base.Execute();
-        this.OnStart();
-    }
-
-    protected override void OnEnd()
+    protected override void OnEnd(bool destroyGameObject = false)
     {
         base.OnEnd();
         OnDestroyLightbox.Invoke();

@@ -11,6 +11,7 @@ public class Lantern : MonoBehaviour {
     [SerializeField] private bool isLanternActive;
     [SerializeField] private float lanternInputCd = 0f;
     [SerializeField] private LayerMask UVLayer;
+    [SerializeField] private LayerMask NotUVLayer;
     private int lanternState = 0;
 
     void OnEnable()
@@ -60,7 +61,8 @@ public class Lantern : MonoBehaviour {
         if(isUV){
             lanternState = 2;
             lanternLight.color = Color.magenta;
-            lanternLight.cullingMask =  ~(1 << UVLayer);
+            Camera.main.cullingMask = ~(1 << UVLayer);
+            lanternLight.cullingMask = ~(1 << UVLayer);
         }
         isLanternActive = true;
         lanternInputCd = 1f;
@@ -71,6 +73,7 @@ public class Lantern : MonoBehaviour {
         lanternState = 0;
         isLanternActive = false;
         lanternLight.color = Color.white;
+        Camera.main.cullingMask = NotUVLayer;
         lanternLight.cullingMask =  -1;
         lanternInputCd = 1f;
     }

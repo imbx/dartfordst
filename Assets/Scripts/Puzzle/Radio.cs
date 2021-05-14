@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using BoxScripts;
 
 public class Radio : InteractBase {
-    
+    public int Identifier = 1243;
     private bool isRadioOn = false;
     public List<RadioSound> sequence;
     private int currentSeqPos = 0;
@@ -19,9 +19,14 @@ public class Radio : InteractBase {
 
 
     private bool hasGivenPage = false;
-    
+
     void OnEnable()
     {
+        if(GameController.current.database.ProgressionExists(Identifier)){
+            Debug.Log("Deactivating " + name);
+        }
+        else GameController.current.database.AddProgressionID(Identifier);
+
         isRadioOn = false;
         audioSource = GetComponent<AudioSource>();
         audioSource.Pause();
@@ -41,7 +46,8 @@ public class Radio : InteractBase {
                 if(!hasGivenPage)
                 {
                     hasGivenPage = true;
-                    GameController.current.database.AddNotePage(1243, "...-..--.");
+                    
+                    GameController.current.database.EditProgression(Identifier);
                 }
             }
             else

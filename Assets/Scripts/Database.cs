@@ -31,7 +31,7 @@ public class Database {
         Diary.Add(232341, new NotebookPage("test page 4"));
         Diary.Add(646533, new NotebookPage("test page 5"));
         
-        Notes.Add(5223, new NotebookPage("La llave esta en el jarron"));
+        //Notes.Add(5223, new NotebookPage("La llave esta en el jarron"));
         
 
         PlayerProgression.Add(78325, true);
@@ -39,19 +39,24 @@ public class Database {
         PlayerProgression.Add(2342342, true);
         PlayerProgression.Add(232341, true);
         PlayerProgression.Add(646533, true);
-        PlayerProgression.Add(5223, true);
+        //PlayerProgression.Add(5223, true);
         PlayerProgression.Add(3652, true);
         PlayerProgression.Add(1234, true);
         PlayerProgression.Add(6434, true);
         PlayerProgression.Add(3234, true);
 
 
-        PlayerProgression.Add(1242, true);
-        PlayerProgression.Add(1243, true);
-        PlayerProgression.Add(126, true);
-        PlayerProgression.Add(12432, true);
+        //PlayerProgression.Add(1242, true);
+        //PlayerProgression.Add(1243, true);
+        //PlayerProgression.Add(126, true);
+        //PlayerProgression.Add(12432, true);
 
+        AddNotePage(5223, "La llave esta en el jarron");
 
+        Notes.Add(12432, new NotebookPage("Paris"));
+        Notes.Add(1242,  new NotebookPage("... 1 \n -.. 2 \n --. 3 \n --- 4 \n .-- 5 \n ..- 6 \n .-. 7"));
+        Notes.Add(126, new NotebookPage("La llave esta en la estanteria de la cocina"));
+        Notes.Add(1243,  new NotebookPage("...-..--."));
 
 
 
@@ -64,7 +69,10 @@ public class Database {
 
     public void AddNotePage (int identifier, string page)
     {
+        AddProgressionID(identifier, true);
         Notes.Add(identifier, new NotebookPage(page));
+
+        Debug.Log("[Database] Note " + identifier + " added : " + page);
     }
 
     public void ParseDialogueData(string fileName)
@@ -78,7 +86,7 @@ public class Database {
             if(row.Length == 2)
             {
                 Dialogues.Add(int.Parse(row[0]), row[1]);
-                Debug.Log("Dialogue added " + row[0] + " : " + row[1]);
+                Debug.Log("[Database] Dialogue added " + row[0] + " : " + row[1]);
             }
         }
     }

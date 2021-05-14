@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PicturePuzzle : MonoBehaviour {
+    public int Identifier = 1242;
     public List<Picture> pictures;
     private Picture first;
-    
-
-
     private bool hasGivenPage = false;
+
+    private void OnEnable() {
+        if(GameController.current.database.ProgressionExists(Identifier)){
+            Debug.Log("Deactivating " + name);
+        }
+        else GameController.current.database.AddProgressionID(Identifier);
+    }
     void Update()
     {
-        if(CheckPictures() && !hasGivenPage)
+        if(CheckPictures())
         {
             hasGivenPage = true;
-            GameController.current.database.AddNotePage(1242, "... 1 -.. 2 --. 3 --- 4 .-- 5 ..- 6 .-. 7");
+            GameController.current.database.EditProgression(Identifier);
+            Debug.Log("[PicturePuzzle] Ended");
         }
     }
 

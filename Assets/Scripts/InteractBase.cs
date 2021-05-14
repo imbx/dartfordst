@@ -7,44 +7,49 @@ public class InteractBase : MonoBehaviour {
     public int _id = 0;
 
     public bool hasRequirement = false;
+    public bool hideIfReq = false;
     public int reqID = -1;
     [SerializeField] protected GameControllerObject gameControllerObject;
 
     private bool hasCheckedState = false;
-    void OnEnable() {
-        OnLoad();
+
+    private void Awake() {
+        GameController.current.SubscribeInteraction(this);
+    }
+    void OnEnable()
+    {
     }
 
-    protected void OnLoad() {
+    public void OnLoad() {
         if(!hasCheckedState)
         {
             Debug.Log("[InteractBase] " + name);
             if(GameController.current){
-                hasCheckedState = true;
-                if(GameController.current.database.ProgressionExists(_id)){
-                    Debug.Log("Deactivating " + name);
-                    this.gameObject.SetActive(!GameController.current.database.GetProgressionState(_id));
+                if(hasRequirement && !GameController.current.database.GetProgressionState(reqID))
+                {
+                    tag = "Requirement";
+                    if(hideIfReq) gameObject.SetActive(false);
                 }
-                else GameController.current.database.AddProgressionID(_id);
+
+                hasCheckedState = true;
+                if(_id != 0)
+                    if(GameController.current.database.ProgressionExists(_id)){
+                        Debug.Log("Deactivating " + name);
+                        // this.gameObject.SetActive(!GameController.current.database.GetProgressionState(_id));
+                    }
+                    else GameController.current.database.AddProgressionID(_id);
             }
         }
-        
-        if(hasRequirement && !GameController.current.database.GetProgressionState(reqID))
-        {
-            tag = "Requirement";
-        }
-        
     }
 
     private void Update() {
-        OnLoad();
     }
 
     protected virtual void OnStart(){
 
     }
 
-    protected virtual void OnEnd() {
+    protected virtual void OnEnd(bool destroyGameObject = false) {
         if(!gameControllerObject)
             GameController.current.ChangeState(BoxScripts.GameState.ENDINTERACTING);
         else {

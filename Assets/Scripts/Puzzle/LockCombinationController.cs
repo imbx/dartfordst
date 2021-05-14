@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class LockCombinationController : MonoBehaviour {
@@ -6,7 +7,7 @@ public class LockCombinationController : MonoBehaviour {
 
     public int Number { get { return currentNumber; } }
 
-    public TextMesh textMesh;
+    public TextMeshPro textMesh;
 
     public void Operate (bool isPositive = true)
     {
