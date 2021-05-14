@@ -32,12 +32,12 @@ public class Item : InteractBase {
             
             if(startTransform == null) 
             {
-                gameObject.layer = 8;
+                if(Son) BoxUtils.SetLayerRecursively(gameObject, 8);
+                else gameObject.layer = LayerMask.NameToLayer("Focus");
                 startTransform = new TransformData(transform);
                 movement.SetConfig(2f, true);
                 movement.SetParameters(new TransformData(GameController.current.Hand.position, Vector3.zero), startTransform);
-            } else {
-                gameObject.layer = 6;
+            } else { 
                 movement.Invert();
             }
             if(HasItemInside) GetComponent<BoxCollider>().enabled = false;
@@ -47,6 +47,7 @@ public class Item : InteractBase {
         if(movement.isAtDestination) {
             if(isLeftAction && CanPickup)
             {
+                BoxUtils.SetLayerRecursively(gameObject, 6);
                 OnEnd();
                 return;
             }
@@ -69,6 +70,7 @@ public class Item : InteractBase {
         isInteractingThis = false;
         // base.OnExit();
         if(!NoEffects) {
+            BoxUtils.SetLayerRecursively(gameObject, 6);
             movement.Invert();
         }
         gameControllerObject.ChangeState(GameState.ENDLOOKITEM);

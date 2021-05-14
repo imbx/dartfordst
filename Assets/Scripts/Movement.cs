@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour {
     [HideInInspector] public bool hasParameters = false;
     private float timer = 0f;
     [HideInInspector] public bool HasToDestroy = false;
-    [HideInInspector] public bool isAtDestination = true;
+    [SerializeField] public bool isAtDestination = true;
 
     void Update()
     {

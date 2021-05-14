@@ -12,9 +12,9 @@ public class CameraMovement : MonoBehaviour {
     private TransformData pointerData;
     private Vector3 rotation;
 
-    private bool isMoving = false;
+    [SerializeField] private bool isMoving = false;
 
-    private bool sentCameraAway = false;
+    [SerializeField] private bool sentCameraAway = false;
 
     private void Awake() {
         movement = GetComponent<Movement>();
@@ -55,16 +55,17 @@ public class CameraMovement : MonoBehaviour {
     {
         if(!isMoving && gameControllerObject.state == GameState.MOVINGCAMERA) {
             if(!sentCameraAway){
+                Debug.Log("[CameraMovement] Set base pos and rot");
                 gameControllerObject.ChangeState(GameState.PLAYING);
-                transform.position = transformData.position;
-                transform.eulerAngles = transformData.eulerAngles;
-                pointerToLook.position = pointerData.position;
+                transform.localPosition = new Vector3(0, 0.6f, 0);
+                transform.localEulerAngles = Vector3.zero;
+                pointerToLook.localPosition = new Vector3(0, 0.6f, 0.25f);
             }
             else gameControllerObject.ChangeState(GameState.INTERACTING);
             
         }
         if(isMoving) {
-            isMoving = movement.isAtDestination;
+            isMoving = !movement.isAtDestination;
         }
         transform.LookAt(pointerToLook);
     }
