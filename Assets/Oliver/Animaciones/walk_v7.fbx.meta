@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: c6a6b02556f229c49b60c724093488aa
+guid: 52d328ce8383762499cdb907d08559d3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
     second: Take 001
+  - first:
+      74: 6152323575415727269
+    second: Walk_AnimationV1
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -38,16 +41,16 @@ ModelImporter:
       name: Take 001
       takeName: Take 001
       internalID: 0
-      firstFrame: 10
-      lastFrame: 60
+      firstFrame: 0
+      lastFrame: 200
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 0.15
+      cycleOffset: 0
       loop: 0
-      hasAdditiveReferencePose: 1
-      loopTime: 1
-      loopBlend: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -62,7 +65,36 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk_AnimationV1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 70
+      lastFrame: 144
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
