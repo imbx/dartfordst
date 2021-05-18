@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BoxScripts;
 
 public class PicturePuzzle : MonoBehaviour {
     public int Identifier = 1242;
@@ -16,12 +18,26 @@ public class PicturePuzzle : MonoBehaviour {
     }
     void Update()
     {
-        if(CheckPictures())
+        if(CheckPictures() && !hasGivenPage)
         {
             hasGivenPage = true;
+            StartCoroutine(DeatachPictures());
+            
             GameController.current.database.EditProgression(Identifier);
             Debug.Log("[PicturePuzzle] Ended");
         }
+    }
+
+    IEnumerator DeatachPictures()
+    {
+        pictures.Shuffle();
+        foreach(Picture pic in pictures)
+            {
+                pic.gameObject.AddComponent<Rigidbody>();
+                pic.GetComponent<Rigidbody>().AddForce(pic.transform.forward * 4f);
+                yield return new WaitForSeconds(UnityEngine.Random.Range(0.1f, 0.3f));
+            }
+        yield return null;
     }
 
     public bool CheckPictures()

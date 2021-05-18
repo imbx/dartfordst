@@ -10,7 +10,6 @@ public class TargetController : MonoBehaviour {
     void Update() 
     {
         if(StatesToAvoid()) return;
-        if(gcObject.state == BoxScripts.GameState.MOVINGCAMERA) return;
         RaycastHit hit;
         
         m_ROrigin = gcObject.camera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
@@ -25,7 +24,10 @@ public class TargetController : MonoBehaviour {
         if(_isPressedCd > 0) _isPressedCd -= Time.deltaTime;
         LayerMask layerMask = LayerMask.GetMask("Focus") | LayerMask.GetMask("Interactuable");
         if(gcObject.state == GameState.INTERACTING || gcObject.state == GameState.LOOKITEM) layerMask = LayerMask.GetMask("Focus");
+        if(gcObject.state == GameState.MOVINGPICTURE) layerMask = 1;
         if(Physics.Raycast(m_ROrigin, direction, out hit, m_CVars.VisionRange, layerMask)){
+            Debug.Log("[TargetController] Hitpoint : " + hit.point);
+            gcObject.playerTargetPosition = hit.point;
             bool leftButton = m_PlayerMovement.isInputPressed;
             if(
                 (!m_CVars.CanLook && hit.collider.GetComponent<InteractBase>()) ||
@@ -38,9 +40,11 @@ public class TargetController : MonoBehaviour {
                     gcObject.state != BoxScripts.GameState.LOOKITEM &&
                     gcObject.state != BoxScripts.GameState.ENDLOOKITEM)
                     {
+                        gcObject.playerTargetTag = hit.collider.tag;
                         switch(hit.collider.tag)
                         {
                             case "Picture":
+                            
                                 gcObject.ChangeState(BoxScripts.GameState.TARGETINGPICTURE);
                                 GameController.current.SetCursor();
                                 break;

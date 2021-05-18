@@ -8,6 +8,7 @@ public class GameControllerObject : ScriptableObject {
     public bool requireFocus = true;
     public bool justChangedState = false;
     public string playerTargetTag = "";
+    public Vector3 playerTargetPosition = Vector3.zero;
 
     public void ChangeState(GameState gs)
     {
