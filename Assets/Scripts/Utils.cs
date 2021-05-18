@@ -102,6 +102,13 @@ namespace BoxScripts {
 
     // https://forum.unity.com/threads/change-gameobject-layer-at-run-time-wont-apply-to-child.10091/
     public static class BoxUtils{
+
+        public static int ConvertTo01 (int value)
+        {
+            if(value == 0) return 0;
+            if(value > 0) return 1;
+            return -1;
+        }
         public static void SetLayerRecursively(
             GameObject obj,
             int newLayer)
