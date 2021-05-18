@@ -50,6 +50,7 @@ public class DiaryController : MonoBehaviour
             }
         }
         MaxList = counter;
+        diaryNodes.ResetLists();
         diaryNodes.SetDiaryNodes(DiaryPositions.Count);
         diaryNodes.SetNotesNodes(NotesPosition.Count);
         SetNewPage(0);

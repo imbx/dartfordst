@@ -2,12 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using static UnityEngine.UI.Button;
 
 public class DiaryNodes : MonoBehaviour {
-    private int dNodesCount = 0;
+    private int diaryNodesCount = 0;
     private float diaryNodesWidth = 0;
-    private int nNodesCount = 0;
+    private int notesNodesCount = 0;
     private float notesNodesWidth = 0;
 
     public float NodeSpan = 44f;
@@ -25,54 +24,54 @@ public class DiaryNodes : MonoBehaviour {
 
     [SerializeField] private GameObject separator;
     public float separatorWidth = 126f;
-    private List<GameObject> dNodes;
-    private List<GameObject> nNodes;
+    [SerializeField] private List<GameObject> diaryNodes;
+    [SerializeField] private List<GameObject> notesNodes;
 
     public UnityEvent<int> OnDotEvent;
 
-    private void Awake() {
-        dNodes = new List<GameObject>();
-        nNodes = new List<GameObject>();
+    public void ResetLists()
+    {
+        DestroyNodes();
     }
 
     public void SetDiaryNodes(int diaryNodes)
     {
-        if(dNodesCount == diaryNodes) return;
-        dNodesCount = diaryNodes;
+        // if(diaryNodesCount == diaryNodes) return;
+        diaryNodesCount = diaryNodes;
         SetNodes(true);
     }
 
     public void SetNotesNodes(int notesNodes)
     {
-        if(nNodesCount == notesNodes) return;
-        nNodesCount = notesNodes;
+        // if(notesNodesCount == notesNodes) return;
+        notesNodesCount = notesNodes;
         SetNodes(false);
     }
 
     private void DestroyNodes()
-    {
-        foreach(GameObject diaryObject in dNodes) Destroy(diaryObject);
-        foreach(GameObject noteObject in nNodes) Destroy(noteObject);
+    {   if(diaryNodes != null) foreach(GameObject diaryObject in diaryNodes) Destroy(diaryObject);
+        diaryNodes = new List<GameObject>();
+        if(notesNodes != null) foreach(GameObject noteObject in notesNodes) Destroy(noteObject);
+        notesNodes = new List<GameObject>();
     }
 
     private void SetNodes(bool isDiary)
     {
-        if (isDiary) DestroyNodes();
         int nodesLeft = 0;
         if(isDiary)
-            nodesLeft = Mathf.Abs(dNodes.Count - dNodesCount);
+            nodesLeft = Mathf.Abs(diaryNodes.Count - diaryNodesCount);
         else
-            nodesLeft = Mathf.Abs(nNodes.Count - nNodesCount);
+            nodesLeft = Mathf.Abs(notesNodes.Count - notesNodesCount);
 
         for(int i = 0; i < nodesLeft; i++)
         {
             bool isFirst = false;
-            GameObject goParent =  Instantiate(nodePrefab);
-            //new GameObject("Node " + dNodesCount + i, typeof(RectTransform));
+            GameObject goParent = Instantiate(nodePrefab);
+            //new GameObject("Node " + diaryNodesCount + i, typeof(RectTransform));
             //goParent.AddComponent<DiaryPoint>();
             
             goParent.transform.SetParent(transform);
-            if((isDiary && dNodes.Count == 0 && i == 0) || (!isDiary && nNodes.Count == 0  && i == 0)) isFirst = true;
+            if((isDiary && diaryNodes.Count == 0 && i == 0) || (!isDiary && notesNodes.Count == 0  && i == 0)) isFirst = true;
 
             if(!isFirst)
             {
@@ -85,7 +84,7 @@ public class DiaryNodes : MonoBehaviour {
             point.transform.SetParent(goParent.transform);
             point.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             goParent.GetComponent<DiaryPoint>().DotImage = point.GetComponent<Image>();
-            goParent.GetComponent<DiaryPoint>().SetData(isDiary ? dNodes.Count : dNodes.Count + nNodes.Count, this);
+            goParent.GetComponent<DiaryPoint>().SetData(isDiary ? diaryNodes.Count : diaryNodes.Count + notesNodes.Count, this);
             goParent.GetComponent<Button>().targetGraphic = goParent.GetComponent<DiaryPoint>().DotImage;
             
             if(isDiary)
@@ -99,25 +98,24 @@ public class DiaryNodes : MonoBehaviour {
                 notesNodesWidth += NodeSpan;
             }
 
-            if(nNodesCount == 0) separator.SetActive(false);
+            if(notesNodesCount == 0) separator.SetActive(false);
             else separator.SetActive(true);
 
             if(isDiary && i == nodesLeft - 1)
             {
                 separator.GetComponent<RectTransform>().anchoredPosition = new Vector2(diaryNodesWidth + (separatorWidth * 0.5f) - (NodeSpan * 0.5f), 0f);
             }
-            if(isDiary) dNodes.Add(goParent);
-            else nNodes.Add(goParent);
+
+            if(isDiary) diaryNodes.Add(goParent);
+            else notesNodes.Add(goParent);
         }
-        Debug.Log("[DiaryNodes] dNodeWidth : " + diaryNodesWidth + " nNodesWidth : " + notesNodesWidth);
-        float totalWidth = 0.5f * (diaryNodesWidth + (nNodes.Count > 0 ? separatorWidth + notesNodesWidth : 0));
+        Debug.Log("[DiaryNodes] dNodeWidth : " + diaryNodesWidth + " notesNodesWidth : " + notesNodesWidth);
+        float totalWidth = 0.5f * (diaryNodesWidth + (notesNodes.Count > 0 ? separatorWidth + notesNodesWidth : 0));
                 Debug.Log("[DiaryNodes] totalWidth : " + totalWidth);
 
         GetComponent<RectTransform>().anchoredPosition = new Vector2(-totalWidth + NodeSpan, 96f);
         leftArrow.anchoredPosition = new Vector2(-totalWidth - 48f , 96f);
         rightArrow.anchoredPosition = new Vector2(totalWidth + (48f * 2f), 96f);
-        dNodesCount = dNodes.Count;
-        nNodesCount = nNodes.Count;
     }
 
     public void SetPointAction(int newId)
@@ -127,17 +125,16 @@ public class DiaryNodes : MonoBehaviour {
 
     public void SelectCircle(int prevPoint, int newPoint)
     {
-        if(prevPoint > dNodesCount - 1)
+        if(prevPoint > diaryNodesCount - 1)
         {
-            prevPoint -= dNodesCount;
-            nNodes[prevPoint].GetComponent<DiaryPoint>().DotImage.sprite = EmptyCircle;
-        } else dNodes[prevPoint].GetComponent<DiaryPoint>().DotImage.sprite = EmptyCircle;
+            prevPoint -= diaryNodesCount;
+            notesNodes[prevPoint].GetComponent<DiaryPoint>().DotImage.sprite = EmptyCircle;
+        } else diaryNodes[prevPoint].GetComponent<DiaryPoint>().DotImage.sprite = EmptyCircle;
 
-        if(newPoint > dNodesCount - 1)
+        if(newPoint > diaryNodesCount - 1)
         {
-            newPoint -= dNodesCount;
-            nNodes[newPoint].GetComponent<DiaryPoint>().DotImage.sprite = FilledCircle;
-        } else dNodes[newPoint].GetComponent<DiaryPoint>().DotImage.sprite = FilledCircle;
-            
+            newPoint -= diaryNodesCount;
+            notesNodes[newPoint].GetComponent<DiaryPoint>().DotImage.sprite = FilledCircle;
+        } else diaryNodes[newPoint].GetComponent<DiaryPoint>().DotImage.sprite = FilledCircle; 
     }
 }
