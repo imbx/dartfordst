@@ -22,6 +22,7 @@ public class Database {
         //Dialogues.Add(1, "Test dialogue");
         ParseDialogueData("Database/dialogues");
         PlayerProgression.Add(-1, true);
+        PlayerProgression.Add(0, true);
         PlayerProgression.Add(1, true);
 
 

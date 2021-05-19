@@ -8,7 +8,7 @@ public class UIController : MonoBehaviour {
 
     public void SetNotebookActive(bool active = true) {
         Notebook.SetActive(active);
-        Notebook.GetComponent<Notebook>().enabled = active;
+        //Notebook.GetComponent<Notebook>().enabled = active;
     }
 
     public void HideUI()

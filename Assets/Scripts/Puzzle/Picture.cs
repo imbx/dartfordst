@@ -78,7 +78,7 @@ public class Picture : InteractBase {
 
             if(boxCollider.enabled) boxCollider.enabled = false;
 
-            Vector3 vec = Camera.main.ViewportToWorldPoint(
+            /*Vector3 vec = Camera.main.ViewportToWorldPoint(
                 new Vector3(
                     0.5f,
                     0.5f,
@@ -89,7 +89,9 @@ public class Picture : InteractBase {
                     startPosition.x + (vec.x - startMousePos.x),
                     startPosition.y + (vec.y - startMousePos.y),
                     startPosition.z + (vec.z - startMousePos.z)
-                );
+                );*/
+
+                transform.position = gameControllerObject.playerTargetPosition + (0.25f * transform.forward);
             
             if(!isMoving)
             {

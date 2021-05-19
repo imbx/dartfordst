@@ -22,16 +22,6 @@ public class CController : MonoBehaviour
     [Header("Stats")]
     [SerializeField] private float l_gravity = 9.8f;
 
-    void Awake()
-    {
-        
-    }
-    void Start()
-    {
-        //m_startPosition.ApplyTo(transform);
-        //Cursor.lockState = CursorLockMode.Locked;
-    }
-
     void OnEnable()
     {
         m_characterController = GetComponent<CharacterController>();
