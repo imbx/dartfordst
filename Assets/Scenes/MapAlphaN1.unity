@@ -10050,6 +10050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Marco_NoMorse_Mundo
       objectReference: {fileID: 0}
+    - target: {fileID: 8657036028307177005, guid: a627b69ebdd529f4391a8d2dda28e4fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a627b69ebdd529f4391a8d2dda28e4fb, type: 3}
 --- !u!1 &1082783254 stripped
@@ -17845,8 +17849,40 @@ PrefabInstance:
       value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 4224758177626106336, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
+      propertyPath: UVLanternColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224758177626106336, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
+      propertyPath: UVLanternColor.b
+      value: 0.9529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224758177626106336, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
+      propertyPath: UVLanternColor.g
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224758177626106336, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
+      propertyPath: UVLanternColor.r
+      value: 0.8745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224758177626106336, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
       propertyPath: NotUVLayer.m_Bits
       value: 231
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224758177626106336, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
+      propertyPath: MainLanternColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224758177626106336, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
+      propertyPath: MainLanternColor.b
+      value: 0.43529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224758177626106336, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
+      propertyPath: MainLanternColor.g
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224758177626106336, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
+      propertyPath: MainLanternColor.r
+      value: 0.9529412
       objectReference: {fileID: 0}
     - target: {fileID: 4224758177626106337, guid: 7680debc7f7f7bf42b00017dc4f92c29, type: 3}
       propertyPath: m_Type
@@ -21937,6 +21973,10 @@ PrefabInstance:
       value: Puerta_Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 408740371458990594, guid: 06e8b3fd27de4944ca5747e084b70dbc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 679281455259486697, guid: 06e8b3fd27de4944ca5747e084b70dbc, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
