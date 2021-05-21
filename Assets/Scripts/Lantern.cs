@@ -14,6 +14,12 @@ public class Lantern : MonoBehaviour {
     [SerializeField] private LayerMask NotUVLayer;
     private int lanternState = 0;
 
+    [SerializeField] private Color MainLanternColor;
+    [SerializeField] private Color UVLanternColor;
+    
+
+    
+
     void OnEnable()
     {
         lanternLight = GetComponent<Light>();
@@ -37,7 +43,7 @@ public class Lantern : MonoBehaviour {
                 !isLanternActive &&
                 lanternInputCd <= 0f)
             {
-                TurnOn();
+                TurnOn(reqIdUVBool);
                 // GameController.current.lanternActive = true;
             }
 
@@ -45,10 +51,7 @@ public class Lantern : MonoBehaviour {
                 isLanternActive &&
                 lanternInputCd <= 0f)
             {
-                if(reqIdUVBool)
-                    if(lanternState == 1) TurnOn(true);
-                    else TurnOff();
-                else TurnOff();
+                TurnOff();
             }
         }
         lanternLight.enabled = isLanternActive;
@@ -59,8 +62,7 @@ public class Lantern : MonoBehaviour {
         lanternState = 1;
         
         if(isUV){
-            lanternState = 2;
-            lanternLight.color = Color.magenta;
+            lanternLight.color = UVLanternColor;
             Camera.main.cullingMask = ~(1 << UVLayer);
             lanternLight.cullingMask = ~(1 << UVLayer);
         }
@@ -72,7 +74,7 @@ public class Lantern : MonoBehaviour {
     {
         lanternState = 0;
         isLanternActive = false;
-        lanternLight.color = Color.white;
+        
         Camera.main.cullingMask = NotUVLayer;
         lanternLight.cullingMask =  -1;
         lanternInputCd = 1f;
