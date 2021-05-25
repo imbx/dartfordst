@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using BoxScripts;
-
 public class PuzzleBase : InteractBase {
+    [Header("Puzzle Base Parameters")]
     public bool MoveCamera = true;
 
     public int EndIdentifier = 0;
@@ -28,6 +28,7 @@ public class PuzzleBase : InteractBase {
 
     public override void Execute(bool isLeftAction = true)
     {
+        if(hasRequirement && !GameController.current.database.GetProgressionState(reqID)) return;
         base.Execute(isLeftAction);
         this.OnStart();
         isInteractingThis = true;

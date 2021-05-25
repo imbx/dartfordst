@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour{
 
     public TextManager textManager;
     [SerializeField] private VolumeProfile postFxVol;
-    [SerializeField] private ClampedFloatParameter contrast;
+    [SerializeField] private FloatParameter contrast;
     [SerializeField] private float blurSpeed = 2f;
 
     private float keyPressCooldown = 0.75f;
@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour{
                     if (!postFxVol.TryGet<ColorAdjustments>(out var ca))
                             ca = postFxVol.Add<ColorAdjustments>(false);
 
-                    contrast = ca.contrast;
+                    contrast = ca.postExposure;
 
                     DisablePostEffect();
                 }
@@ -209,11 +209,11 @@ public class GameController : MonoBehaviour{
 
     private bool ApplyPostEffect()
     {
-        if(contrast.value < 99f)
+        if(contrast.value > -1f)
         {
-            contrast.value += blurSpeed;
+            contrast.value -= blurSpeed;
             return false;
-        } else contrast.value = 100f;
+        } else contrast.value = -1.15f;
         return true;
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using BoxScripts;
 
 public class InteractBase : MonoBehaviour {
+    [Header("Interact Base Parameters")]
     public int _id = 0;
 
     public bool hasRequirement = false;
