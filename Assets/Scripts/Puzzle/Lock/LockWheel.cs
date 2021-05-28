@@ -41,6 +41,6 @@ public class LockWheel : InteractBase {
 
         transform.localEulerAngles = new Vector3((int)Mathf.Lerp(0, 360f, RotationLerp), 0, 0);
 
-        Debug.Log("[RoundedLock] Current rot : " + CurrentRotation);
+        // Debug.Log("[LookWheel] Current rot : " + CurrentRotation);
     }
 }
