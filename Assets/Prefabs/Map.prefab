@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   hasRequirement: 0
+  hideIfReq: 0
   reqID: -1
   gameControllerObject: {fileID: 0}
   pin: 1
@@ -225,14 +226,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   hasRequirement: 0
+  hideIfReq: 0
   reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
-  controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   PinPrefab: {fileID: 8910510840762010180, guid: 8461242137a064b4ca1d6b4da6fce225, type: 3}
   Red: {fileID: 2100000, guid: 30057f03081f9ce4a864602657a81a77, type: 2}
   Blue: {fileID: 2100000, guid: ef5a57ae349a19c4fbf46a8a148a85f2, type: 2}
   RedLine: {fileID: 6942674034614596707}
   BlueLine: {fileID: 6942674035439066506}
+  mapPuzzle: {fileID: 0}
 --- !u!65 &6942674034133200599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -365,12 +367,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   hasRequirement: 0
+  hideIfReq: 0
   reqID: -1
   gameControllerObject: {fileID: 0}
   MoveCamera: 1
   EndIdentifier: 0
   DistanceToCamera: 3
   vecModifier: {x: 1, y: 0, z: 0}
+  targetAngle: {x: 0, y: 0, z: 0}
+  controller: {fileID: 0}
+  RedPinList: []
+  BluePinList: []
 --- !u!1 &6942674034614596705
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   hasRequirement: 0
+  hideIfReq: 0
   reqID: -1
   gameControllerObject: {fileID: 0}
   pin: 0
