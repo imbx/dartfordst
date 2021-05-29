@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{a2f63a4f-e486-4a33-a942-9bc87404dcf6}">
+		<property name="assetPath">
+			<value>tancar llibreta versió mono.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.4338321995464853</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cea5f889-bfa4-4f52-91eb-48329abf56b5}</destination>
+		</relationship>
+	</object>
+</objects>

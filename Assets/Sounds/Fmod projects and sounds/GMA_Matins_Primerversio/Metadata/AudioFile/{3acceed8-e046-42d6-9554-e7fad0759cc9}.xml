@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{3acceed8-e046-42d6-9554-e7fad0759cc9}">
+		<property name="assetPath">
+			<value>abrir  puerta versió 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.6486167800453515</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cea5f889-bfa4-4f52-91eb-48329abf56b5}</destination>
+		</relationship>
+	</object>
+</objects>

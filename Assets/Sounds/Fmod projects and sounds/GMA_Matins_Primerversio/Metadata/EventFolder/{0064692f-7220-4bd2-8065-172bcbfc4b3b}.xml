@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{0064692f-7220-4bd2-8065-172bcbfc4b3b}">
+		<property name="name">
+			<value>morse</value>
+		</property>
+		<relationship name="folder">
+			<destination>{13043e9d-d67e-4974-b73d-2eccba9735b9}</destination>
+		</relationship>
+	</object>
+</objects>

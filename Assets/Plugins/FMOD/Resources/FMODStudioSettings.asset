@@ -267,9 +267,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/Sounds/Fmod projects and sounds/dartford fmod - Roger/dartford
-    fmod.fspro
-  sourceBankPath: Assets\Sounds\Fmod projects and sounds\dartford fmod - Roger\Build
+  sourceProjectPath: Assets/Sounds/Fmod projects and sounds/GMA_Matins_Primerversio/GMA_Matins_Primerversio.fspro
+  sourceBankPath: Assets\Sounds\Fmod projects and sounds\GMA_Matins_Primerversio\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -570,37 +569,37 @@ MonoBehaviour:
   Properties:
     LiveUpdate:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     LiveUpdatePort:
       Value: 9264
       HasValue: 1
     Overlay:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     Logging:
       Value: 0
       HasValue: 0
     SampleRate:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     BuildDirectory:
-      Value: 
-      HasValue: 0
+      Value: Desktop
+      HasValue: 1
     SpeakerMode:
-      Value: 0
-      HasValue: 0
+      Value: 3
+      HasValue: 1
     VirtualChannelCount:
-      Value: 0
-      HasValue: 0
+      Value: 128
+      HasValue: 1
     RealChannelCount:
-      Value: 0
-      HasValue: 0
+      Value: 32
+      HasValue: 1
     DSPBufferLength:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     DSPBufferCount:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     Plugins:
       Value: []
       HasValue: 1
@@ -609,7 +608,7 @@ MonoBehaviour:
       HasValue: 1
     CallbackHandler:
       Value: {fileID: 0}
-      HasValue: 0
+      HasValue: 1
   outputType: 
   threadAffinities:
     Value: []

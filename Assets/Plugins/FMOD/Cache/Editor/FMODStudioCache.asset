@@ -21,6 +21,27 @@ MonoBehaviour:
   - Name: Desktop
     Value: 700
   Exists: 1
+--- !u!114 &-2816790027083228695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/Fmod projects and sounds/GMA_Matins_Primerversio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637578440380994661
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
+  Exists: 1
 --- !u!114 &-1000524234207682747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,13 +74,32 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -8369244989922519699}
-  - {fileID: -1000524234207682747}
+  - {fileID: -2816790027083228695}
+  - {fileID: 3807988244929336078}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: -1000524234207682747}
+  - {fileID: 3807988244929336078}
   StringsBanks:
-  - {fileID: -8369244989922519699}
-  stringsBankWriteTime: 637568944580871238
+  - {fileID: -2816790027083228695}
+  stringsBankWriteTime: 637578440380994661
   cacheVersion: 6
+--- !u!114 &3807988244929336078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/Fmod projects and sounds/GMA_Matins_Primerversio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637578440380974336
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1

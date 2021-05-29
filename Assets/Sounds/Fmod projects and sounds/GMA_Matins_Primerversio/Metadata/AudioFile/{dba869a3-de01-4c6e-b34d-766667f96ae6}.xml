@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{dba869a3-de01-4c6e-b34d-766667f96ae6}">
+		<property name="assetPath">
+			<value>escribir libreta verisón 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.2856235827664397</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cea5f889-bfa4-4f52-91eb-48329abf56b5}</destination>
+		</relationship>
+	</object>
+</objects>
