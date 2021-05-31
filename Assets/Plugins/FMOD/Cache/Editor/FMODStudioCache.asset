@@ -44,6 +44,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 700
   Exists: 1
+--- !u!114 &-8347022525283829268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/morse/Morse punt
+  m_EditorClassIdentifier: 
+  Path: event:/morse/Morse punt
+  guid: 609de251a5c2e84a949d18d87c3d8ce7
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 275
 --- !u!114 &-8147589852944131715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +113,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 317
+--- !u!114 &-7535882489704437879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llibreta/cerrar libreta
+  m_EditorClassIdentifier: 
+  Path: event:/llibreta/cerrar libreta
+  guid: 4a83682c63a1b74abd6707975cd81e8a
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1433
 --- !u!114 &-7515269339871121664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +182,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1799
+--- !u!114 &-7350186776750478570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ambiente/goteras
+  m_EditorClassIdentifier: 
+  Path: event:/ambiente/goteras
+  guid: 37bf1e20c540494d8cfeb539c30d5953
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16179
 --- !u!114 &-6938421052297275504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +221,29 @@ MonoBehaviour:
   guid: 57b1f6d11f6a184aa7c8c8f3ad3b7e3f
   Banks:
   - {fileID: 3807988244929336078}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3285
+--- !u!114 &-6917627438397172401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llibreta/escribir
+  m_EditorClassIdentifier: 
+  Path: event:/llibreta/escribir
+  guid: 90170718a7c0de4fbcbd427669f49d37
+  Banks:
+  - {fileID: 89327925031201630}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -205,6 +297,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 221
+--- !u!114 &-6304361118193265406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/l\xE0mpara/encender l\xE1mpara"
+  m_EditorClassIdentifier: 
+  Path: "event:/l\xE0mpara/encender l\xE1mpara"
+  guid: bba6ab428944894aa95be991b1d94c80
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6531
 --- !u!114 &-6069148752931825860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +343,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10495
+--- !u!114 &-6047186436244795604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/coger objeto
+  m_EditorClassIdentifier: 
+  Path: event:/coger objeto
+  guid: 23fc1d0655de8c4e97c615b15a41e4a3
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 783
 --- !u!114 &-5090434531738458528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +412,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &-4913290307633660331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llama/llama+ encendido
+  m_EditorClassIdentifier: 
+  Path: event:/llama/llama+ encendido
+  guid: 50c60379f8da224fabbe7c3020cb6e3d
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6103
 --- !u!114 &-4659710628014466373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +458,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7787
+--- !u!114 &-4474447892812096477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/pasos/pasos escaleras
+  m_EditorClassIdentifier: 
+  Path: event:/pasos/pasos escaleras
+  guid: 31839f54eaa37041a0bdcd729a01c52b
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17000
+--- !u!114 &-4008703150164251845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/morse/Morse Ratlla
+  m_EditorClassIdentifier: 
+  Path: event:/morse/Morse Ratlla
+  guid: b8667b05a3400643acc8894b78e5076f
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 310
 --- !u!114 &-3659950492900768116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +527,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6531
+--- !u!114 &-3559213096808642698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/chispas
+  m_EditorClassIdentifier: 
+  Path: event:/chispas
+  guid: 9e1bfa825f0e43448c2eab457bb886bc
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3604
 --- !u!114 &-2816790027083228695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +617,98 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 700
+--- !u!114 &-2463668780792231780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llama/Encender llama
+  m_EditorClassIdentifier: 
+  Path: event:/llama/Encender llama
+  guid: e2ecfdf76adcef428f3ab3358f391beb
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 317
+--- !u!114 &-2143426822073127381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/palanca
+  m_EditorClassIdentifier: 
+  Path: event:/palanca
+  guid: 5d4714352cc0db4581be25fc8d145ea9
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 476
+--- !u!114 &-2094165998378050389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ambiente/Pluja
+  m_EditorClassIdentifier: 
+  Path: event:/ambiente/Pluja
+  guid: 0706d208adbe084cb1aeba98ae550465
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 133978
+--- !u!114 &-1882973842715828829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Interruptor
+  m_EditorClassIdentifier: 
+  Path: event:/Interruptor
+  guid: cb5564e9561f2e46b27627ce90e9ef30
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &-1417807146838320005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +755,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 476
+--- !u!114 &-1136913483292744657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/puerta/abrir puerta
+  m_EditorClassIdentifier: 
+  Path: event:/puerta/abrir puerta
+  guid: 148b9964ff44e54ea91df42f004f554a
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1648
 --- !u!114 &-1000524234207682747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +797,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-236455966045789165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llibreta/abrir llibreta
+  m_EditorClassIdentifier: 
+  Path: event:/llibreta/abrir llibreta
+  guid: ee1300b520fd6c439d73f2a5d274faa3
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1799
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,42 +833,130 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -2816790027083228695}
-  - {fileID: 3807988244929336078}
+  - {fileID: 4311495132367669648}
+  - {fileID: 89327925031201630}
   EditorEvents:
-  - {fileID: -6535489863426026840}
-  - {fileID: 7166186933434873163}
-  - {fileID: -6378212379270252650}
-  - {fileID: -2642941437406729165}
-  - {fileID: -1417807146838320005}
-  - {fileID: -8147589852944131715}
-  - {fileID: 9034017539187352476}
-  - {fileID: 6528521838295691359}
-  - {fileID: -7515269339871121664}
-  - {fileID: 1216297343444995564}
-  - {fileID: -6938421052297275504}
-  - {fileID: -9096243237524098508}
-  - {fileID: -1240331930046690628}
-  - {fileID: 5948893413061534831}
-  - {fileID: 8822460264011696308}
-  - {fileID: -5010413685105137525}
-  - {fileID: 6072555681573242031}
-  - {fileID: -8066757808876337115}
-  - {fileID: -7449928378170154261}
-  - {fileID: 8440742929688353070}
-  - {fileID: -2783625949171324840}
-  - {fileID: -6069148752931825860}
-  - {fileID: 6052266582301865948}
-  - {fileID: -5090434531738458528}
-  - {fileID: -3659950492900768116}
-  - {fileID: -4659710628014466373}
+  - {fileID: 2598006641191115301}
+  - {fileID: -2094165998378050389}
+  - {fileID: -1136913483292744657}
+  - {fileID: -6047186436244795604}
+  - {fileID: -4474447892812096477}
+  - {fileID: -7350186776750478570}
+  - {fileID: 3915815270989519723}
+  - {fileID: -7535882489704437879}
+  - {fileID: 1751236072283752217}
+  - {fileID: -4913290307633660331}
+  - {fileID: 107147644763471155}
+  - {fileID: 793606888151650981}
+  - {fileID: 6805754589311152757}
+  - {fileID: -2143426822073127381}
+  - {fileID: -8347022525283829268}
+  - {fileID: -6917627438397172401}
+  - {fileID: -3559213096808642698}
+  - {fileID: -4008703150164251845}
+  - {fileID: -6304361118193265406}
+  - {fileID: 1650286666131776706}
+  - {fileID: 8576884583662469376}
+  - {fileID: -1882973842715828829}
+  - {fileID: 2969161594648145017}
+  - {fileID: -2463668780792231780}
+  - {fileID: -236455966045789165}
+  - {fileID: 212914845484716553}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3807988244929336078}
+  - {fileID: 89327925031201630}
   StringsBanks:
-  - {fileID: -2816790027083228695}
-  stringsBankWriteTime: 637579329346743272
+  - {fileID: 4311495132367669648}
+  stringsBankWriteTime: 637580837352140112
   cacheVersion: 6
+--- !u!114 &89327925031201630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/Fmod projects and sounds/GMA_Matins_Primerversio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637580837351801075
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &107147644763471155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llama/llama
+  m_EditorClassIdentifier: 
+  Path: event:/llama/llama
+  guid: 520738f0d166434ba00718f27b33fcf1
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2008
+--- !u!114 &212914845484716553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/puerta/cerara puerta
+  m_EditorClassIdentifier: 
+  Path: event:/puerta/cerara puerta
+  guid: ee1f1958692e2943a3c8c22471f2eb3d
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7787
+--- !u!114 &793606888151650981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llibreta/escribir libreta
+  m_EditorClassIdentifier: 
+  Path: event:/llibreta/escribir libreta
+  guid: 57b1f6d11f6a184aa7c8c8f3ad3b7e3f
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3285
 --- !u!114 &1216297343444995564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +980,98 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2008
+--- !u!114 &1650286666131776706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/caj\xF3n/abrir caj\xF3n"
+  m_EditorClassIdentifier: 
+  Path: "event:/caj\xF3n/abrir caj\xF3n"
+  guid: bed02a5e4357c7488cde7785ad2fff1a
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1033
+--- !u!114 &1751236072283752217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/pasos/pasos moqueta
+  m_EditorClassIdentifier: 
+  Path: event:/pasos/pasos moqueta
+  guid: 4ef97c996e32284f9f3d3b81d5d81e2b
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10495
+--- !u!114 &2598006641191115301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/papel
+  m_EditorClassIdentifier: 
+  Path: event:/papel
+  guid: 0166926dd1a6f04681c24a3ea3c15928
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 700
+--- !u!114 &2969161594648145017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/estanteria
+  m_EditorClassIdentifier: 
+  Path: event:/estanteria
+  guid: cebfe1efe01cdf4abf24936ffe497d29
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15581
 --- !u!114 &3807988244929336078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +1090,50 @@ MonoBehaviour:
   lastModified: 637579329346673458
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &3915815270989519723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/caj\xF3n/cerrar caj\xF3n"
+  m_EditorClassIdentifier: 
+  Path: "event:/caj\xF3n/cerrar caj\xF3n"
+  guid: 467785a03318744ea1d812642a548724
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1323
+--- !u!114 &4311495132367669648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/Fmod projects and sounds/GMA_Matins_Primerversio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637580837352140112
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2012
   Exists: 1
 --- !u!114 &5948893413061534831
 MonoBehaviour:
@@ -635,6 +1227,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1433
+--- !u!114 &6805754589311152757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sonidos radio
+  m_EditorClassIdentifier: 
+  Path: event:/sonidos radio
+  guid: 58b1c94d7a4435428ee9f361abd74f26
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 32507
 --- !u!114 &7166186933434873163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,6 +1296,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1648
+--- !u!114 &8576884583662469376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/candado
+  m_EditorClassIdentifier: 
+  Path: event:/candado
+  guid: c637d2669b741d46b6176635213ace59
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 221
 --- !u!114 &8822460264011696308
 MonoBehaviour:
   m_ObjectHideFlags: 0

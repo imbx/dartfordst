@@ -9,18 +9,6 @@ public class Lock : PuzzleBase {
 
     [FMODUnity.EventRef]
     public string candadoSound = "event:/candado";
-    FMOD.Studio.EventInstance lockEvent;
-
-    Rigidbody cachedRigidBody;
-
-
-    private void Start()
-    {
-        cachedRigidBody = GetComponent<Rigidbody>();
-        lockEvent = FMODUnity.RuntimeManager.CreateInstance(candadoSound);
-        lockEvent.start();
-    }
-
 
     public override void Execute(bool isLeftAction = true)
     {
@@ -30,26 +18,12 @@ public class Lock : PuzzleBase {
 
     void Update()
     {
-        lockEvent.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, cachedRigidBody));
-
         if (GetCurrentCombination().Equals(FinalCombination))
-        { 
+        {
             this.OnEnd(true);
-            
-            if (lockEvent.isValid())
-            {
-                FMOD.Studio.PLAYBACK_STATE playbackState;
-                lockEvent.getPlaybackState(out playbackState);
-                if (playbackState == FMOD.Studio.PLAYBACK_STATE.STOPPED)
-                {
-                    lockEvent.release();
-                    lockEvent.clearHandle();
-                    SendMessage("lockEventFinished");
-                }
-            }
-
+            GameController.current.music.playMusic(candadoSound);
         }
-
+        
     }
 
     private string GetCurrentCombination()
