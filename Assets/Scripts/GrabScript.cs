@@ -18,6 +18,12 @@ public class GrabScript : MonoBehaviour
     float m_AttachingObjectCurrentTime = 0.0f;
     public float m_AttachedObjectTime = 1.0f;
 
+    private FMODUnity.StudioEventEmitter eventEmiterRef;
+
+    private void Awake()
+    {
+        eventEmiterRef = GetComponent<FMODUnity.StudioEventEmitter>();
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -16,9 +16,15 @@ public class Lantern : MonoBehaviour {
 
     [SerializeField] private Color MainLanternColor;
     [SerializeField] private Color UVLanternColor;
-    
 
-    
+    [FMODUnity.EventRef]
+    public string lanternSound = "event:/candado";
+    FMOD.Studio.EventInstance lanternEvent;
+
+    private void Start()
+    {
+        lanternEvent = FMODUnity.RuntimeManager.CreateInstance(lanternSound);
+    }
 
     void OnEnable()
     {

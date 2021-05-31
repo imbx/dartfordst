@@ -11,7 +11,12 @@ public class Door : InteractBase {
 
     private float timer = 0f;
 
+    private FMODUnity.StudioEventEmitter eventEmiterRef;
 
+    private void Awake()
+    {
+        eventEmiterRef = GetComponent<FMODUnity.StudioEventEmitter>();
+    }
 
     void OnEnable() { 
         BaseRotation = transform.localEulerAngles;

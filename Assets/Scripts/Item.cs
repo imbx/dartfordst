@@ -14,14 +14,21 @@ public class Item : InteractBase {
 
     protected bool isInteractingThis = false;
 
+    [FMODUnity.EventRef]
+    public string itemSound = "event:/";
+    FMOD.Studio.EventInstance itemEvent;
+
+
     void Start()
     {
         movement = GetComponent<Movement>();
+        itemEvent = FMODUnity.RuntimeManager.CreateInstance(itemSound); ;
     }
 
     public override void Execute(bool isLeftAction = true) {
         if(hasRequirement && !GameController.current.database.GetProgressionState(reqID)) return;
-        
+        itemEvent.start();
+
         isInteractingThis = true;
         if(Son) Son.GetComponent<Item>().isInteractingThis = true;
         if(isLeftAction && gameControllerObject.state != GameState.LOOKITEM){

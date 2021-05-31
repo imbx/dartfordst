@@ -9,6 +9,14 @@ public class LightboxSwitches : InteractBase {
     public bool isChecker = false;
     public UnityEvent<int> Action;
 
+    [FMODUnity.EventRef]
+    public string interruptorSound = "event:/interruptor";
+    FMOD.Studio.EventInstance interruptorEvent;
+
+    private void Start()
+    {
+        interruptorEvent = FMODUnity.RuntimeManager.CreateInstance(interruptorSound);
+    }
     public override void Execute(bool isLeftAction = true) {
         if(isOn) ResetSwitch();
         else {
@@ -43,8 +51,11 @@ public class LightboxSwitches : InteractBase {
         {
             if(timer < 1f)
                 timer += Time.deltaTime * 5f;
-            
+
+            interruptorEvent.start();//sound
+
             transform.localEulerAngles = Vector3.up * Mathf.LerpAngle(0, 180f, timer);
+                        
             yield return null;
         }
         yield return new WaitForSeconds(0.25f);

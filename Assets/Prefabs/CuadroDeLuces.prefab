@@ -211,6 +211,7 @@ MonoBehaviour:
           m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
+  interruptorSound: event:/interruptor
 --- !u!1 &725962781865137890
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,8 +362,6 @@ MonoBehaviour:
   vecModifier: {x: 1, y: 0, z: 0}
   targetAngle: {x: 0, y: 90, z: 0}
   FinalCombination: 01000000030000000400000005000000
-  BulbRenderer: {fileID: 0}
-  BulbEndMaterial: {fileID: 2100000, guid: 26bf78088f82fd4468baf06ab6063a67, type: 2}
   OnResetLightbox:
     m_PersistentCalls:
       m_Calls:
@@ -537,6 +536,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interruptorSound: event:/interruptor
 --- !u!1 &2009103599670186040
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +667,7 @@ MonoBehaviour:
           m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
+  interruptorSound: event:/interruptor
 --- !u!1 &2021664061043353377
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +798,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interruptorSound: event:/interruptor
 --- !u!1 &2977690481711446234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,6 +1091,7 @@ MonoBehaviour:
           m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
+  interruptorSound: event:/interruptor
 --- !u!1 &4320478026282399518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1222,7 @@ MonoBehaviour:
           m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
+  interruptorSound: event:/interruptor
 --- !u!1 &5770688864165970710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,6 +1610,7 @@ MonoBehaviour:
           m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
+  interruptorSound: event:/interruptor
 --- !u!1 &7536573722588060351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,3 +1822,4 @@ MonoBehaviour:
           m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
+  interruptorSound: event:/interruptor

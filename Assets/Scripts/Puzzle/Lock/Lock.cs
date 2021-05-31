@@ -7,6 +7,17 @@ public class Lock : PuzzleBase {
 
     public string FinalCombination = "123";
 
+    [FMODUnity.EventRef]
+    public string candadoSound = "event:/candado";
+    FMOD.Studio.EventInstance lockEvent;
+
+
+    private void Start()
+    {
+        lockEvent = FMODUnity.RuntimeManager.CreateInstance(candadoSound);
+    }
+
+
     public override void Execute(bool isLeftAction = true)
     {
         base.Execute();
@@ -15,7 +26,13 @@ public class Lock : PuzzleBase {
 
     void Update()
     {
-        if(GetCurrentCombination().Equals(FinalCombination)) this.OnEnd(true);
+        if (GetCurrentCombination().Equals(FinalCombination))
+        { 
+            this.OnEnd(true);
+            lockEvent.start();
+        
+        }
+
     }
 
     private string GetCurrentCombination()

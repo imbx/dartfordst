@@ -22,6 +22,14 @@ public class CController : MonoBehaviour
     [Header("Stats")]
     [SerializeField] private float l_gravity = 9.8f;
 
+
+    private FMODUnity.StudioEventEmitter eventEmiterRef;
+
+    private void Awake()
+    {
+        eventEmiterRef = GetComponent<FMODUnity.StudioEventEmitter>();
+    }
+
     void OnEnable()
     {
         m_characterController = GetComponent<CharacterController>();

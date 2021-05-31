@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   hasRequirement: 0
+  hideIfReq: 0
   reqID: -1
   gameControllerObject: {fileID: 0}
   rotationSpeed: 2
@@ -532,7 +533,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   hasRequirement: 0
+  hideIfReq: 0
   reqID: -1
   gameControllerObject: {fileID: 0}
   MovDimensions: {x: 0, y: 0, z: 0.3}
   Speed: 2
+  abrirCajon: "event:/caj\xF3n/abrir caj\xF3n"
+  cerrarCajon: "event:/caj\xF3n/cerrar caj\xF3n"

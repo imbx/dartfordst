@@ -750,6 +750,7 @@ MonoBehaviour:
   - {fileID: 103309754}
   - {fileID: 323961113}
   FinalCombination: 1919
+  candadoSound: event:/candado
 --- !u!65 &141654525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3797,6 +3798,7 @@ MonoBehaviour:
   HasItemInside: 0
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Son: {fileID: 0}
+  itemSound: event:/
 --- !u!114 &687421467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4193,6 +4195,7 @@ MonoBehaviour:
   HasItemInside: 0
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Son: {fileID: 0}
+  itemSound: event:/
 --- !u!136 &721147937
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4764,6 +4767,7 @@ MonoBehaviour:
   HasItemInside: 0
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Son: {fileID: 0}
+  itemSound: event:/
 --- !u!114 &878029729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5226,6 +5230,7 @@ MonoBehaviour:
   - {fileID: 620600679}
   - {fileID: 1475098791}
   FinalCombination: 1905
+  candadoSound: event:/candado
 --- !u!65 &996514159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5300,6 +5305,7 @@ MonoBehaviour:
   - {fileID: 680028499}
   - {fileID: 343323491}
   FinalCombination: 1905
+  candadoSound: event:/candado
 --- !u!65 &1049299442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5845,6 +5851,7 @@ MonoBehaviour:
   HasItemInside: 1
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Son: {fileID: 721147934}
+  itemSound: event:/coger objeto
 --- !u!65 &1234379914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5989,6 +5996,7 @@ MonoBehaviour:
   HasItemInside: 0
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Son: {fileID: 0}
+  itemSound: event:/coger objeto
   Action:
     m_PersistentCalls:
       m_Calls:
@@ -6274,6 +6282,7 @@ MonoBehaviour:
   HasItemInside: 0
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Son: {fileID: 0}
+  itemSound: event:/
 --- !u!65 &1294893482
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7174,6 +7183,7 @@ MonoBehaviour:
   HasItemInside: 0
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Son: {fileID: 0}
+  itemSound: event:/llama/llama+ encendido
 --- !u!65 &1587257538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7634,6 +7644,7 @@ MonoBehaviour:
   HasItemInside: 0
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Son: {fileID: 0}
+  itemSound: event:/
 --- !u!114 &1851198059
 MonoBehaviour:
   m_ObjectHideFlags: 0
