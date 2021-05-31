@@ -11,10 +11,14 @@ public class Lock : PuzzleBase {
     public string candadoSound = "event:/candado";
     FMOD.Studio.EventInstance lockEvent;
 
+    Rigidbody cachedRigidBody;
+
 
     private void Start()
     {
+        cachedRigidBody = GetComponent<Rigidbody>();
         lockEvent = FMODUnity.RuntimeManager.CreateInstance(candadoSound);
+        lockEvent.start();
     }
 
 
@@ -26,11 +30,24 @@ public class Lock : PuzzleBase {
 
     void Update()
     {
+        lockEvent.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, cachedRigidBody));
+
         if (GetCurrentCombination().Equals(FinalCombination))
         { 
             this.OnEnd(true);
-            lockEvent.start();
-        
+            
+            if (lockEvent.isValid())
+            {
+                FMOD.Studio.PLAYBACK_STATE playbackState;
+                lockEvent.getPlaybackState(out playbackState);
+                if (playbackState == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+                {
+                    lockEvent.release();
+                    lockEvent.clearHandle();
+                    SendMessage("lockEventFinished");
+                }
+            }
+
         }
 
     }
