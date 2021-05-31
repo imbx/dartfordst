@@ -83,4 +83,11 @@ public class InteractBase : MonoBehaviour {
 
         BoxUtils.SetLayerRecursively(gameObject, 8);
     }
+
+    public virtual void DestroyInteraction()
+    {
+        if(GetComponent<BoxCollider>()) Destroy(GetComponent<BoxCollider>());
+
+        Destroy(this);
+    }
 }

@@ -18,12 +18,20 @@ public class Lock : PuzzleBase {
 
     void Update()
     {
-        if (GetCurrentCombination().Equals(FinalCombination))
+        if (isInteractingThis && GetCurrentCombination().Equals(FinalCombination))
         {
-            this.OnEnd(true);
+            OnEnd(true);
             GameController.current.music.playMusic(candadoSound);
         }
         
+    }
+    protected override void OnEnd(bool destroyGameObject = false)
+    {
+        foreach(LockWheel lw in keys)
+        {
+            lw.DestroyInteraction();
+        }
+        base.OnEnd(destroyGameObject);
     }
 
     private string GetCurrentCombination()

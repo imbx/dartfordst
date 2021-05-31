@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8910510840762010182}
   m_Layer: 8
   m_Name: Pin
-  m_TagString: Untagged
+  m_TagString: MapPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   lineStart: {fileID: 8910510840987802371}
-  meshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 3862963839600526720}
 --- !u!1 &8910510840987802370
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,10 +151,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: chincheta
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d6c7997d4fe93ca4782bfeb22d146023, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c7997d4fe93ca4782bfeb22d146023, type: 3}
 --- !u!4 &2726698649073385199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6c7997d4fe93ca4782bfeb22d146023, type: 3}
+  m_PrefabInstance: {fileID: 2476298669028219140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3862963839600526720 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: d6c7997d4fe93ca4782bfeb22d146023, type: 3}
   m_PrefabInstance: {fileID: 2476298669028219140}
   m_PrefabAsset: {fileID: 0}

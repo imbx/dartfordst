@@ -26,6 +26,7 @@ public class Map : InteractBase {
 
         if(pinSelect != PinSelect.None && isLeftAction)
         {
+            Debug.Log("[Map] Setting pin");
             SetPin();
         }
         
@@ -43,6 +44,7 @@ public class Map : InteractBase {
         Vector3 pos = ReturnHitPoint();
         if(pos != Vector3.zero)
         {
+            Debug.Log("[Map] Instantiating prefab");
             GameObject go = Instantiate(PinPrefab);
             MapPin mapPin = go.GetComponent<MapPin>();
             mapPin.SetPin(transform, pinSelect == PinSelect.Red ? Red : Blue);
@@ -83,11 +85,13 @@ public class Map : InteractBase {
     private Vector3 ReturnHitPoint()
     {
         Ray r = gameControllerObject.camera.ScreenPointToRay((Vector3)mapPuzzle.controller.Mouse);
-        
+        Debug.Log("[Map] Returning HitPoint");
         if(Physics.Raycast(
             r, out var hit, Mathf.Infinity,
             LayerMask.GetMask("Focus")))
         {
+
+            Debug.Log(hit.point);
             if(hit.transform.tag == "Map") return hit.point;
         }
 

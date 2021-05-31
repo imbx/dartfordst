@@ -51,7 +51,7 @@ public class PuzzleBase : InteractBase {
         Debug.Log("[PuzzleBase] Activating progress id : " + _id);
         GameController.current.database.EditProgression(_id);
         if(destroyGameObject) Destroy(gameObject);
-        Destroy(this);
+        DestroyInteraction();
     }
 
     void OnDrawGizmos(){

@@ -8,6 +8,7 @@ public class PinSelector : InteractBase {
 
     public override void Execute(bool isLeftAction = true)
     {
+        Debug.Log("[PinSelector] Pin set : " + pin);
         OnAction.Invoke(pin);
     }
     

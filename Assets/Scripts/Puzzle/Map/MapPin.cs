@@ -13,7 +13,7 @@ public class MapPin : InteractBase {
     {
         this.parent = tr.GetComponent<Map>();
         Material[] mats = meshRenderer.materials;
-        mats[0] = color;
+        mats[1] = color;
         meshRenderer.materials = mats;
         transform.SetParent(tr);
     }

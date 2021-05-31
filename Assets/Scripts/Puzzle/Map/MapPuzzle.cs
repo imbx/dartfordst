@@ -25,7 +25,7 @@ public class MapPuzzle : PuzzleBase
         if(isInteractingThis && controller.isEscapePressed)
         {
             Debug.Log("[PuzzleBase] Called Escape");
-            this.OnEnd();
+            this.OnExit();
         }
     }
 }
