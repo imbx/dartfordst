@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour{
     private int counter = 1;
     private List<InteractBase> AllInteractions;
 
+    public MusicControler music;
+
     private void Awake() {
         current = this;
         Debug.Log("Loading Database");

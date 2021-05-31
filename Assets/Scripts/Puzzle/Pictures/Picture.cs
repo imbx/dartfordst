@@ -29,7 +29,6 @@ public class Picture : InteractBase {
 
     public override void Execute(bool isLeftAction = true)
     {
-        Debug.Log("Executing "  + gameObject.name);
         if(!(controller.isInputHold || controller.isInput2Hold)){
             hasPressedLeft = isLeftAction;
             this.OnStart();
@@ -54,7 +53,6 @@ public class Picture : InteractBase {
                 isMoving = false;
                 hasPressedLeft = false;
                 gameControllerObject.ChangeState(BoxScripts.GameState.PLAYING);
-                Debug.Log("Not moving1 "  + gameObject.name);
 
                 RaycastHit hit;
                 Vector3 m_ROrigin = gameControllerObject.camera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
@@ -73,30 +71,12 @@ public class Picture : InteractBase {
         {
             if(gameControllerObject.state != BoxScripts.GameState.MOVINGPICTURE) gameControllerObject.ChangeState(BoxScripts.GameState.MOVINGPICTURE);
             isMoving = controller.isInputHold;
-            Debug.Log("Moving " + gameObject.name);
-            Debug.Log(isMoving + " " + gameObject.name);
-
             if(boxCollider.enabled) boxCollider.enabled = false;
-
-            /*Vector3 vec = Camera.main.ViewportToWorldPoint(
-                new Vector3(
-                    0.5f,
-                    0.5f,
-                    0.0f
-                ));
-            transform.localPosition =
-                new Vector3(
-                    startPosition.x + (vec.x - startMousePos.x),
-                    startPosition.y + (vec.y - startMousePos.y),
-                    startPosition.z + (vec.z - startMousePos.z)
-                );*/
-
-                transform.position = gameControllerObject.playerTargetPosition + (0.25f * transform.forward);
+            transform.position = gameControllerObject.playerTargetPosition + (0.25f * transform.forward);
             
             if(!isMoving)
             {
-                Debug.Log("Not moving "  + gameObject.name);
-                
+
             }
         }
     }

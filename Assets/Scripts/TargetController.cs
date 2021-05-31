@@ -26,7 +26,7 @@ public class TargetController : MonoBehaviour {
         if(gcObject.state == GameState.INTERACTING || gcObject.state == GameState.LOOKITEM) layerMask = LayerMask.GetMask("Focus");
         if(gcObject.state == GameState.MOVINGPICTURE) layerMask = 1;
         if(Physics.Raycast(m_ROrigin, direction, out hit, m_CVars.VisionRange, layerMask)){
-            Debug.Log("[TargetController] Hitpoint : " + hit.point);
+            // Debug.Log("[TargetController] Hitpoint : " + hit.point);
             gcObject.playerTargetPosition = hit.point;
             bool leftButton = m_PlayerMovement.isInputPressed;
             if(
