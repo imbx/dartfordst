@@ -16,7 +16,7 @@ public class Item : InteractBase {
 
     [FMODUnity.EventRef]
     public string itemSound = "event:/";
-    FMOD.Studio.EventInstance itemEvent;
+    protected FMOD.Studio.EventInstance itemEvent;
 
 
     void Start()

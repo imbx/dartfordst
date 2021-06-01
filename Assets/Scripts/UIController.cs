@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour {
     public GameObject Notebook;
-
+    public DiaryController notebookController;
     public GameObject BasicInteract;
     public GameObject PicturesInteract;
 
@@ -28,5 +28,11 @@ public class UIController : MonoBehaviour {
     {
         Debug.Log("(Un)Showing Pictures Interactions UI");
         PicturesInteract.SetActive(active);
+    }
+
+    public void ForceDiaryPage(int reqId)
+    {
+        notebookController.forcedReqId = reqId;
+        notebookController.wantToForcePage = true;
     }
 }

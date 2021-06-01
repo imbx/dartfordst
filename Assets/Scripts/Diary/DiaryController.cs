@@ -14,6 +14,9 @@ public class DiaryController : MonoBehaviour
 
     [SerializeField] private DiaryNodes diaryNodes;
 
+    public bool wantToForcePage = false;
+    public int forcedReqId = 0;
+
 
     
     private void Awake() {
@@ -53,7 +56,12 @@ public class DiaryController : MonoBehaviour
         diaryNodes.ResetLists();
         diaryNodes.SetDiaryNodes(DiaryPositions.Count);
         diaryNodes.SetNotesNodes(NotesPosition.Count);
-        SetNewPage(0);
+        if(wantToForcePage)
+        {
+            wantToForcePage = false;
+            ForcePage(forcedReqId);
+        }
+        else SetNewPage(0);
     }
 
     private void AddToDiary (int newId)
@@ -75,6 +83,29 @@ public class DiaryController : MonoBehaviour
             Pages[GetPageFromListPost(pageId)].SetActive(true);
             diaryNodes.SelectCircle(currentPage, pageId);
             currentPage = pageId;
+        }
+    }
+
+    public void ForcePage(int pageReq)
+    {
+        int pageCounter = 0;
+
+        foreach(int i in DiaryPositions)
+        {
+            if(Pages[i].ReqID == pageReq) {
+                SetNewPage(pageCounter);
+                return;
+            }
+            pageCounter++;
+        }
+
+        foreach(int i in NotesPosition)
+        {
+            if(Pages[i].ReqID == pageReq) {
+                SetNewPage(pageCounter);
+                return;
+            }
+            pageCounter++;
         }
     }
 
