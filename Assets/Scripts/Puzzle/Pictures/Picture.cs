@@ -57,6 +57,8 @@ public class Picture : InteractBase {
                 isMoving = false;
                 hasPressedLeft = false;
                 gameControllerObject.ChangeState(BoxScripts.GameState.PLAYING);
+                gameControllerObject.targetAllLayers = false;
+                gameControllerObject.isInPuzzle = false;
 
                 RaycastHit hit;
                 Vector3 m_ROrigin = gameControllerObject.camera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
@@ -73,7 +75,12 @@ public class Picture : InteractBase {
 
         if(isMoving)
         {
-            if(gameControllerObject.state != BoxScripts.GameState.MOVINGPICTURE) gameControllerObject.ChangeState(BoxScripts.GameState.MOVINGPICTURE);
+            if(gameControllerObject.state != BoxScripts.GameState.MOVINGPICTURE) {
+                gameControllerObject.ChangeState(BoxScripts.GameState.MOVINGPICTURE);
+                gameControllerObject.targetAllLayers = true;
+                gameControllerObject.isInPuzzle = true;
+            }
+            
             isMoving = controller.isInputHold;
             if(boxCollider.enabled) boxCollider.enabled = false;
             transform.position = gameControllerObject.playerTargetPosition + (0.25f * transform.forward);

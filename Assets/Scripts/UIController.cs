@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UIController : MonoBehaviour {
@@ -5,6 +6,10 @@ public class UIController : MonoBehaviour {
     public DiaryController notebookController;
     public GameObject BasicInteract;
     public GameObject PicturesInteract;
+
+    public List<GameObject> TargetUIObjects;
+
+    public GameObject RadioText;
 
     public void SetNotebookActive(bool active = true) {
         Notebook.SetActive(active);
@@ -28,6 +33,22 @@ public class UIController : MonoBehaviour {
     {
         Debug.Log("(Un)Showing Pictures Interactions UI");
         PicturesInteract.SetActive(active);
+    }
+
+
+    public void TargetUI(string targetTag)
+    {
+
+        if(targetTag == "RadioOn")
+        {
+            RadioText.SetActive(true);
+        } else RadioText.SetActive(false);
+        
+        foreach(GameObject gObject in TargetUIObjects)
+        {
+            if(gObject.activeInHierarchy && gObject.name != targetTag) gObject.SetActive(false);
+            else if(gObject.name == targetTag) gObject.SetActive(true);
+        }
     }
 
     public void ForceDiaryPage(int reqId)

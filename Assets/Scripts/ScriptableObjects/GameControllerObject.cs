@@ -10,6 +10,9 @@ public class GameControllerObject : ScriptableObject {
     public string playerTargetTag = "";
     public Vector3 playerTargetPosition = Vector3.zero;
 
+    public bool targetAllLayers = false;
+    public bool isInPuzzle = false;
+
     public void ChangeState(GameState gs)
     {
         justChangedState = true;

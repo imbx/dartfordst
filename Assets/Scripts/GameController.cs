@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour{
 
     private void Update() {
         keyPressCooldown -= Time.deltaTime;
+        UpdateTargetUI();
         switch(gameCObject.state)
         {
             case GameState.TITLESCREEN:
@@ -91,7 +92,7 @@ public class GameController : MonoBehaviour{
             case GameState.TARGETING:
                 if(gameCObject.justChangedState)
                 {
-                    ui.SetBasicInteract(true);
+                    //ui.SetBasicInteract(true);
                     Debug.Log("Should enable UI");
                     gameCObject.justChangedState = false;
                 }
@@ -106,7 +107,7 @@ public class GameController : MonoBehaviour{
                 if(gameCObject.justChangedState)
                 {
                     Debug.Log("Should enable pic UI");
-                    ui.SetPicturesInteract(true);
+                    //ui.SetPicturesInteract(true);
                     gameCObject.justChangedState = false;
                 }
 
@@ -178,6 +179,12 @@ public class GameController : MonoBehaviour{
         return true;
     }
 
+
+    public void UpdateTargetUI()
+    {
+        ui.TargetUI(gameCObject.playerTargetTag);
+    }
+
     public void SubscribeInteraction(InteractBase ib)
     {
         AllInteractions.Add(ib);
@@ -202,11 +209,11 @@ public class GameController : MonoBehaviour{
     }
 
     public void DisableUI() {
-        ui.gameObject.SetActive(false);
+        //ui.gameObject.SetActive(false);
     }
 
     public void EnableUI() {
-        ui.gameObject.SetActive(true);
+        //ui.gameObject.SetActive(true);
     }
 
     private bool ApplyPostEffect()

@@ -24,8 +24,11 @@ public class TargetController : MonoBehaviour {
         if(_isPressedCd > 0) _isPressedCd -= Time.deltaTime;
         LayerMask layerMask = LayerMask.GetMask("Focus") | LayerMask.GetMask("Interactuable");
         if(gcObject.state == GameState.INTERACTING || gcObject.state == GameState.LOOKITEM) layerMask = LayerMask.GetMask("Focus");
-        if(gcObject.state == GameState.MOVINGPICTURE) layerMask = 1;
+        if(gcObject.targetAllLayers) layerMask = 1;
         if(Physics.Raycast(m_ROrigin, direction, out hit, m_CVars.VisionRange, layerMask)){
+
+            gcObject.playerTargetTag = hit.collider.tag;
+
             // Debug.Log("[TargetController] Hitpoint : " + hit.point);
             gcObject.playerTargetPosition = hit.point;
             bool leftButton = m_PlayerMovement.isInputPressed;
@@ -70,6 +73,7 @@ public class TargetController : MonoBehaviour {
         }
         else
         {
+            if(!gcObject.isInPuzzle) gcObject.playerTargetTag = "";
             if(gcObject.state == BoxScripts.GameState.TARGETING) gcObject.ChangeState(BoxScripts.GameState.PLAYING);
         }
     }

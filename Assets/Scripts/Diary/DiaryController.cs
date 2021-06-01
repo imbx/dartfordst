@@ -14,8 +14,8 @@ public class DiaryController : MonoBehaviour
 
     [SerializeField] private DiaryNodes diaryNodes;
 
-    public bool wantToForcePage = false;
-    public int forcedReqId = 0;
+    [HideInInspector] public bool wantToForcePage = false;
+    [HideInInspector] public int forcedReqId = 0;
 
 
     

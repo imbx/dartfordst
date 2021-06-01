@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using BoxScripts;
+using UnityEngine.UI;
 
 public class Radio : InteractBase {
     [Header("Radio Parameters")]
@@ -26,6 +27,8 @@ public class Radio : InteractBase {
 
     private bool hasPressedRight = false;
 
+    public Text uiText;
+
     void OnEnable()
     {
         if(GameController.current.database.ProgressionExists(Identifier)){
@@ -44,6 +47,8 @@ public class Radio : InteractBase {
         if(isLeftAction)
         {
             isRadioOn = !isRadioOn;
+
+            tag = (isRadioOn) ? "RadioOn": "RadioOff";
 
             if(isRadioOn)
             {
@@ -95,18 +100,20 @@ public class Radio : InteractBase {
 
         if(isRadioOn && hasPressedRight && controller.isInput2Hold)
         {
+            gameControllerObject.isInPuzzle = true;
             player.CanMove = false;
             player.CanLook = false;
 
             int mouseDir = BoxScripts.BoxUtils.ConvertTo01((int)controller.CameraAxis.x);
             currentFreq = Mathf.Lerp(FrequencyInterval.x, FrequencyInterval.y, FrequencyLerp);
             FrequencyLerp += mouseDir * 0.25f * Time.deltaTime;
-
+            uiText.text = (Mathf.Round(currentFreq * 10f) /10f).ToString();
             Debug.Log("[Radio] Current freq : " + (Mathf.Round(currentFreq * 10f) /10f));
         }
 
         if(hasPressedRight && !controller.isInput2Pressed)
         {
+            gameControllerObject.isInPuzzle = false;
             hasPressedRight = false;
             player.CanLook = true;
             player.CanMove = true;

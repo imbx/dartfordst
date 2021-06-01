@@ -32,6 +32,7 @@ public class PuzzleBase : InteractBase {
         base.Execute(isLeftAction);
         this.OnStart();
         isInteractingThis = true;
+        gameControllerObject.isInPuzzle = true;
     }
 
 
@@ -39,6 +40,7 @@ public class PuzzleBase : InteractBase {
         base.OnExit();
         //GetComponent<CameraReposition>().InvertDirection();
         isInteractingThis = false;
+        gameControllerObject.isInPuzzle = false;
         GameController.current.RevertCamera();
         boxCollider.enabled = true;
     }
@@ -47,6 +49,7 @@ public class PuzzleBase : InteractBase {
         base.OnEnd();
         // GetComponent<CameraReposition>().InvertDirection();
         isInteractingThis = false;
+        gameControllerObject.isInPuzzle = false;
         GameController.current.RevertCamera();
         Debug.Log("[PuzzleBase] Activating progress id : " + _id);
         GameController.current.database.EditProgression(_id);
