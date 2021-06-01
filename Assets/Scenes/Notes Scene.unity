@@ -884,6 +884,8 @@ MonoBehaviour:
   gameControllerObject: {fileID: 0}
   rotationSpeed: 2
   targetAngle: 90
+  abrirPuerta: event:/puerta/abrirPuerta2d
+  cerrarPuerta: event:/puerta/cerrarPuerta2d
 --- !u!65 &35959040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1991,6 +1993,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &115547056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2355,6 +2358,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &134283934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2502,6 +2506,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &140662640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2825,6 +2830,8 @@ MonoBehaviour:
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   rotationSpeed: 2
   targetAngle: 90
+  abrirPuerta: event:/puerta/abrirPuerta2d
+  cerrarPuerta: event:/puerta/cerrarPuerta2d
 --- !u!65 &149553735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5410,6 +5417,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &306460669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5534,6 +5542,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &331565738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7972,6 +7981,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &433793003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12244,6 +12254,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &635385308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14060,6 +14071,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &722543243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17919,6 +17931,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  itemSound: event:/cogerObject2d
 --- !u!4 &913064236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d2b37498d255c24b9037552f4d81618, type: 3}
@@ -18218,6 +18231,8 @@ MonoBehaviour:
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   rotationSpeed: 2
   targetAngle: 90
+  abrirPuerta: event:/puerta/abrirPuerta2d
+  cerrarPuerta: event:/puerta/cerrarPuerta2d
 --- !u!65 &921501203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18937,6 +18952,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &966588829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19145,6 +19161,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  itemSound: event:/cogerObject2d
 --- !u!65 &981019613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19607,6 +19624,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &1004865350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22170,7 +22188,7 @@ MonoBehaviour:
   HasItemInside: 0
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Son: {fileID: 0}
-  itemSound: event:/
+  itemSound: event:/cogerObject2d
 --- !u!114 &1139460631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23401,6 +23419,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &1227025874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27661,6 +27680,8 @@ MonoBehaviour:
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   rotationSpeed: 2
   targetAngle: 90
+  abrirPuerta: event:/puerta/abrirPuerta2d
+  cerrarPuerta: event:/puerta/cerrarPuerta2d
 --- !u!65 &1462381338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28471,6 +28492,8 @@ MonoBehaviour:
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   rotationSpeed: 2
   targetAngle: -90
+  abrirPuerta: event:/puerta/abrirPuerta2d
+  cerrarPuerta: event:/puerta/cerrarPuerta2d
 --- !u!65 &1498119199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29441,6 +29464,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  itemSound: event:/cogerObject2d
 --- !u!65 &1554277363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33019,6 +33043,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  itemSound: event:/cogerObject2d
 --- !u!65 &1710012772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34386,6 +34411,8 @@ MonoBehaviour:
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   rotationSpeed: 2
   targetAngle: -90
+  abrirPuerta: event:/puerta/abrirPuerta2d
+  cerrarPuerta: event:/puerta/cerrarPuerta2d
 --- !u!65 &1841752549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38596,6 +38623,7 @@ MonoBehaviour:
   controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   Interval: {x: 0, y: 10}
   Number: 0
+  eventoSound: event:/weels2d
 --- !u!65 &2112872309
 BoxCollider:
   m_ObjectHideFlags: 0

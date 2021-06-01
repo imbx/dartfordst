@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour{
     private void Awake() {
         current = this;
         Debug.Log("Loading Database");
-        database = new Database();
+        database = new Database(Player);
         Debug.Log("-- DB LOADED --");
         gameCObject.camera = Camera.main;
         AllInteractions = new List<InteractBase>();

@@ -7,7 +7,7 @@ public class ItemNote : Item
 {
     public override void Execute(bool isLeftAction = true) {
         if(hasRequirement && !GameController.current.database.GetProgressionState(reqID)) return;
-        itemEvent.start();
+        // GameController.current.music.playMusic(itemSound);
         this.OnEnd();
         return;
     }

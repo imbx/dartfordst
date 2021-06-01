@@ -1,20 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using BoxScripts;
 using UnityEngine;
 
 public class Database {
     private Dictionary<int, string>  Dialogues;
-    private Dictionary<int, NotebookPage>  Diary;
-    private Dictionary<int, NotebookPage>  Notes;
     private Dictionary<int, bool> PlayerProgression;
+    public EntityData playerData;
 
-    public Database() {
+    public Database(EntityData entityData) {
         Dialogues = new Dictionary<int, string>();
         PlayerProgression = new Dictionary<int, bool>();
-        Diary = new Dictionary<int, NotebookPage>();
-        Notes = new Dictionary<int, NotebookPage>();
+        playerData = entityData;
+        // Try to load
+        LoadGame();
         LoadData();
     }
 
@@ -25,12 +27,6 @@ public class Database {
         PlayerProgression.Add(0, true);
         PlayerProgression.Add(1, true);
 
-
-        Diary.Add(78325, new NotebookPage("test page 1"));
-        Diary.Add(324234, new NotebookPage("test page 2"));
-        Diary.Add(2342342, new NotebookPage("test page 3"));
-        Diary.Add(232341, new NotebookPage("test page 4"));
-        Diary.Add(646533, new NotebookPage("test page 5"));
         
         //Notes.Add(5223, new NotebookPage("La llave esta en el jarron"));
         
@@ -45,35 +41,47 @@ public class Database {
         PlayerProgression.Add(1234, true);
         PlayerProgression.Add(6434, true);
         PlayerProgression.Add(3234, true);
-
-
-        //PlayerProgression.Add(1242, true);
-        //PlayerProgression.Add(1243, true);
-        //PlayerProgression.Add(126, true);
-        //PlayerProgression.Add(12432, true);
-
-        AddNotePage(5223, "La llave esta en el jarron");
-
-        Notes.Add(12432, new NotebookPage("Paris"));
-        Notes.Add(1242,  new NotebookPage("... 1 \n -.. 2 \n --. 3 \n --- 4 \n .-- 5 \n ..- 6 \n .-. 7"));
-        Notes.Add(126, new NotebookPage("La llave esta en la estanteria de la cocina"));
-        Notes.Add(1243,  new NotebookPage("...-..--."));
-
-
-
-
-
-
         return true;
     }
 
-
-    public void AddNotePage (int identifier, string page)
+    
+    private Save CreateSaveGameObject()
     {
-        AddProgressionID(identifier, true);
-        Notes.Add(identifier, new NotebookPage(page));
+        Save save = new Save();
+        save.PlayerProgression = PlayerProgression;
+        save.playerPosition = playerData.PlayerPosition;
+        save.cameraRotation = playerData.CameraRotations;
+        return save;
+    }
 
-        Debug.Log("[Database] Note " + identifier + " added : " + page);
+    public void SaveGame()
+    {
+        Save save = CreateSaveGameObject();
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+        bf.Serialize(file, save);
+        file.Close();
+        Debug.Log("[Database] Game saved");
+    }
+
+
+    public void LoadGame()
+    {
+        if(File.Exists(Application.persistentDataPath + "/gamesave.save"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
+            Save save = (Save)bf.Deserialize(file);
+            file.Close();
+            playerData.isLoadingData = true;
+
+            PlayerProgression = save.PlayerProgression;
+            playerData.PlayerPosition = save.playerPosition;
+            playerData.CameraRotations = save.cameraRotation;
+
+            Debug.Log("[Database] Game loaded");
+
+        } else playerData.isLoadingData = false;
     }
 
     public void ParseDialogueData(string fileName)
@@ -118,14 +126,11 @@ public class Database {
     {
         return Dialogues.ContainsKey(dialogueID) ? Dialogues[dialogueID] : null;
     }
-
-    public string GetDiaryPage (int diaryID)
-    {
-         return GetProgressionState(diaryID) ? Diary[diaryID].text : null;
-    }
-
-    public string GetNotesPage (int noteID)
-    {
-         return GetProgressionState(noteID) ? Notes[noteID].text : null;
-    }
+}
+[System.Serializable]
+public class Save
+{
+    public Dictionary<int, bool> PlayerProgression;
+    public Vector3 playerPosition;
+    public Vector3 cameraRotation;
 }

@@ -10,6 +10,9 @@ public class EntityData : ScriptableObject, ISerializationCallbackReceiver {
     public bool CanLook = true;
 
     public bool IsBlockedByEvent = false;
+
+    public Vector3 PlayerPosition = Vector3.zero;
+    public bool isLoadingData = false;
     public void OnAfterDeserialize() { }
     public void OnBeforeSerialize() { }
 

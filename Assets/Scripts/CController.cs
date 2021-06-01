@@ -33,6 +33,12 @@ public class CController : MonoBehaviour
     void OnEnable()
     {
         m_characterController = GetComponent<CharacterController>();
+        if(m_CVars.isLoadingData) 
+        {
+            transform.position = m_CVars.PlayerPosition;
+            transform.rotation = Quaternion.Euler(0, m_Yaw, 0);
+            m_PitchController.localRotation = Quaternion.Euler(m_Pitch, 0, 0);
+        }
     }
 
     void Update()
@@ -41,6 +47,7 @@ public class CController : MonoBehaviour
 
         if(m_CVars.CanLook) CameraMovement();
         if(m_CVars.CanMove) Movement();
+        
     }
     #region UpdateFunctions
     private void CameraMovement()
@@ -71,6 +78,7 @@ public class CController : MonoBehaviour
         l_Movement = l_Movement * m_CVars.Speed * Time.deltaTime;
 
         m_characterController.Move(l_Movement);
+        m_CVars.PlayerPosition = transform.position;
     }
     #endregion
 
