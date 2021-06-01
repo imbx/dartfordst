@@ -11,11 +11,14 @@ public class LockWheel : InteractBase {
 
     public int Number = 0;
 
+    [FMODUnity.EventRef]
+    public string eventoSound = "event:/weels2d";
+
     public override void Execute(bool isLeftAction = true)
     {
         base.Execute(isLeftAction);
         isInteractingThis = true;
-
+        GameController.current.music.playMusic(eventoSound);
 
     }
     private void Update() {
