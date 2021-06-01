@@ -11,12 +11,11 @@ public class Door : InteractBase {
 
     private float timer = 0f;
 
-    private FMODUnity.StudioEventEmitter eventEmiterRef;
+    [FMODUnity.EventRef]
+    public string abrirPuerta = "event:/puerta/abrirPuerta2d";
 
-    private void Awake()
-    {
-        eventEmiterRef = GetComponent<FMODUnity.StudioEventEmitter>();
-    }
+    [FMODUnity.EventRef]
+    public string cerrarPuerta = "event:/puerta/cerrarPuerta2d";
 
     void OnEnable() { 
         BaseRotation = transform.localEulerAngles;
@@ -31,10 +30,12 @@ public class Door : InteractBase {
             if(!GameController.current.database.GetProgressionState(reqID))
                 return;
         }
+        if (isDoorOpen) GameController.current.music.playMusic(cerrarPuerta);
+        if (!isDoorOpen) GameController.current.music.playMusic(abrirPuerta);
         ToggleDoor();
     }
 
-    private void ToggleDoor()
+    void ToggleDoor()
     {
         timer = 0;
         eulerYAngle = transform.localEulerAngles.y;

@@ -18,13 +18,8 @@ public class Lantern : MonoBehaviour {
     [SerializeField] private Color UVLanternColor;
 
     [FMODUnity.EventRef]
-    public string lanternSound = "event:/candado";
-    FMOD.Studio.EventInstance lanternEvent;
-
-    private void Start()
-    {
-        lanternEvent = FMODUnity.RuntimeManager.CreateInstance(lanternSound);
-    }
+    public string eventoSound = "event:/candado";
+    
 
     void OnEnable()
     {
@@ -41,7 +36,8 @@ public class Lantern : MonoBehaviour {
     void Update() 
     {
         UpdateChecks();
-        if(reqIdBool)
+        
+        if (reqIdBool)
         {
             if(lanternInputCd > 0f) lanternInputCd -= Time.deltaTime;
 
@@ -74,6 +70,7 @@ public class Lantern : MonoBehaviour {
         }
         isLanternActive = true;
         lanternInputCd = 1f;
+        GameController.current.music.playMusic(eventoSound);
     }
 
     private void TurnOff() 
@@ -84,5 +81,6 @@ public class Lantern : MonoBehaviour {
         Camera.main.cullingMask = NotUVLayer;
         lanternLight.cullingMask =  -1;
         lanternInputCd = 1f;
+        GameController.current.music.StopMusic(eventoSound);
     }
 }

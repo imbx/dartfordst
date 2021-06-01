@@ -20,6 +20,9 @@ public class Picture : InteractBase {
 
     public UnityEvent<Picture> OnAction;
 
+    [FMODUnity.EventRef]
+    public string itemSound = "event:/cogerObject2d";
+
     protected override void OnStart()
     {
         boxCollider = GetComponent<BoxCollider>();
@@ -32,8 +35,9 @@ public class Picture : InteractBase {
         if(!(controller.isInputHold || controller.isInput2Hold)){
             hasPressedLeft = isLeftAction;
             this.OnStart();
-        
-            if(!isLeftAction)
+            GameController.current.music.playMusic(itemSound);
+
+            if (!isLeftAction)
             {
                 transform.Rotate(Vector3.forward * forcedRotation);
             }

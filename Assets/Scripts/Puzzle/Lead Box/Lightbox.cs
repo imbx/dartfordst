@@ -9,13 +9,12 @@ public class Lightbox : PuzzleBase {
     public UnityEvent OnDestroyLightbox;
     private List<int> CombinationList;
 
-    [FMODUnity.EventRef]
-    public string interruptorSound = "event:/interruptor";
-    FMOD.Studio.EventInstance interruptorEvent;
+    //[FMODUnity.EventRef]
+    //public string eventoSound = "event:/interruptor2d";
+    
 
     private void Start() {
         CombinationList = new List<int>();
-        interruptorEvent = FMODUnity.RuntimeManager.CreateInstance(interruptorSound);
     }
 
     protected override void OnEnd(bool destroyGameObject = false)
@@ -45,7 +44,7 @@ public class Lightbox : PuzzleBase {
 
     public void CheckCombination(int newLever = 0)
     {
-        interruptorEvent.start();
+        //GameController.current.music.playMusic(eventoSound);
         if (CompareLists())
             this.OnEnd();
         else ResetLightbox();

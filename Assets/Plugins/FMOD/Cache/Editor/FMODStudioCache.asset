@@ -23,6 +23,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 32507
+--- !u!114 &-8518016407483923639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llibreta/abrirLibreta2d
+  m_EditorClassIdentifier: 
+  Path: event:/llibreta/abrirLibreta2d
+  guid: d7a162616dedea488d8d1945b6653d23
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1799
+--- !u!114 &-8412944574940911286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/palanca2d
+  m_EditorClassIdentifier: 
+  Path: event:/palanca2d
+  guid: 88b7d6f7a7c20f4d82e3ea3a09fb980c
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 476
 --- !u!114 &-8369244989922519699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +228,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1799
+--- !u!114 &-7411278887664560910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interruptor2d
+  m_EditorClassIdentifier: 
+  Path: event:/interruptor2d
+  guid: 188ba1c350badb4897c86d4ee2a8f15f
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &-7350186776750478570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +343,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 783
+--- !u!114 &-6452988521202497037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/candado2d
+  m_EditorClassIdentifier: 
+  Path: event:/candado2d
+  guid: 96c4afd8b9f3734982a35878e2527cf0
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 120
 --- !u!114 &-6378212379270252650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +412,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6531
+--- !u!114 &-6279110664624371614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llibreta/escribir2.02d
+  m_EditorClassIdentifier: 
+  Path: event:/llibreta/escribir2.02d
+  guid: 650a0790ec307e4ca6a3042e80293c66
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3285
+--- !u!114 &-6136612573306866707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llama/lamaEncendido2d
+  m_EditorClassIdentifier: 
+  Path: event:/llama/lamaEncendido2d
+  guid: 404fb17ee572ea4ca9e8cd5b8dd2a609
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6103
 --- !u!114 &-6069148752931825860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +504,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 783
+--- !u!114 &-5742098975047211134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/pasos/pasosMoquetas2d
+  m_EditorClassIdentifier: 
+  Path: event:/pasos/pasosMoquetas2d
+  guid: 89373ab84f214a4aa029eb8d7306578b
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 10495
+--- !u!114 &-5630240645253775198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/puerta/CerrarPuerta2d
+  m_EditorClassIdentifier: 
+  Path: event:/puerta/CerrarPuerta2d
+  guid: 64a9afa66bc6444fb6b72b6380034756
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1047
 --- !u!114 &-5090434531738458528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +573,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 310
+--- !u!114 &-5047906207115230776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/morse/puntoMorse2d
+  m_EditorClassIdentifier: 
+  Path: event:/morse/puntoMorse2d
+  guid: 4ac6162f0d6c024ba6d8208da1f1d8c2
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 275
 --- !u!114 &-5010413685105137525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +642,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6103
+--- !u!114 &-4671149971907004270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llama/encencerLlama2d
+  m_EditorClassIdentifier: 
+  Path: event:/llama/encencerLlama2d
+  guid: 8f06f3cf63d93c4ea8e9db5ccc3abc56
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 317
 --- !u!114 &-4659710628014466373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,6 +780,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3604
+--- !u!114 &-2872655141449048212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/pasos/pasosEscaleras2d
+  m_EditorClassIdentifier: 
+  Path: event:/pasos/pasosEscaleras2d
+  guid: df2781101e131a4e94df69154bc17bcb
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 17000
 --- !u!114 &-2816790027083228695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +824,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2012
   Exists: 1
+--- !u!114 &-2799501041289730768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/l\xE0mpara/encenderLampara2d"
+  m_EditorClassIdentifier: 
+  Path: "event:/l\xE0mpara/encenderLampara2d"
+  guid: 9c0904c1b204274d927620040399fc86
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3531
 --- !u!114 &-2783625949171324840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,6 +870,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 17000
+--- !u!114 &-2704207862244376583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/caj\xF3n/cerrarCajon2d"
+  m_EditorClassIdentifier: 
+  Path: "event:/caj\xF3n/cerrarCajon2d"
+  guid: b1346deae1bc2441b48823d0cc880728
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 860
 --- !u!114 &-2642941437406729165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,6 +939,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 317
+--- !u!114 &-2199581317438753063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/puerta/abrirPuerta2d
+  m_EditorClassIdentifier: 
+  Path: event:/puerta/abrirPuerta2d
+  guid: 6dd23c49d0f39a4cabcaa6d4049a0b42
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 880
 --- !u!114 &-2143426822073127381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +1054,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 133978
+--- !u!114 &-1349050189284121930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llama/llama2d
+  m_EditorClassIdentifier: 
+  Path: event:/llama/llama2d
+  guid: 014ce18dd3ef8747b576364510922ddf
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2008
 --- !u!114 &-1240331930046690628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,6 +1142,75 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-849716860915182243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/morse/rayaMorse2d
+  m_EditorClassIdentifier: 
+  Path: event:/morse/rayaMorse2d
+  guid: 2e1c8250481f95419122d0e8ce7f69e6
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 310
+--- !u!114 &-805406137906454430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/cogerObject2d
+  m_EditorClassIdentifier: 
+  Path: event:/cogerObject2d
+  guid: bcbe188043690c468c3889798ddbc842
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 783
+--- !u!114 &-631583972722755717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llibreta/cerrarLibreta2d
+  m_EditorClassIdentifier: 
+  Path: event:/llibreta/cerrarLibreta2d
+  guid: 628ab0d1a6f2a9499755e1f5d2d9b7d5
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1433
 --- !u!114 &-236455966045789165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,36 +1252,44 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 2598006641191115301}
   - {fileID: -2094165998378050389}
-  - {fileID: -1136913483292744657}
   - {fileID: -6047186436244795604}
-  - {fileID: -4474447892812096477}
   - {fileID: -7350186776750478570}
-  - {fileID: 3915815270989519723}
-  - {fileID: -7535882489704437879}
-  - {fileID: 1751236072283752217}
-  - {fileID: -4913290307633660331}
-  - {fileID: 107147644763471155}
-  - {fileID: 793606888151650981}
   - {fileID: 6805754589311152757}
   - {fileID: -2143426822073127381}
-  - {fileID: -8347022525283829268}
-  - {fileID: -6917627438397172401}
   - {fileID: -3559213096808642698}
-  - {fileID: -4008703150164251845}
-  - {fileID: -6304361118193265406}
-  - {fileID: 1650286666131776706}
-  - {fileID: 8576884583662469376}
-  - {fileID: -1882973842715828829}
   - {fileID: 2969161594648145017}
-  - {fileID: -2463668780792231780}
-  - {fileID: -236455966045789165}
-  - {fileID: 212914845484716553}
+  - {fileID: -6452988521202497037}
+  - {fileID: -1349050189284121930}
+  - {fileID: -7411278887664560910}
+  - {fileID: -849716860915182243}
+  - {fileID: 6683567481800340357}
+  - {fileID: -6136612573306866707}
+  - {fileID: -5047906207115230776}
+  - {fileID: 989268339981786670}
+  - {fileID: -631583972722755717}
+  - {fileID: -5630240645253775198}
+  - {fileID: -6279110664624371614}
+  - {fileID: -2199581317438753063}
+  - {fileID: -8412944574940911286}
+  - {fileID: -5742098975047211134}
+  - {fileID: 3502566512650594637}
+  - {fileID: -4671149971907004270}
+  - {fileID: -2799501041289730768}
+  - {fileID: 751893983107994391}
+  - {fileID: -2704207862244376583}
+  - {fileID: -805406137906454430}
+  - {fileID: 1788554699984577853}
+  - {fileID: 179060468739407474}
+  - {fileID: -8518016407483923639}
+  - {fileID: -2872655141449048212}
+  - {fileID: 5010074363509493604}
+  - {fileID: 4513673658233200646}
   EditorParameters: []
   MasterBanks:
   - {fileID: 89327925031201630}
   StringsBanks:
   - {fileID: 4311495132367669648}
-  stringsBankWriteTime: 637580837352140112
+  stringsBankWriteTime: 637581088234315019
   cacheVersion: 6
 --- !u!114 &89327925031201630
 MonoBehaviour:
@@ -884,7 +1306,7 @@ MonoBehaviour:
   Path: Assets/Sounds/Fmod projects and sounds/GMA_Matins_Primerversio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637580837351801075
+  lastModified: 637581088234285095
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -911,6 +1333,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2008
+--- !u!114 &179060468739407474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/estanteria2d
+  m_EditorClassIdentifier: 
+  Path: event:/estanteria2d
+  guid: cf7f4d90e5c8f6439b5f1b23ac3bbfaf
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7081
 --- !u!114 &212914845484716553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,6 +1379,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7787
+--- !u!114 &751893983107994391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sonidosRadio2d
+  m_EditorClassIdentifier: 
+  Path: event:/sonidosRadio2d
+  guid: aac2c91ba0ab07439da2e6d4e82659f5
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 32507
 --- !u!114 &793606888151650981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,6 +1425,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3285
+--- !u!114 &989268339981786670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/chispas2d
+  m_EditorClassIdentifier: 
+  Path: event:/chispas2d
+  guid: 5a6a8caa7e988f45a2f9b44668d51a51
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3604
 --- !u!114 &1216297343444995564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,6 +1517,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10495
+--- !u!114 &1788554699984577853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interruptor
+  m_EditorClassIdentifier: 
+  Path: event:/interruptor
+  guid: cb5564e9561f2e46b27627ce90e9ef30
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &2598006641191115301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,7 +1585,30 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 15581
+  Length: 7081
+--- !u!114 &3502566512650594637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/papel2d
+  m_EditorClassIdentifier: 
+  Path: event:/papel2d
+  guid: 8a2c4d5c65fcba4fa08e387a3833b2ff
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 700
 --- !u!114 &3807988244929336078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,12 +1666,58 @@ MonoBehaviour:
   Path: Assets/Sounds/Fmod projects and sounds/GMA_Matins_Primerversio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637580837352140112
+  lastModified: 637581088234315019
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2012
+    Value: 2402
   Exists: 1
+--- !u!114 &4513673658233200646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/weels2d
+  m_EditorClassIdentifier: 
+  Path: event:/weels2d
+  guid: 16257e27bf57124eab4bc70679336a6d
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 100
+--- !u!114 &5010074363509493604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/llibreta/escribirLibreta2d
+  m_EditorClassIdentifier: 
+  Path: event:/llibreta/escribirLibreta2d
+  guid: df8e6c61930d5e4bb009aeb56755069a
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3285
 --- !u!114 &5948893413061534831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,6 +1810,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1433
+--- !u!114 &6683567481800340357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/caj\xF3n/abrirCajon2d"
+  m_EditorClassIdentifier: 
+  Path: "event:/caj\xF3n/abrirCajon2d"
+  guid: 3ac529793fa1dd408540778a6c4325f9
+  Banks:
+  - {fileID: 89327925031201630}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 800
 --- !u!114 &6805754589311152757
 MonoBehaviour:
   m_ObjectHideFlags: 0

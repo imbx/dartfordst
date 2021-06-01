@@ -147,6 +147,8 @@ MonoBehaviour:
   gameControllerObject: {fileID: 0}
   rotationSpeed: 2
   targetAngle: 90
+  abrirCajon: event:/puerta/abrirPuerta2d
+  cerrarCajon: event:/puerta/CerrarPuerta2d
 --- !u!1 &5165016969556024582
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,5 +540,5 @@ MonoBehaviour:
   gameControllerObject: {fileID: 0}
   MovDimensions: {x: 0, y: 0, z: 0.3}
   Speed: 2
-  abrirCajon: "event:/caj\xF3n/abrir caj\xF3n"
-  cerrarCajon: "event:/caj\xF3n/cerrar caj\xF3n"
+  abrirCajon: "event:/caj\xF3n/abrirCajon2d"
+  cerrarCajon: "event:/caj\xF3n/cerrarCajon2d"

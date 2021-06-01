@@ -21,6 +21,10 @@ public class Note : InteractBase {
 
     private float distance = 0f;
 
+    [FMODUnity.EventRef]
+    public string itemSound = "event:/cogerObject2d";
+
+
     protected override void OnStart()
     {
         boxCollider = GetComponent<BoxCollider>();
@@ -33,6 +37,7 @@ public class Note : InteractBase {
         if(!controller.isInputHold){
             hasPressedLeft = isLeftAction;
             this.OnStart();
+            GameController.current.music.playMusic(itemSound);
         }
     }
 

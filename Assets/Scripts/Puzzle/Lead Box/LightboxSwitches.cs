@@ -10,13 +10,11 @@ public class LightboxSwitches : InteractBase {
     public UnityEvent<int> Action;
 
     [FMODUnity.EventRef]
-    public string interruptorSound = "event:/interruptor";
-    FMOD.Studio.EventInstance interruptorEvent;
+    public string interruptorSound = "event:/interruptor2d";
+    [FMODUnity.EventRef]
+    public string palancaSound = "event:/palanca2d";
 
-    private void Start()
-    {
-        interruptorEvent = FMODUnity.RuntimeManager.CreateInstance(interruptorSound);
-    }
+
     public override void Execute(bool isLeftAction = true) {
         if(isOn) ResetSwitch();
         else {
@@ -27,16 +25,26 @@ public class LightboxSwitches : InteractBase {
                 return;
             }
             transform.localEulerAngles = new Vector3(0, 90 + 45f, 0);
+            GameController.current.music.playMusic(interruptorSound);//sonido interruptor pequeño
             Action.Invoke(switchID);
         }
     }
 
     public void ResetSwitch(bool isReset = false) {
         isOn = false;
+
+        if (isChecker) 
+        { 
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+            GameController.current.music.playMusic(palancaSound);//grande
+        }
         
-        if(isChecker) transform.localEulerAngles = new Vector3(0, 0, 0);
-        else transform.localEulerAngles = new Vector3(0, 45f, 0);
-        if(!isReset) Action.Invoke(switchID);
+        else
+        { 
+            transform.localEulerAngles = new Vector3(0, 45f, 0);
+            GameController.current.music.playMusic(interruptorSound);//sonido interruptor pequeño
+        }
+        if (!isReset) Action.Invoke(switchID);
     } 
 
     public void OnDestroyLightbox() {
@@ -44,7 +52,7 @@ public class LightboxSwitches : InteractBase {
         Destroy(this);
     }
 
-    private IEnumerator Animate()
+    private IEnumerator Animate()//palanca grande
     {
         float timer = 0;
         while(timer < 1f)
@@ -52,12 +60,11 @@ public class LightboxSwitches : InteractBase {
             if(timer < 1f)
                 timer += Time.deltaTime * 5f;
 
-            interruptorEvent.start();//sound
-
             transform.localEulerAngles = Vector3.up * Mathf.LerpAngle(0, 180f, timer);
                         
             yield return null;
         }
+        GameController.current.music.playMusic(palancaSound);//sonido de palanca grande
         yield return new WaitForSeconds(0.25f);
         Action.Invoke(switchID);
         yield return null;
