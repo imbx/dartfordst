@@ -15,19 +15,18 @@ public class Item : InteractBase {
     protected bool isInteractingThis = false;
 
     [FMODUnity.EventRef]
-    public string itemSound = "event:/";
-    protected FMOD.Studio.EventInstance itemEvent;
+    public string itemSound = "event:/cogerObject2d";
+
 
 
     void Start()
     {
         movement = GetComponent<Movement>();
-        itemEvent = FMODUnity.RuntimeManager.CreateInstance(itemSound); ;
     }
 
     public override void Execute(bool isLeftAction = true) {
         if(hasRequirement && !GameController.current.database.GetProgressionState(reqID)) return;
-        itemEvent.start();
+        GameController.current.music.playMusic(itemSound);
 
         isInteractingThis = true;
         if(Son) Son.GetComponent<Item>().isInteractingThis = true;
