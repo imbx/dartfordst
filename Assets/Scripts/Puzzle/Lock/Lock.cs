@@ -8,7 +8,7 @@ public class Lock : PuzzleBase {
     public string FinalCombination = "123";
 
     [FMODUnity.EventRef]
-    public string candadoSound = "event:/candado";
+    public string candadoSound = "event:/candado2d";
 
     public override void Execute(bool isLeftAction = true)
     {

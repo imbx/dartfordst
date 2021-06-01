@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 4224758176778954707}
   - component: {fileID: 7253575655573032968}
   - component: {fileID: 6926244952017668526}
+  - component: {fileID: 8958420383467953739}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -438,6 +439,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   pointerToLook: {fileID: 8480109890210975078}
+  isMoving: 0
+  sentCameraAway: 0
+--- !u!114 &8958420383467953739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4224758176778954696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &4224758177293311591
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +686,9 @@ MonoBehaviour:
   NotUVLayer:
     serializedVersion: 2
     m_Bits: 0
+  MainLanternColor: {r: 0, g: 0, b: 0, a: 0}
+  UVLanternColor: {r: 0, g: 0, b: 0, a: 0}
+  lanternSound: event:/candado
 --- !u!1 &4224758177869429384
 GameObject:
   m_ObjectHideFlags: 0

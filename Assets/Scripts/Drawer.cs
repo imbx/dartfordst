@@ -10,26 +10,22 @@ public class Drawer : InteractBase {
     private Movement movement;
     
     [FMODUnity.EventRef]
-    public string abrirCajon = "event:/cajón/abrir cajón";
-    FMOD.Studio.EventInstance eventOpen;
+    public string abrirCajon = "event:/cajón/abrirCajon2d";
 
     [FMODUnity.EventRef]
-    public string cerrarCajon = "event:/cajón/cerrar cajón";
-    FMOD.Studio.EventInstance eventClose;
+    public string cerrarCajon = "event:/cajón/cerrarCajon2d";
 
-    private void Start() {
+    private void Start() 
+    {
         movement = GetComponent<Movement>();
-        eventOpen = FMODUnity.RuntimeManager.CreateInstance(abrirCajon);
-        eventClose = FMODUnity.RuntimeManager.CreateInstance(cerrarCajon);
-
     }
 
     public override void Execute(bool isLeftAction = true)
     {
         if(movement.isAtDestination) ToggleDrawer();
 
-        if(isDrawerIn) eventOpen.start();
-        if (!isDrawerIn) eventClose.start();
+        if(isDrawerIn) GameController.current.music.playMusic(cerrarCajon);
+        if (!isDrawerIn) GameController.current.music.playMusic(abrirCajon);
     }
 
     void ToggleDrawer()
