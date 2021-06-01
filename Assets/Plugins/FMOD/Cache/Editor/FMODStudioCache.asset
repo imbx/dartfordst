@@ -1289,7 +1289,7 @@ MonoBehaviour:
   - {fileID: 89327925031201630}
   StringsBanks:
   - {fileID: 4311495132367669648}
-  stringsBankWriteTime: 637581088234315019
+  stringsBankWriteTime: 637581563404845497
   cacheVersion: 6
 --- !u!114 &89327925031201630
 MonoBehaviour:
@@ -1306,7 +1306,7 @@ MonoBehaviour:
   Path: Assets/Sounds/Fmod projects and sounds/GMA_Matins_Primerversio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637581088234285095
+  lastModified: 637581563404805767
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1666,7 +1666,7 @@ MonoBehaviour:
   Path: Assets/Sounds/Fmod projects and sounds/GMA_Matins_Primerversio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637581088234315019
+  lastModified: 637581563404845497
   LoadResult: 0
   FileSizes:
   - Name: Desktop

@@ -1093,7 +1093,7 @@ MonoBehaviour:
           m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
-  interruptorSound: event:/interruptor
+  interruptorSound: event:/interruptor2d
   palancaSound: event:/palanca2d
 --- !u!1 &4320478026282399518
 GameObject:
