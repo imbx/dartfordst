@@ -115,10 +115,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   hasRequirement: 0
+  hideIfReq: 0
   reqID: -1
-  gameControllerObject: {fileID: 0}
+  gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   MovDimensions: {x: 0.3, y: 0, z: 0}
   Speed: 2
+  abrirCajon: "event:/caj\xF3n/abrirCajon2d"
+  cerrarCajon: "event:/caj\xF3n/cerrarCajon2d"
 --- !u!65 &8685957223094039224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -247,10 +250,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   hasRequirement: 0
+  hideIfReq: 0
   reqID: -1
-  gameControllerObject: {fileID: 0}
+  gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   MovDimensions: {x: 0.3, y: 0, z: 0}
   Speed: 2
+  abrirCajon: "event:/caj\xF3n/abrirCajon2d"
+  cerrarCajon: "event:/caj\xF3n/cerrarCajon2d"
 --- !u!65 &8385688083410745436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -994,10 +1000,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   hasRequirement: 0
+  hideIfReq: 0
   reqID: -1
-  gameControllerObject: {fileID: 0}
+  gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   MovDimensions: {x: 0.3, y: 0, z: 0}
   Speed: 2
+  abrirCajon: "event:/caj\xF3n/abrirCajon2d"
+  cerrarCajon: "event:/caj\xF3n/cerrarCajon2d"
 --- !u!1 &8809260645337719840
 GameObject:
   m_ObjectHideFlags: 0
