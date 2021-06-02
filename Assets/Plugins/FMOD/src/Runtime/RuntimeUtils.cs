@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -366,6 +367,11 @@ namespace FMODUnity
 
             Guid temp3;
             FMOD.Studio.Util.parseID("", out temp3);
+        }
+
+        public static ATTRIBUTES_3D To3DAttributes(GameObject gameObject, object cachedRigidBody)
+        {
+            throw new NotImplementedException();
         }
     }
 }
