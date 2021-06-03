@@ -18,8 +18,23 @@ public class SafeBoxChecker : InteractBase {
 
     IEnumerator Open()
     {
-
+        float timer = 0f;
+        while(timer < 1f)
+        {
+            transform.localEulerAngles = new Vector3(0, Mathf.Lerp(0, 66f, timer), 0);
+            timer += Time.deltaTime * 2f;
+            yield return null;
+        }
         Action.Invoke();
+        timer = 0;
+
+        while(timer < 1f)
+        {
+            transform.localEulerAngles = new Vector3(0, Mathf.Lerp(66f, 0, timer), 0);
+            timer += Time.deltaTime * 2f;
+            yield return null;
+        }
+        isOpening = false;
         yield return null;
     }
 }

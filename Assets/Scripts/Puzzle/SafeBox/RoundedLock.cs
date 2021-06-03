@@ -41,7 +41,7 @@ public class RoundedLock : InteractBase
         if(RotationLerp > 1f ) RotationLerp = 0f;
         if(RotationLerp < 0f) RotationLerp = 1f;
 
-        transform.localEulerAngles = new Vector3((int)Mathf.Lerp(0, 360f, RotationLerp), 0, -90);
+        transform.localEulerAngles = new Vector3(0, (int)Mathf.Lerp(0, 360f, RotationLerp), 0);
         
         if(mouseDir > 0) parent.FirstNumber = (int) CurrentRotation;
         else parent.SecondNumber = (int) CurrentRotation;
