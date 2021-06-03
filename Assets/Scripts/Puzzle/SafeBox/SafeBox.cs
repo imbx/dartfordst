@@ -20,9 +20,16 @@ public class SafeBox : PuzzleBase
     void Update()
     {
         if(!isInteractingThis) return;
+        gameControllerObject.playerTargetTag = "Safebox";
 
         if(gameControllerObject.isInPuzzle)
             targetText.text = FirstNumber + " , " + SecondNumber;
+
+        if(controller.isEscapePressed)
+        {
+            Debug.Log("[Safebox] Escape pressed");
+            this.OnExit();
+        }
     }
 
     public void CheckNumbers()
