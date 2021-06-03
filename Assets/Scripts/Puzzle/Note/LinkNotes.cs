@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class LinkNotes : PuzzleBase {
     public List<Note> notes;
-    public PrimaryController controller;
     public override void Execute(bool isLeftAction = true)
     {
         base.Execute();
@@ -17,7 +16,7 @@ public class LinkNotes : PuzzleBase {
     }
 
     private void Update() {
-        if(!isInteractingThis)return;
+        if(!isInteractingThis) return;
         if(notes.Count <= 0) this.OnEnd();
         if(controller.isEscapePressed)
         {

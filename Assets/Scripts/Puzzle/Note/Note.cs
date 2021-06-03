@@ -10,62 +10,54 @@ public class Note : InteractBase {
             return _id;
         }
     }
-    [SerializeField] private bool hasPressedLeft = false;
     [SerializeField] private bool isMoving = false;
     private Vector3 startPosition;
     private Vector3 startMousePos = Vector3.zero;
-
-    private BoxCollider boxCollider;
-
     public UnityEvent<Note> OnAction;
-
-    private float distance = 0f;
 
     [FMODUnity.EventRef]
     public string itemSound = "event:/cogerObject2d";
 
 
-    protected override void OnStart()
-    {
-        boxCollider = GetComponent<BoxCollider>();
-        startPosition = transform.position;
-        startMousePos = Camera.main.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
-    }
+
+
+    private bool isInteractingThis = false;
 
     public override void Execute(bool isLeftAction = true)
     {
-        if(!controller.isInputHold){
-            hasPressedLeft = isLeftAction;
-            this.OnStart();
+        if(controller.isInputHold || controller.isInput2Hold) return;
+        if(!isInteractingThis)
+        {
+            startMousePos = Camera.main.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
+            startPosition = transform.position;
+            isInteractingThis = true;
+            GetComponent<BoxCollider>().enabled = false;
             GameController.current.music.playMusic(itemSound);
         }
     }
 
     void Update()
     {
-        if(hasPressedLeft && !isMoving)
+        if(isInteractingThis && !isMoving)
         {
-            distance = Vector3.Distance(transform.parent.position, Camera.main.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f)));
-            startMousePos = Camera.main.ScreenToWorldPoint(new Vector3(controller.Mouse.x, controller.Mouse.y, distance));
-            Debug.Log("[Note] START MOUSE POS IS " + startMousePos);
-            isMoving = controller.isInputHold;
+            isMoving = controller.isInputHold || controller.isInput2Hold;
         }
-        else if(hasPressedLeft && isMoving)
+        else if(isInteractingThis && isMoving)
         {
             if(!controller.isInputPressed)
             {
                 isMoving = false;
-                hasPressedLeft = false;
-                // gameControllerObject.ChangeState(BoxScripts.GameState.PLAYING);
-                Debug.Log("[Note] Not moving1 "  + gameObject.name);
-
+                isInteractingThis = false;
                 RaycastHit hit;
-                Ray mouseHit = Camera.main.ScreenPointToRay(controller.Mouse);
-                Vector3 m_ROrigin = Camera.main.ScreenToWorldPoint(controller.Mouse);
-                Vector3 direction = mouseHit.direction;
-                Debug.Log("[Note] Prepare to hit raycast with direction " + direction );
-                if(Physics.Raycast(m_ROrigin, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Focus"))){
-                    Debug.Log("[Note] Hitting note raycast");
+                Vector3 m_ROrigin = gameControllerObject.camera.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
+                Vector3 direction = gameControllerObject.camera.transform.forward;
+                Debug.Log("[Note] End moving");
+
+                Ray r = gameControllerObject.camera.ScreenPointToRay((Vector3)controller.Mouse);
+                if(Physics.Raycast(
+                    r, out hit, 5f,
+                    LayerMask.GetMask("Focus")))
+                {
                     if(hit.collider.GetComponent<NotePlacement>())
                     {
 
@@ -76,37 +68,39 @@ public class Note : InteractBase {
                             transform.position = np.transform.position;
                             OnAction.Invoke(this);
                         }
+                        else
+                        {
+                            transform.position = startPosition;
+                            GetComponent<BoxCollider>().enabled = true;
+                        }
                     }
-                    Debug.Log(hit.collider.name);
                 }
-                else transform.position = startPosition;
-                boxCollider.enabled = true;
+                else 
+                {
+                    transform.position = startPosition;
+                    GetComponent<BoxCollider>().enabled = true;
+                }
             }
         }
 
         if(isMoving)
         {
             isMoving = controller.isInputHold;
-            Debug.Log("[Note] Moving " + gameObject.name);
-            Debug.Log(isMoving + " " + gameObject.name);
-
-            if(boxCollider.enabled) boxCollider.enabled = false;
-
-            Vector3 vec = Camera.main.ScreenToWorldPoint(new Vector3(controller.Mouse.x, controller.Mouse.y, distance));
-            Debug.Log("[Note] Difference should be " + (float)(vec.x - startMousePos.x) + " " + (float)(vec.y - startMousePos.y) + " from x " + vec.x + " y " + vec.y + " and startpos " + startMousePos);
-            transform.position =
-                new Vector3(
-                    startPosition.x + (float)(vec.x - startMousePos.x),
-                    startPosition.y ,
-                    startPosition.z + (float)(vec.z - startMousePos.z)
-                );
-            
-            if(!isMoving)
+            Ray r = gameControllerObject.camera.ScreenPointToRay((Vector3)controller.Mouse);
+            if(Physics.Raycast(
+                r, out var hit, 5f))
             {
-                Debug.Log("[Note] Not moving "  + gameObject.name);
-                
+                transform.position = new Vector3(
+                    hit.point.x,
+                    startPosition.y,
+                    hit.point.z
+                );
             }
         }
+
+
+
+
     }
 
 }

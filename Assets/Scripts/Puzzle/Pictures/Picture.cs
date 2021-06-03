@@ -26,7 +26,7 @@ public class Picture : InteractBase {
     protected override void OnStart()
     {
         boxCollider = GetComponent<BoxCollider>();
-        startPosition = transform.localPosition;
+        startPosition = transform.position;
         startMousePos = Camera.main.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
     }
 
@@ -83,21 +83,16 @@ public class Picture : InteractBase {
             
             isMoving = controller.isInputHold;
             if(boxCollider.enabled) boxCollider.enabled = false;
-            transform.position = gameControllerObject.playerTargetPosition + (0.25f * transform.forward);
-            
-            if(!isMoving)
-            {
-
-            }
+            transform.position = new Vector3(startPosition.x + 0.25f, startPosition.y, gameControllerObject.playerTargetPosition.z);
         }
     }
 
     public Vector3 ChangePosition (Vector3 newPosition)
     {
-        startPosition = transform.localPosition;
+        startPosition = transform.position;
         Vector3 oldPos = startPosition;
-        transform.localPosition = newPosition;
-        startPosition = transform.localPosition;
+        transform.position = newPosition;
+        startPosition = transform.position;
         OnAction.Invoke(this);
         return oldPos;
     }

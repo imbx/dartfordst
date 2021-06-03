@@ -16,11 +16,13 @@ TagManager:
   - Requirement
   - RadioOff
   - RadioOn
+  - Safebox
+  - BasicInteraction
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - IgnorePostProcessing
   - Water
   - UI
   - Interactuable

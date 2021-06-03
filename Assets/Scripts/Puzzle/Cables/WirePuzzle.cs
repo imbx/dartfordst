@@ -6,7 +6,6 @@ public class WirePuzzle : PuzzleBase
 {
     [Header("Wire Puzzle Parameters")]
     public GameObject Tapa;
-    [SerializeField] private PrimaryController controller;
     [SerializeField] private List<Knot> tornillos;
 
     public override void Execute(bool isLeftAction = true)

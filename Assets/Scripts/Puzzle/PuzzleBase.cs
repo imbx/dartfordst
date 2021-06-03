@@ -14,8 +14,9 @@ public class PuzzleBase : InteractBase {
     private Vector3 CameraTarget;
     private Vector3 CameraEulerTarget;
     private BoxCollider boxCollider;
-
     protected bool isInteractingThis = false;
+
+    public PrimaryController controller;
 
     protected override void OnStart() {
         Debug.Log("[PuzzleBase] Starting");

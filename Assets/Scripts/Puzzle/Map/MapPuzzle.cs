@@ -5,7 +5,6 @@ using BoxScripts;
 
 public class MapPuzzle : PuzzleBase
 {
-    public PrimaryController controller;
     public List<GameObject> RedPinList;
     public List<GameObject> BluePinList;
     private GameObject Marker3;

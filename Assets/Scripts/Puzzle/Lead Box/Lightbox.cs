@@ -20,12 +20,28 @@ public class Lightbox : PuzzleBase {
     protected override void OnEnd(bool destroyGameObject = false)
     {
         base.OnEnd();
+        GetComponent<LightController>().LightController_AnimLights();
         OnDestroyLightbox.Invoke();
     }
 
     void ResetLightbox() {
         CombinationList = new List<int>();
         OnResetLightbox.Invoke(true);
+    }
+    private void Update() {
+        if(hasRequirement)
+        {
+            if(GameController.current.database.GetProgressionState(reqID))
+                transform.tag = "BasicInteraction";
+        }
+        if(!isInteractingThis) return;
+
+        if(controller.isEscapePressed)
+        {
+            Debug.Log("[Lightbox] Escape pressed");
+            this.OnExit();
+        }
+
     }
 
     public void AddToCombination (int newLever)
