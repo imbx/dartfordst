@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 224822318}
-  m_IndirectSpecularColor: {r: 0.00045569346, g: 0.0005636927, b: 0.0037554258, a: 1}
+  m_IndirectSpecularColor: {r: 0.00044891384, g: 0.00056785793, b: 0.0032627634, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9963,7 +9963,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.6901961, g: 0.72156864, b: 0.7647059, a: 1}
-  m_Intensity: 1
+  m_Intensity: 6.57
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10020,13 +10020,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224822317}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: -0.13434468, y: -0.20536199, z: 0.32118604, w: 0.91466796}
   m_LocalPosition: {x: 0, y: 20, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.537, y: -27.71, z: 40.311}
 --- !u!1 &266536801
 GameObject:
   m_ObjectHideFlags: 0
@@ -16598,6 +16598,37 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1004837975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004837976}
+  m_Layer: 6
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1004837976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004837975}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7536139544264395868}
+  m_Father: {fileID: 8691867663588164069}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1022853484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65626,7 +65657,7 @@ MonoBehaviour:
   DistanceToCamera: 1
   vecModifier: {x: 0, y: 0, z: -1}
   targetAngle: {x: 0, y: 0, z: 0}
-  controller: {fileID: 0}
+  controller: {fileID: 11400000, guid: cf0be0ce4604b4546bc2f4d9be3d64fc, type: 2}
   FirstNumber: 0
   SecondNumber: 0
   FirstTargetNumber: 20
@@ -67684,7 +67715,7 @@ MonoBehaviour:
   reqID: -1
   gameControllerObject: {fileID: 11400000, guid: da79aebf0ea0e4999b7fad6670219c4e, type: 2}
   rotationSpeed: 2
-  targetAngle: 90
+  targetAngle: -90
   abrirPuerta: event:/puerta/abrirPuerta2d
   cerrarPuerta: event:/puerta/cerrarPuerta2d
 --- !u!1 &6545081454365801425
@@ -69050,13 +69081,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6516120379338255353}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.050713245, y: 0.039952576, z: 0.0062940386}
-  m_LocalScale: {x: 1.0849999, y: 1, z: 1.1327273}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.050713245, y: 0.0062940344, z: -0.039952576}
+  m_LocalScale: {x: 1.0849999, y: 1, z: 1.1327268}
   m_Children:
   - {fileID: 22510553667070308}
   - {fileID: 8798963973887547350}
-  m_Father: {fileID: 8691867663588164069}
+  m_Father: {fileID: 1004837976}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7558436230824761321
@@ -72176,7 +72207,7 @@ Transform:
   m_LocalPosition: {x: 0.576815, y: -0.33943507, z: 1.3740656}
   m_LocalScale: {x: 3.47472, y: 4.38912, z: 3.3528}
   m_Children:
-  - {fileID: 7536139544264395868}
+  - {fileID: 1004837976}
   m_Father: {fileID: 543450652404273267}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
